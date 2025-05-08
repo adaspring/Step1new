@@ -72,22 +72,6 @@ def flatten_and_structure(text, block_id, sentence_index):
 
     return flat_map, structured
 
-def process_json_ld(obj, block_id, flat_token_map, structured_map, sentence_index=1):
-    if isinstance(obj, dict):
-        for key, value in obj.items():
-            obj[key], sentence_index = process_json_ld(value, block_id, flat_token_map, structured_map, sentence_index)
-    elif isinstance(obj, list):
-        for i in range(len(obj)):
-            obj[i], sentence_index = process_json_ld(obj[i], block_id, flat_token_map, structured_map, sentence_index)
-    elif isinstance(obj, str) and is_lexical_content(obj):
-        flat_map, structured = flatten_and_structure(obj, block_id, sentence_index)
-        flat_token_map.update(flat_map)
-        if block_id not in structured_map:
-            structured_map[block_id] = {"tag": "script[type=application/ld+json]", "sentences": {}}
-        structured_map[block_id]["sentences"][f"S{sentence_index}"] = structured
-        return f"__{block_id}_S{sentence_index}__", sentence_index + 1
-    return obj, sentence_index
-
 def extract_translatable_html(input_path):
     with open(input_path, "r", encoding="utf-8") as f:
         soup = BeautifulSoup(f, "html.parser")
@@ -96,13 +80,13 @@ def extract_translatable_html(input_path):
     structured_map = {}
     block_count = 0
 
-    # 1. Extract normal visible text
+    # Text nodes in elements
     for element in soup.find_all(string=True):
         if is_translatable_text(element):
             doc = nlp(element.strip())
             sentences = [sent.text.strip() for sent in doc.sents if is_lexical_content(sent.text.strip())]
             if not sentences:
-                continue
+                continue  # skip non-lexical content
 
             block_count += 1
             block_id = f"BLOCK_{block_count}"
@@ -117,18 +101,6 @@ def extract_translatable_html(input_path):
                 sentence_index += 1
             element.replace_with(" ".join(token_placeholders))
 
-    # 2. Extract from application/ld+json blocks
-    for script in soup.find_all("script", type="application/ld+json"):
-        try:
-            json_data = json.loads(script.string)
-        except Exception:
-            continue  # skip if malformed
-        block_count += 1
-        block_id = f"BLOCK_{block_count}"
-        processed_data, _ = process_json_ld(json_data, block_id, flat_token_map, structured_map)
-        script.string.replace_with(json.dumps(processed_data, ensure_ascii=False, indent=2))
-    
-    # 3. Write output files
     with open("translatable_flat.json", "w", encoding="utf-8") as f:
         json.dump(flat_token_map, f, indent=2, ensure_ascii=False)
 
@@ -138,7 +110,7 @@ def extract_translatable_html(input_path):
     with open("non_translatable.html", "w", encoding="utf-8") as f:
         f.write(str(soup))
 
-    print("✅ Step 1 complete: extracted text, including from JSON-LD.")
+    print("✅ Step 1 complete: created translatable_flat.json, translatable_structured.json, and non_translatable.html")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
