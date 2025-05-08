@@ -46,10 +46,20 @@ def flatten_sentence_tokens(text, block_id, sentence_index):
     sentence_id = f"{block_id}_S{sentence_index}"
     flat_map[sentence_id] = text
     doc = nlp(text)
-    for i, token in enumerate(doc):
-        if not token.is_space:
-            word_key = f"{sentence_id}_W{i+1}"
-            flat_map[word_key] = token.text
+
+    # Get non-space tokens as a list
+    tokens = [token.text for token in doc if not token.is_space]
+
+    # Optimization: Skip W-tokens if 1–3 tokens and joined string equals original
+    joined = " ".join(tokens).strip()
+    if len(tokens) <= 3 and joined == text:
+        return flat_map
+
+    # Otherwise, include W-tokens
+    for i, token in enumerate(tokens):
+        word_key = f"{sentence_id}_W{i+1}"
+        flat_map[word_key] = token
+
     return flat_map
 
 def extract_translatable_html(input_path):
