@@ -38,6 +38,10 @@ def is_translatable_text(tag):
         tag.strip()
     )
 
+def is_lexical_content(text):
+    doc = nlp(text)
+    return any(token.is_alpha or token.is_digit for token in doc if not token.is_space)
+
 def flatten_and_structure(text, block_id, sentence_index):
     flat_map = {}
     structured = {}
@@ -79,21 +83,22 @@ def extract_translatable_html(input_path):
     # Text nodes in elements
     for element in soup.find_all(string=True):
         if is_translatable_text(element):
+            doc = nlp(element.strip())
+            sentences = [sent.text.strip() for sent in doc.sents if is_lexical_content(sent.text.strip())]
+            if not sentences:
+                continue  # skip non-lexical content
+
             block_count += 1
             block_id = f"BLOCK_{block_count}"
             structured_map[block_id] = {"tag": element.parent.name, "sentences": {}}
-
-            doc = nlp(element.strip())
             sentence_index = 1
             token_placeholders = []
-            for sent in doc.sents:
-                sentence = sent.text.strip()
-                if sentence:
-                    flat_map, structured = flatten_and_structure(sentence, block_id, sentence_index)
-                    flat_token_map.update(flat_map)
-                    structured_map[block_id]["sentences"][f"S{sentence_index}"] = structured
-                    token_placeholders.append(f"__{block_id}_S{sentence_index}__")
-                    sentence_index += 1
+            for sentence in sentences:
+                flat_map, structured = flatten_and_structure(sentence, block_id, sentence_index)
+                flat_token_map.update(flat_map)
+                structured_map[block_id]["sentences"][f"S{sentence_index}"] = structured
+                token_placeholders.append(f"__{block_id}_S{sentence_index}__")
+                sentence_index += 1
             element.replace_with(" ".join(token_placeholders))
 
     with open("translatable_flat.json", "w", encoding="utf-8") as f:
