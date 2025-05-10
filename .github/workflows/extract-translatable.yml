@@ -31,11 +31,10 @@ jobs:
         run: |
           python step1_extract.py ${{ github.event.inputs.html_file }}
 
-      - name: Upload translation artifacts
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: translatable-output
           path: |
             translatable_flat.json
-            translatable_structured.json
             non_translatable.html
