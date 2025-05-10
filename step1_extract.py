@@ -140,7 +140,7 @@ def extract_translatable_html(input_path, lang_code):
     nlp = load_spacy_model(lang_code)
 
     with open(input_path, "r", encoding="utf-8") as f:
-        soup = BeautifulSoup(f, "html.parser")
+        soup = BeautifulSoup(f, "html5lib")
 
     structured_output = {}
     flattened_output = {}
