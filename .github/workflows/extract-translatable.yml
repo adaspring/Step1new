@@ -1,15 +1,15 @@
-name: Extract Translatable HTML
+name: Extract Translatable Content from HTML
 
 on:
   workflow_dispatch:
     inputs:
       html_file:
-        description: 'Specify the HTML file to process'
+        description: 'Path to the HTML file to process'
         required: true
         default: 'input.html'
 
 jobs:
-  extract-translatable:
+  extract:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
@@ -27,15 +27,14 @@ jobs:
           pip install beautifulsoup4 spacy
           python -m spacy download en_core_web_sm
 
-      - name: Run translatable extraction script
+      - name: Run HTML Extraction
         run: |
-          python step1_extract.py ${{ github.event.inputs.html_file }}
+          python Merged_V2_with_V1_core.py ${{ github.event.inputs.html_file }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: translatable-output
+          name: translation-artifacts
           path: |
             translatable_flat.json
-            translatable_structured.json
             non_translatable.html
