@@ -110,15 +110,18 @@ def extract_from_jsonld(obj, block_counter, nlp, structured_output, flattened_ou
                 key_lc = key.lower()
                 if (
     key_lc not in 
-    JSONLD_EXCLUDE_KEYS and (
+     JSONLD_EXCLUDE_KEYS and (
         key_lc in 
-        TRANSLATABLE_JSONLD_KEYS
+         TRANSLATABLE_JSONLD_KEYS
         or (
-            not key_lc.startswith("@")
-            and all(x not in key_lc for x in ["url", "date", "time", "type"])
-                   )
-                )
-              ):
+            not 
+        key_lc.startswith("@")
+            and all(x not in key_lc 
+                    for x in ["url", "date", "time", 
+                              "type"])
+        )
+    )
+):
                     block_id = f"BLOCK_{block_counter}"
                     structured, flattened, tokens = process_text_block(block_id, value, nlp)
                     obj[key] = tokens[0][0]  # replace in-place
@@ -180,8 +183,8 @@ def extract_translatable_html(input_path, lang_code):
         name = meta.get("name", "").lower()
         prop = meta.get("property", "").lower()
         content = meta.get("content", "").strip()
-        if name in EXCLUDED_META_NAMES 
-        or prop in EXCLUDED_META_PROPERTIES:
+        if name in EXCLUDED_META_NAMES or 
+        prop in EXCLUDED_META_PROPERTIES:
         continue  
         if content and (name in SEO_META_FIELDS["name"] or prop in SEO_META_FIELDS["property"]):
             block_id = f"BLOCK_{block_counter}"
