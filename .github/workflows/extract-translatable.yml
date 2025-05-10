@@ -30,7 +30,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install beautifulsoup4 spacy
 
-      - name: Run Step 1 HTML extraction
+      - name: Run Step 1 HTML extraction with JSON-LD support
         run: |
           python step1_extract.py ${{ github.event.inputs.html_file }} --lang ${{ github.event.inputs.lang }}
 
