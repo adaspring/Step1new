@@ -43,9 +43,14 @@ TRANSLATABLE_JSONLD_KEYS = {
     "alternateName", "summary", "title", "about"
 }
 
-
 SKIP_PARENTS = {
-    "script", "style", "code", "pre", "noscript", "template", "svg", "canvas"
+    "script", "style", "code", "pre", "noscript", "template", "svg", "canvas",
+    "frameset", "frame", "noframes", "object", "embed", "base", "map"
+}
+
+BLOCKED_ATTRS = {
+    "accept", "align", "autocomplete", "bgcolor", "charset", "class", "content",
+    "dir", "download", "href", "id", "lang", "name", "rel", "src", "style", "type"
 }
 
 JSONLD_EXCLUDE_KEYS = {
@@ -54,6 +59,7 @@ JSONLD_EXCLUDE_KEYS = {
 
 EXCLUDED_META_NAMES = {"viewport"}
 EXCLUDED_META_PROPERTIES = {"og:url"}
+
 
 def load_spacy_model(lang_code):
     if lang_code not in SPACY_MODELS:
@@ -75,7 +81,11 @@ def is_translatable_text(tag):
         tag.parent.name in TRANSLATABLE_TAGS and
         tag.parent.name not in SKIP_PARENTS and
         not isinstance(tag, Comment) and
-        tag.strip()
+        tag.strip() and
+        (
+            not tag.parent.has_attr("translate") or
+            tag.parent.get("translate") != "no"
+        )
     )
 
 
@@ -109,22 +119,16 @@ def extract_from_jsonld(obj, block_counter, nlp, structured_output, flattened_ou
             if isinstance(value, str):
                 key_lc = key.lower()
                 if (
-    key_lc not in 
-     JSONLD_EXCLUDE_KEYS and (
-        key_lc in 
-         TRANSLATABLE_JSONLD_KEYS
-        or (
-            not 
-        key_lc.startswith("@")
-            and all(x not in key_lc 
-                    for x in ["url", "date", "time", 
-                              "type"])
-        )
-    )
-):
+                    key_lc not in JSONLD_EXCLUDE_KEYS and (
+                        key_lc in TRANSLATABLE_JSONLD_KEYS or (
+                            not key_lc.startswith("@") and
+                            all(x not in key_lc for x in ["url", "date", "time", "type"])
+                        )
+                    )
+                ):
                     block_id = f"BLOCK_{block_counter}"
                     structured, flattened, tokens = process_text_block(block_id, value, nlp)
-                    obj[key] = tokens[0][0]  # replace in-place
+                    obj[key] = tokens[0][0]
                     structured_output[block_id] = {"jsonld": key, "tokens": structured}
                     flattened_output.update(flattened)
                     block_counter += 1
@@ -151,53 +155,47 @@ def extract_translatable_html(input_path, lang_code):
             text = element.strip()
             block_id = f"BLOCK_{block_counter}"
             structured, flattened, sentence_tokens = process_text_block(block_id, text, nlp)
-
-            structured_output[block_id] = {
-                "tag": element.parent.name,
-                "tokens": structured
-            }
+            structured_output[block_id] = {"tag": element.parent.name, "tokens": structured}
             flattened_output.update(flattened)
-
             if sentence_tokens:
                 element.replace_with(sentence_tokens[0][0])
-
             block_counter += 1
 
     for tag in soup.find_all():
         for attr in TRANSLATABLE_ATTRS:
-            if attr in tag.attrs and isinstance(tag[attr], str):
+            if (
+                attr in tag.attrs and 
+                isinstance(tag[attr], str) and 
+                attr not in BLOCKED_ATTRS
+            ):
                 value = tag[attr].strip()
                 if value:
                     block_id = f"BLOCK_{block_counter}"
                     structured, flattened, sentence_tokens = process_text_block(block_id, value, nlp)
-
                     structured_output[block_id] = {"attr": attr, "tokens": structured}
                     flattened_output.update(flattened)
-
                     if sentence_tokens:
                         tag[attr] = sentence_tokens[0][0]
-
                     block_counter += 1
 
     for meta in soup.find_all("meta"):
         name = meta.get("name", "").lower()
         prop = meta.get("property", "").lower()
         content = meta.get("content", "").strip()
-        
-        if (name in EXCLUDED_META_NAMES or 
-            prop in EXCLUDED_META_PROPERTIES):
+
+        if name in EXCLUDED_META_NAMES or prop in EXCLUDED_META_PROPERTIES:
             continue
 
-        if content and (name in SEO_META_FIELDS["name"] or prop in SEO_META_FIELDS["property"]):
+        if content and (
+            (name and name in SEO_META_FIELDS["name"]) or
+            (prop and prop in SEO_META_FIELDS["property"])
+        ):
             block_id = f"BLOCK_{block_counter}"
             structured, flattened, sentence_tokens = process_text_block(block_id, content, nlp)
-
             structured_output[block_id] = {"meta": name or prop, "tokens": structured}
             flattened_output.update(flattened)
-
             if sentence_tokens:
                 meta["content"] = sentence_tokens[0][0]
-
             block_counter += 1
 
     title_tag = soup.title
@@ -205,13 +203,10 @@ def extract_translatable_html(input_path, lang_code):
         block_id = f"BLOCK_{block_counter}"
         text = title_tag.string.strip()
         structured, flattened, sentence_tokens = process_text_block(block_id, text, nlp)
-
         structured_output[block_id] = {"tag": "title", "tokens": structured}
         flattened_output.update(flattened)
-
         if sentence_tokens:
             title_tag.string.replace_with(sentence_tokens[0][0])
-
         block_counter += 1
 
     for script_tag in soup.find_all("script", {"type": "application/ld+json"}):
@@ -233,7 +228,6 @@ def extract_translatable_html(input_path, lang_code):
     with open("non_translatable.html", "w", encoding="utf-8") as f:
         f.write(str(soup))
 
-    # Generate translatable_flat_sentences.json (sentence-level only)
     flat_sentences_only = {
         k: v for k, v in flattened_output.items()
         if "_S" in k and "_W" not in k
@@ -249,5 +243,4 @@ if __name__ == "__main__":
     parser.add_argument("input_file", help="HTML file to process")
     parser.add_argument("--lang", choices=SPACY_MODELS.keys(), default="en", help="Language code (default: en)")
     args = parser.parse_args()
-
     extract_translatable_html(args.input_file, args.lang)
