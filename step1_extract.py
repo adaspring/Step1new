@@ -43,10 +43,17 @@ TRANSLATABLE_JSONLD_KEYS = {
     "alternateName", "summary", "title", "about"
 }
 
+
 SKIP_PARENTS = {
     "script", "style", "code", "pre", "noscript", "template", "svg", "canvas"
 }
 
+JSONLD_EXCLUDE_KEYS = {
+    "duration", "uploadDate", "embedUrl", "contentUrl", "thumbnailUrl"
+}
+
+EXCLUDED_META_NAMES = {"viewport"}
+EXCLUDED_META_PROPERTIES = {"og:url"}
 
 def load_spacy_model(lang_code):
     if lang_code not in SPACY_MODELS:
@@ -102,12 +109,16 @@ def extract_from_jsonld(obj, block_counter, nlp, structured_output, flattened_ou
             if isinstance(value, str):
                 key_lc = key.lower()
                 if (
-                    key_lc in TRANSLATABLE_JSONLD_KEYS
-                    or (
-                        not key_lc.startswith("@")
-                        and all(x not in key_lc for x in ["url", "date", "time", "type"])
-                    )
-                ):
+    key_lc not in 
+    JSONLD_EXCLUDE_KEYS and (
+        key_lc in 
+        TRANSLATABLE_JSONLD_KEYS
+        or (
+            not key_lc.startswith("@")
+            and all(x not in key_lc for x in ["url", "date", "time", "type"])
+                   )
+                )
+              ):
                     block_id = f"BLOCK_{block_counter}"
                     structured, flattened, tokens = process_text_block(block_id, value, nlp)
                     obj[key] = tokens[0][0]  # replace in-place
@@ -169,6 +180,9 @@ def extract_translatable_html(input_path, lang_code):
         name = meta.get("name", "").lower()
         prop = meta.get("property", "").lower()
         content = meta.get("content", "").strip()
+        if name in EXCLUDED_META_NAMES 
+        or prop in EXCLUDED_META_PROPERTIES:
+        continue  
         if content and (name in SEO_META_FIELDS["name"] or prop in SEO_META_FIELDS["property"]):
             block_id = f"BLOCK_{block_counter}"
             structured, flattened, sentence_tokens = process_text_block(block_id, content, nlp)
