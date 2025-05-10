@@ -38,9 +38,15 @@ SEO_META_FIELDS = {
     }
 }
 
+TRANSLATABLE_JSONLD_KEYS = {
+    "name", "description", "headline", "caption",
+    "alternateName", "summary", "title", "about"
+}
+
 SKIP_PARENTS = {
     "script", "style", "code", "pre", "noscript", "template", "svg", "canvas"
 }
+
 
 def load_spacy_model(lang_code):
     if lang_code not in SPACY_MODELS:
@@ -56,6 +62,7 @@ def load_spacy_model(lang_code):
         subprocess.run(["python", "-m", "spacy", "download", model_name], check=True)
         return spacy.load(model_name)
 
+
 def is_translatable_text(tag):
     return (
         tag.parent.name in TRANSLATABLE_TAGS and
@@ -63,6 +70,7 @@ def is_translatable_text(tag):
         not isinstance(tag, Comment) and
         tag.strip()
     )
+
 
 def process_text_block(block_id, text, nlp):
     structured = {}
@@ -85,6 +93,34 @@ def process_text_block(block_id, text, nlp):
             structured[s_key]["words"][w_key] = token.text
 
     return structured, flattened, sentence_tokens
+
+
+def extract_from_jsonld(obj, block_counter, nlp, structured_output, flattened_output):
+    if isinstance(obj, dict):
+        for key in list(obj.keys()):
+            value = obj[key]
+            if isinstance(value, str):
+                key_lc = key.lower()
+                if (
+                    key_lc in TRANSLATABLE_JSONLD_KEYS
+                    or (
+                        not key_lc.startswith("@")
+                        and all(x not in key_lc for x in ["url", "date", "time", "type"])
+                    )
+                ):
+                    block_id = f"BLOCK_{block_counter}"
+                    structured, flattened, tokens = process_text_block(block_id, value, nlp)
+                    obj[key] = tokens[0][0]  # replace in-place
+                    structured_output[block_id] = {"jsonld": key, "tokens": structured}
+                    flattened_output.update(flattened)
+                    block_counter += 1
+            elif isinstance(value, (dict, list)):
+                block_counter = extract_from_jsonld(value, block_counter, nlp, structured_output, flattened_output)
+    elif isinstance(obj, list):
+        for i in range(len(obj)):
+            block_counter = extract_from_jsonld(obj[i], block_counter, nlp, structured_output, flattened_output)
+    return block_counter
+
 
 def extract_translatable_html(input_path, lang_code):
     nlp = load_spacy_model(lang_code)
@@ -109,7 +145,6 @@ def extract_translatable_html(input_path, lang_code):
             flattened_output.update(flattened)
 
             if sentence_tokens:
-                # Only replace with the first sentence-level token
                 element.replace_with(sentence_tokens[0][0])
 
             block_counter += 1
@@ -160,6 +195,16 @@ def extract_translatable_html(input_path, lang_code):
 
         block_counter += 1
 
+    for script_tag in soup.find_all("script", {"type": "application/ld+json"}):
+        try:
+            raw_json = script_tag.string.strip()
+            data = json.loads(raw_json)
+            block_counter = extract_from_jsonld(data, block_counter, nlp, structured_output, flattened_output)
+            script_tag.string.replace_with(json.dumps(data, ensure_ascii=False, indent=2))
+        except Exception as e:
+            print(f"⚠️ Failed to parse or process JSON-LD: {e}")
+            continue
+
     with open("translatable_flat.json", "w", encoding="utf-8") as f:
         json.dump(flattened_output, f, indent=2, ensure_ascii=False)
 
@@ -170,6 +215,7 @@ def extract_translatable_html(input_path, lang_code):
         f.write(str(soup))
 
     print("✅ Step 1 complete: saved translatable_flat.json, translatable_structured.json, and non_translatable.html.")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
