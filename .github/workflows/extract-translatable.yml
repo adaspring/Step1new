@@ -37,4 +37,5 @@ jobs:
           name: translatable-output
           path: |
             translatable_flat.json
+            translatable_structured.json
             non_translatable.html
