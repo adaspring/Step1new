@@ -41,4 +41,5 @@ jobs:
           path: |
             translatable_flat.json
             translatable_structured.json
+            translatable_flat_sentences.json
             non_translatable.html
