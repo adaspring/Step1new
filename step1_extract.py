@@ -76,7 +76,7 @@ def extract_translatable_html(input_path):
     structured_map = {}
     block_count = 0
 
-    # Text nodes in elements
+    # Body text content
     for element in soup.find_all(string=True):
         if is_translatable_text(element):
             block_count += 1
@@ -96,6 +96,70 @@ def extract_translatable_html(input_path):
                     sentence_index += 1
             element.replace_with(" ".join(token_placeholders))
 
+    # Attributes
+    for tag in soup.find_all():
+        for attr in TRANSLATABLE_ATTRS:
+            if attr in tag.attrs and isinstance(tag[attr], str):
+                value = tag[attr].strip()
+                if value:
+                    block_count += 1
+                    block_id = f"BLOCK_{block_count}"
+                    doc = nlp(value)
+                    sentence_index = 1
+                    tokens = []
+                    structured_map[block_id] = {"attr": attr, "tag": tag.name, "sentences": {}}
+                    for sent in doc.sents:
+                        sentence = sent.text.strip()
+                        if sentence:
+                            flat_map, structured = flatten_and_structure(sentence, block_id, sentence_index)
+                            flat_token_map.update(flat_map)
+                            structured_map[block_id]["sentences"][f"S{sentence_index}"] = structured
+                            tokens.append(f"__{block_id}_S{sentence_index}__")
+                            sentence_index += 1
+                    tag[attr] = " ".join(tokens)
+
+    # Meta tags
+    for meta in soup.find_all("meta"):
+        name = meta.get("name", "").lower()
+        prop = meta.get("property", "").lower()
+        content = meta.get("content", "").strip()
+        if content and (name in SEO_META_FIELDS["name"] or prop in SEO_META_FIELDS["property"]):
+            block_count += 1
+            block_id = f"BLOCK_{block_count}"
+            doc = nlp(content)
+            sentence_index = 1
+            tokens = []
+            structured_map[block_id] = {"tag": "meta", "sentences": {}}
+            for sent in doc.sents:
+                sentence = sent.text.strip()
+                if sentence:
+                    flat_map, structured = flatten_and_structure(sentence, block_id, sentence_index)
+                    flat_token_map.update(flat_map)
+                    structured_map[block_id]["sentences"][f"S{sentence_index}"] = structured
+                    tokens.append(f"__{block_id}_S{sentence_index}__")
+                    sentence_index += 1
+            meta["content"] = " ".join(tokens)
+
+    # Title tag
+    title_tag = soup.title
+    if title_tag and title_tag.string and title_tag.string.strip():
+        block_count += 1
+        block_id = f"BLOCK_{block_count}"
+        doc = nlp(title_tag.string.strip())
+        sentence_index = 1
+        tokens = []
+        structured_map[block_id] = {"tag": "title", "sentences": {}}
+        for sent in doc.sents:
+            sentence = sent.text.strip()
+            if sentence:
+                flat_map, structured = flatten_and_structure(sentence, block_id, sentence_index)
+                flat_token_map.update(flat_map)
+                structured_map[block_id]["sentences"][f"S{sentence_index}"] = structured
+                tokens.append(f"__{block_id}_S{sentence_index}__")
+                sentence_index += 1
+        title_tag.string.replace_with(" ".join(tokens))
+
+    # Save output
     with open("translatable_flat.json", "w", encoding="utf-8") as f:
         json.dump(flat_token_map, f, indent=2, ensure_ascii=False)
 
