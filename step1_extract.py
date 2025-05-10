@@ -77,16 +77,35 @@ def load_spacy_model(lang_code):
 
 
 def is_translatable_text(tag):
-    return (
+    # Check translate attribute inheritance hierarchy
+    current_element = tag.parent
+    translate_override = None
+    
+    while current_element is not None:
+        current_translate = current_element.get("translate", "").lower()
+        
+        if current_translate in {"yes", "no"}:
+            translate_override = current_translate
+            break  # Closest explicit declaration wins
+        current_element = current_element.parent
+
+    # If any parent says "no", block translation
+    if translate_override == "no":
+        return False
+
+    # If no explicit "yes", check default translatability
+    default_translatable = (
         tag.parent.name in TRANSLATABLE_TAGS and
         tag.parent.name not in SKIP_PARENTS and
         not isinstance(tag, Comment) and
-        tag.strip() and
-        (
-            not tag.parent.has_attr("translate") or
-            tag.parent.get("translate") != "no"
-        )
+        tag.strip()
     )
+
+    # Explicit "yes" overrides default logic
+    if translate_override == "yes":
+        return default_translatable or True  # Force allow if parent says "yes"
+        
+    return default_translatable
 
 
 def process_text_block(block_id, text, nlp):
