@@ -64,26 +64,27 @@ def is_translatable_text(tag):
         tag.strip()
     )
 
-def generate_token():
-    return f"__TRANS_{uuid.uuid4().hex}__"
-
 def process_text_block(block_id, text, nlp):
     structured = {}
     flattened = {}
+    sentence_tokens = []
 
     doc = nlp(text)
     for s_idx, sent in enumerate(doc.sents, 1):
         s_key = f"S{s_idx}"
-        flattened[f"{block_id}_{s_key}"] = sent.text
-        structured[s_key] = {"text": sent.text, "words": {}}
+        sentence_id = f"{block_id}_{s_key}"
+        sentence_text = sent.text
+        flattened[sentence_id] = sentence_text
+        structured[s_key] = {"text": sentence_text, "words": {}}
+        sentence_tokens.append((sentence_id, sentence_text))
 
         for w_idx, token in enumerate(sent, 1):
             w_key = f"W{w_idx}"
-            word_key = f"{block_id}_{s_key}_{w_key}"
-            flattened[word_key] = token.text
+            word_id = f"{sentence_id}_{w_key}"
+            flattened[word_id] = token.text
             structured[s_key]["words"][w_key] = token.text
 
-    return structured, flattened
+    return structured, flattened, sentence_tokens
 
 def extract_translatable_html(input_path, lang_code):
     nlp = load_spacy_model(lang_code)
@@ -99,15 +100,18 @@ def extract_translatable_html(input_path, lang_code):
         if is_translatable_text(element):
             text = element.strip()
             block_id = f"BLOCK_{block_counter}"
-            structured, flattened = process_text_block(block_id, text, nlp)
+            structured, flattened, sentence_tokens = process_text_block(block_id, text, nlp)
+
             structured_output[block_id] = {
                 "tag": element.parent.name,
                 "tokens": structured
             }
             flattened_output.update(flattened)
 
-            token = generate_token()
-            element.replace_with(token)
+            if sentence_tokens:
+                # Only replace with the first sentence-level token
+                element.replace_with(sentence_tokens[0][0])
+
             block_counter += 1
 
     for tag in soup.find_all():
@@ -116,12 +120,14 @@ def extract_translatable_html(input_path, lang_code):
                 value = tag[attr].strip()
                 if value:
                     block_id = f"BLOCK_{block_counter}"
-                    structured, flattened = process_text_block(block_id, value, nlp)
+                    structured, flattened, sentence_tokens = process_text_block(block_id, value, nlp)
+
                     structured_output[block_id] = {"attr": attr, "tokens": structured}
                     flattened_output.update(flattened)
 
-                    token = generate_token()
-                    tag[attr] = token
+                    if sentence_tokens:
+                        tag[attr] = sentence_tokens[0][0]
+
                     block_counter += 1
 
     for meta in soup.find_all("meta"):
@@ -130,24 +136,28 @@ def extract_translatable_html(input_path, lang_code):
         content = meta.get("content", "").strip()
         if content and (name in SEO_META_FIELDS["name"] or prop in SEO_META_FIELDS["property"]):
             block_id = f"BLOCK_{block_counter}"
-            structured, flattened = process_text_block(block_id, content, nlp)
+            structured, flattened, sentence_tokens = process_text_block(block_id, content, nlp)
+
             structured_output[block_id] = {"meta": name or prop, "tokens": structured}
             flattened_output.update(flattened)
 
-            token = generate_token()
-            meta["content"] = token
+            if sentence_tokens:
+                meta["content"] = sentence_tokens[0][0]
+
             block_counter += 1
 
     title_tag = soup.title
     if title_tag and title_tag.string and title_tag.string.strip():
         block_id = f"BLOCK_{block_counter}"
         text = title_tag.string.strip()
-        structured, flattened = process_text_block(block_id, text, nlp)
+        structured, flattened, sentence_tokens = process_text_block(block_id, text, nlp)
+
         structured_output[block_id] = {"tag": "title", "tokens": structured}
         flattened_output.update(flattened)
 
-        token = generate_token()
-        title_tag.string.replace_with(token)
+        if sentence_tokens:
+            title_tag.string.replace_with(sentence_tokens[0][0])
+
         block_counter += 1
 
     with open("translatable_flat.json", "w", encoding="utf-8") as f:
