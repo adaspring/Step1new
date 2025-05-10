@@ -1,0 +1,5993 @@
+{
+  "BLOCK_1": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "ARTEAK",
+        "words": [
+          {
+            "id": "W1",
+            "text": "ARTEAK"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_2": {
+    "tag": "div",
+    "sentences": {
+      "S1": {
+        "text": "☰",
+        "words": [
+          {
+            "id": "W1",
+            "text": "☰"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_3": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Home",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Home"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_4": {
+    "tag": "div",
+    "sentences": {
+      "S1": {
+        "text": ">",
+        "words": [
+          {
+            "id": "W1",
+            "text": ">"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_5": {
+    "tag": "span",
+    "sentences": {
+      "S1": {
+        "text": "Nok Terracottas",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Nok Terracottas"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_6": {
+    "tag": "div",
+    "sentences": {
+      "S1": {
+        "text": "×",
+        "words": [
+          {
+            "id": "W1",
+            "text": "×"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_7": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Home",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Home"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_8": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Nok Terracottas",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Nok Terracottas"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_9": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Large Man",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Large Man"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_10": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Short Man",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Short Man"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_11": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Man Head",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Man Head"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_12": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "About Nok",
+        "words": [
+          {
+            "id": "W1",
+            "text": "About Nok"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_13": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "African Bronzes",
+        "words": [
+          {
+            "id": "W1",
+            "text": "African Bronzes"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_14": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Spoon",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Spoon"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_15": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Sun",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Sun"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_16": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Twins",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Twins"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_17": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Snake",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Snake"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_18": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "About Bronzes",
+        "words": [
+          {
+            "id": "W1",
+            "text": "About Bronzes"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_19": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Ritual Artifacts",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Ritual Artifacts"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_20": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Bōcio/Fetiche",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Bōcio",
+            "lemma": "Bōcio",
+            "pos": "PROPN",
+            "dep": "nmod"
+          },
+          {
+            "id": "W2",
+            "text": "/",
+            "lemma": "/",
+            "pos": "SYM",
+            "dep": "punct"
+          },
+          {
+            "id": "W3",
+            "text": "Fetiche",
+            "lemma": "Fetiche",
+            "pos": "PROPN",
+            "dep": "ROOT"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_21": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "About Artifacts",
+        "words": [
+          {
+            "id": "W1",
+            "text": "About Artifacts"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_22": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "About ARTEAK",
+        "words": [
+          {
+            "id": "W1",
+            "text": "About ARTEAK"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_23": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Contact",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Contact"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_24": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Large Man Figure",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Large Man Figure"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_25": {
+    "tag": "button",
+    "sentences": {
+      "S1": {
+        "text": "←",
+        "words": [
+          {
+            "id": "W1",
+            "text": "←"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_26": {
+    "tag": "button",
+    "sentences": {
+      "S1": {
+        "text": "→",
+        "words": [
+          {
+            "id": "W1",
+            "text": "→"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_27": {
+    "tag": "p",
+    "sentences": {
+      "S1": {
+        "text": "Material: Terracotta | Height: 37cm \n                Provenance: French private collection \n                Thermoluminescence certificate (2011)",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Material",
+            "lemma": "material",
+            "pos": "NOUN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W2",
+            "text": ":",
+            "lemma": ":",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W3",
+            "text": "Terracotta",
+            "lemma": "terracotta",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W4",
+            "text": "|",
+            "lemma": "|",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W5",
+            "text": "Height",
+            "lemma": "height",
+            "pos": "NOUN",
+            "dep": "appos"
+          },
+          {
+            "id": "W6",
+            "text": ":",
+            "lemma": ":",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W7",
+            "text": "37",
+            "lemma": "37",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W8",
+            "text": "cm",
+            "lemma": "cm",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W9",
+            "text": "Provenance",
+            "lemma": "Provenance",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W10",
+            "text": ":",
+            "lemma": ":",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W11",
+            "text": "French",
+            "lemma": "french",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W12",
+            "text": "private",
+            "lemma": "private",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W13",
+            "text": "collection",
+            "lemma": "collection",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W14",
+            "text": "Thermoluminescence",
+            "lemma": "Thermoluminescence",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W15",
+            "text": "certificate",
+            "lemma": "certificate",
+            "pos": "NOUN",
+            "dep": "appos"
+          },
+          {
+            "id": "W16",
+            "text": "(",
+            "lemma": "(",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W17",
+            "text": "2011",
+            "lemma": "2011",
+            "pos": "NUM",
+            "dep": "appos"
+          },
+          {
+            "id": "W18",
+            "text": ")",
+            "lemma": ")",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_28": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "+info",
+        "words": [
+          {
+            "id": "W1",
+            "text": "+",
+            "lemma": "+",
+            "pos": "NOUN",
+            "dep": "dep"
+          },
+          {
+            "id": "W2",
+            "text": "info",
+            "lemma": "info",
+            "pos": "NOUN",
+            "dep": "ROOT"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_29": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "+pictures",
+        "words": [
+          {
+            "id": "W1",
+            "text": "+",
+            "lemma": "+",
+            "pos": "NOUN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W2",
+            "text": "pictures",
+            "lemma": "picture",
+            "pos": "NOUN",
+            "dep": "npadvmod"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_30": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Short Man Figure",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Short Man Figure"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_31": {
+    "tag": "button",
+    "sentences": {
+      "S1": {
+        "text": "←",
+        "words": [
+          {
+            "id": "W1",
+            "text": "←"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_32": {
+    "tag": "button",
+    "sentences": {
+      "S1": {
+        "text": "→",
+        "words": [
+          {
+            "id": "W1",
+            "text": "→"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_33": {
+    "tag": "p",
+    "sentences": {
+      "S1": {
+        "text": "Material: Terracotta | Height: 32cm \n                Provenance: French private collection \n                Thermoluminescence certificate (1999)",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Material",
+            "lemma": "material",
+            "pos": "NOUN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W2",
+            "text": ":",
+            "lemma": ":",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W3",
+            "text": "Terracotta",
+            "lemma": "terracotta",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W4",
+            "text": "|",
+            "lemma": "|",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W5",
+            "text": "Height",
+            "lemma": "height",
+            "pos": "NOUN",
+            "dep": "appos"
+          },
+          {
+            "id": "W6",
+            "text": ":",
+            "lemma": ":",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W7",
+            "text": "32",
+            "lemma": "32",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W8",
+            "text": "cm",
+            "lemma": "cm",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W9",
+            "text": "Provenance",
+            "lemma": "Provenance",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W10",
+            "text": ":",
+            "lemma": ":",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W11",
+            "text": "French",
+            "lemma": "french",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W12",
+            "text": "private",
+            "lemma": "private",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W13",
+            "text": "collection",
+            "lemma": "collection",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W14",
+            "text": "Thermoluminescence",
+            "lemma": "Thermoluminescence",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W15",
+            "text": "certificate",
+            "lemma": "certificate",
+            "pos": "NOUN",
+            "dep": "appos"
+          },
+          {
+            "id": "W16",
+            "text": "(",
+            "lemma": "(",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W17",
+            "text": "1999",
+            "lemma": "1999",
+            "pos": "NUM",
+            "dep": "appos"
+          },
+          {
+            "id": "W18",
+            "text": ")",
+            "lemma": ")",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_34": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "+info",
+        "words": [
+          {
+            "id": "W1",
+            "text": "+",
+            "lemma": "+",
+            "pos": "NOUN",
+            "dep": "dep"
+          },
+          {
+            "id": "W2",
+            "text": "info",
+            "lemma": "info",
+            "pos": "NOUN",
+            "dep": "ROOT"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_35": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "+pictures",
+        "words": [
+          {
+            "id": "W1",
+            "text": "+",
+            "lemma": "+",
+            "pos": "NOUN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W2",
+            "text": "pictures",
+            "lemma": "picture",
+            "pos": "NOUN",
+            "dep": "npadvmod"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_36": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Man Head",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Man Head"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_37": {
+    "tag": "button",
+    "sentences": {
+      "S1": {
+        "text": "←",
+        "words": [
+          {
+            "id": "W1",
+            "text": "←"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_38": {
+    "tag": "button",
+    "sentences": {
+      "S1": {
+        "text": "→",
+        "words": [
+          {
+            "id": "W1",
+            "text": "→"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_39": {
+    "tag": "p",
+    "sentences": {
+      "S1": {
+        "text": "Material: Terracotta | Height: 24cm \n                Provenance:",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Material",
+            "lemma": "material",
+            "pos": "NOUN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W2",
+            "text": ":",
+            "lemma": ":",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W3",
+            "text": "Terracotta",
+            "lemma": "terracotta",
+            "pos": "NOUN",
+            "dep": "appos"
+          },
+          {
+            "id": "W4",
+            "text": "|",
+            "lemma": "|",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W5",
+            "text": "Height",
+            "lemma": "height",
+            "pos": "NOUN",
+            "dep": "appos"
+          },
+          {
+            "id": "W6",
+            "text": ":",
+            "lemma": ":",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W7",
+            "text": "24",
+            "lemma": "24",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W8",
+            "text": "cm",
+            "lemma": "cm",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W9",
+            "text": "Provenance",
+            "lemma": "Provenance",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W10",
+            "text": ":",
+            "lemma": ":",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      },
+      "S2": {
+        "text": "French private collection \n                Thermoluminescence certificate (2009)",
+        "words": [
+          {
+            "id": "W1",
+            "text": "French",
+            "lemma": "french",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W2",
+            "text": "private",
+            "lemma": "private",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W3",
+            "text": "collection",
+            "lemma": "collection",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W4",
+            "text": "Thermoluminescence",
+            "lemma": "Thermoluminescence",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W5",
+            "text": "certificate",
+            "lemma": "certificate",
+            "pos": "NOUN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W6",
+            "text": "(",
+            "lemma": "(",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W7",
+            "text": "2009",
+            "lemma": "2009",
+            "pos": "NUM",
+            "dep": "appos"
+          },
+          {
+            "id": "W8",
+            "text": ")",
+            "lemma": ")",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_40": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "+info",
+        "words": [
+          {
+            "id": "W1",
+            "text": "+",
+            "lemma": "+",
+            "pos": "NOUN",
+            "dep": "dep"
+          },
+          {
+            "id": "W2",
+            "text": "info",
+            "lemma": "info",
+            "pos": "NOUN",
+            "dep": "ROOT"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_41": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "+pictures",
+        "words": [
+          {
+            "id": "W1",
+            "text": "+",
+            "lemma": "+",
+            "pos": "NOUN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W2",
+            "text": "pictures",
+            "lemma": "picture",
+            "pos": "NOUN",
+            "dep": "npadvmod"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_42": {
+    "tag": "h2",
+    "sentences": {
+      "S1": {
+        "text": "About Nok Terracottas",
+        "words": [
+          {
+            "id": "W1",
+            "text": "About Nok Terracottas"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_43": {
+    "tag": "h3",
+    "sentences": {
+      "S1": {
+        "text": "Nok Terracottas: Echoes of an Ancient Legacy",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Nok",
+            "lemma": "Nok",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W2",
+            "text": "Terracottas",
+            "lemma": "Terracottas",
+            "pos": "PROPN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W3",
+            "text": ":",
+            "lemma": ":",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W4",
+            "text": "Echoes",
+            "lemma": "echo",
+            "pos": "NOUN",
+            "dep": "appos"
+          },
+          {
+            "id": "W5",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W6",
+            "text": "an",
+            "lemma": "an",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W7",
+            "text": "Ancient",
+            "lemma": "Ancient",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W8",
+            "text": "Legacy",
+            "lemma": "Legacy",
+            "pos": "PROPN",
+            "dep": "pobj"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_44": {
+    "tag": "p",
+    "sentences": {
+      "S1": {
+        "text": "These expressive figures, often with detailed hairstyles and pierced features, reveal a rich cultural and symbolic tradition.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "These",
+            "lemma": "these",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W2",
+            "text": "expressive",
+            "lemma": "expressive",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W3",
+            "text": "figures",
+            "lemma": "figure",
+            "pos": "NOUN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W4",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W5",
+            "text": "often",
+            "lemma": "often",
+            "pos": "ADV",
+            "dep": "advmod"
+          },
+          {
+            "id": "W6",
+            "text": "with",
+            "lemma": "with",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W7",
+            "text": "detailed",
+            "lemma": "detailed",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W8",
+            "text": "hairstyles",
+            "lemma": "hairstyle",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W9",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W10",
+            "text": "pierced",
+            "lemma": "pierce",
+            "pos": "VERB",
+            "dep": "conj"
+          },
+          {
+            "id": "W11",
+            "text": "features",
+            "lemma": "feature",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W12",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W13",
+            "text": "reveal",
+            "lemma": "reveal",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W14",
+            "text": "a",
+            "lemma": "a",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W15",
+            "text": "rich",
+            "lemma": "rich",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W16",
+            "text": "cultural",
+            "lemma": "cultural",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W17",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W18",
+            "text": "symbolic",
+            "lemma": "symbolic",
+            "pos": "ADJ",
+            "dep": "conj"
+          },
+          {
+            "id": "W19",
+            "text": "tradition",
+            "lemma": "tradition",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W20",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      },
+      "S2": {
+        "text": "Technical studies reveals the use of refined clay, controlled firing, and hollow modeling techniques.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Technical",
+            "lemma": "technical",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W2",
+            "text": "studies",
+            "lemma": "study",
+            "pos": "NOUN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W3",
+            "text": "reveals",
+            "lemma": "reveal",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W4",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W5",
+            "text": "use",
+            "lemma": "use",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W6",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W7",
+            "text": "refined",
+            "lemma": "refined",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W8",
+            "text": "clay",
+            "lemma": "clay",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W9",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W10",
+            "text": "controlled",
+            "lemma": "control",
+            "pos": "VERB",
+            "dep": "amod"
+          },
+          {
+            "id": "W11",
+            "text": "firing",
+            "lemma": "firing",
+            "pos": "NOUN",
+            "dep": "conj"
+          },
+          {
+            "id": "W12",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W13",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W14",
+            "text": "hollow",
+            "lemma": "hollow",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W15",
+            "text": "modeling",
+            "lemma": "modeling",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W16",
+            "text": "techniques",
+            "lemma": "technique",
+            "pos": "NOUN",
+            "dep": "conj"
+          },
+          {
+            "id": "W17",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      },
+      "S3": {
+        "text": "Dating back to 1500 BCE and 500 CE, the Nok terracotta sculptures are among the earliest known examples of three-dimensional figurative art not just in sub-Saharan Africa, but in Africa as a whole.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Dating",
+            "lemma": "date",
+            "pos": "VERB",
+            "dep": "advcl"
+          },
+          {
+            "id": "W2",
+            "text": "back",
+            "lemma": "back",
+            "pos": "ADV",
+            "dep": "advmod"
+          },
+          {
+            "id": "W3",
+            "text": "to",
+            "lemma": "to",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W4",
+            "text": "1500",
+            "lemma": "1500",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W5",
+            "text": "BCE",
+            "lemma": "BCE",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W6",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W7",
+            "text": "500",
+            "lemma": "500",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W8",
+            "text": "CE",
+            "lemma": "CE",
+            "pos": "PROPN",
+            "dep": "conj"
+          },
+          {
+            "id": "W9",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W10",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W11",
+            "text": "Nok",
+            "lemma": "Nok",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W12",
+            "text": "terracotta",
+            "lemma": "terracotta",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W13",
+            "text": "sculptures",
+            "lemma": "sculpture",
+            "pos": "NOUN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W14",
+            "text": "are",
+            "lemma": "be",
+            "pos": "AUX",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W15",
+            "text": "among",
+            "lemma": "among",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W16",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W17",
+            "text": "earliest",
+            "lemma": "early",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W18",
+            "text": "known",
+            "lemma": "know",
+            "pos": "VERB",
+            "dep": "amod"
+          },
+          {
+            "id": "W19",
+            "text": "examples",
+            "lemma": "example",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W20",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W21",
+            "text": "three",
+            "lemma": "three",
+            "pos": "NUM",
+            "dep": "advmod"
+          },
+          {
+            "id": "W22",
+            "text": "-",
+            "lemma": "-",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W23",
+            "text": "dimensional",
+            "lemma": "dimensional",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W24",
+            "text": "figurative",
+            "lemma": "figurative",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W25",
+            "text": "art",
+            "lemma": "art",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W26",
+            "text": "not",
+            "lemma": "not",
+            "pos": "PART",
+            "dep": "preconj"
+          },
+          {
+            "id": "W27",
+            "text": "just",
+            "lemma": "just",
+            "pos": "ADV",
+            "dep": "advmod"
+          },
+          {
+            "id": "W28",
+            "text": "in",
+            "lemma": "in",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W29",
+            "text": "sub",
+            "lemma": "sub",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W30",
+            "text": "-",
+            "lemma": "-",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W31",
+            "text": "Saharan",
+            "lemma": "saharan",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W32",
+            "text": "Africa",
+            "lemma": "Africa",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W33",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W34",
+            "text": "but",
+            "lemma": "but",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W35",
+            "text": "in",
+            "lemma": "in",
+            "pos": "ADP",
+            "dep": "conj"
+          },
+          {
+            "id": "W36",
+            "text": "Africa",
+            "lemma": "Africa",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W37",
+            "text": "as",
+            "lemma": "as",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W38",
+            "text": "a",
+            "lemma": "a",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W39",
+            "text": "whole",
+            "lemma": "whole",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W40",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_45": {
+    "tag": "button",
+    "sentences": {
+      "S1": {
+        "text": "Show more...",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Show",
+            "lemma": "show",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W2",
+            "text": "more",
+            "lemma": "more",
+            "pos": "ADJ",
+            "dep": "dobj"
+          },
+          {
+            "id": "W3",
+            "text": "...",
+            "lemma": "...",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_46": {
+    "tag": "p",
+    "sentences": {
+      "S1": {
+        "text": "They are originated from central Nigeria surrounding the village of Nok, from c. 900 to 300 B.C.E., the northern Nigerian states of Katsina, from c. 200 B.C.E to 500 C.E. and Sokoto, from c. 500 B.C.E. to 200 C.E. and nearby sites.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "They",
+            "lemma": "they",
+            "pos": "PRON",
+            "dep": "nsubjpass"
+          },
+          {
+            "id": "W2",
+            "text": "are",
+            "lemma": "be",
+            "pos": "AUX",
+            "dep": "auxpass"
+          },
+          {
+            "id": "W3",
+            "text": "originated",
+            "lemma": "originate",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W4",
+            "text": "from",
+            "lemma": "from",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W5",
+            "text": "central",
+            "lemma": "central",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W6",
+            "text": "Nigeria",
+            "lemma": "Nigeria",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W7",
+            "text": "surrounding",
+            "lemma": "surround",
+            "pos": "VERB",
+            "dep": "advcl"
+          },
+          {
+            "id": "W8",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W9",
+            "text": "village",
+            "lemma": "village",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W10",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W11",
+            "text": "Nok",
+            "lemma": "Nok",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W12",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W13",
+            "text": "from",
+            "lemma": "from",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W14",
+            "text": "c.",
+            "lemma": "c.",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W15",
+            "text": "900",
+            "lemma": "900",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W16",
+            "text": "to",
+            "lemma": "to",
+            "pos": "PART",
+            "dep": "quantmod"
+          },
+          {
+            "id": "W17",
+            "text": "300",
+            "lemma": "300",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W18",
+            "text": "B.C.E.",
+            "lemma": "B.C.E.",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W19",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W20",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W21",
+            "text": "northern",
+            "lemma": "northern",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W22",
+            "text": "Nigerian",
+            "lemma": "nigerian",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W23",
+            "text": "states",
+            "lemma": "state",
+            "pos": "NOUN",
+            "dep": "appos"
+          },
+          {
+            "id": "W24",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W25",
+            "text": "Katsina",
+            "lemma": "Katsina",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W26",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W27",
+            "text": "from",
+            "lemma": "from",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W28",
+            "text": "c.",
+            "lemma": "c.",
+            "pos": "PROPN",
+            "dep": "nmod"
+          },
+          {
+            "id": "W29",
+            "text": "200",
+            "lemma": "200",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W30",
+            "text": "B.C.E",
+            "lemma": "B.C.E",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W31",
+            "text": "to",
+            "lemma": "to",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W32",
+            "text": "500",
+            "lemma": "500",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W33",
+            "text": "C.E.",
+            "lemma": "C.E.",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W34",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W35",
+            "text": "Sokoto",
+            "lemma": "Sokoto",
+            "pos": "PROPN",
+            "dep": "conj"
+          },
+          {
+            "id": "W36",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W37",
+            "text": "from",
+            "lemma": "from",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W38",
+            "text": "c.",
+            "lemma": "c.",
+            "pos": "PROPN",
+            "dep": "nmod"
+          },
+          {
+            "id": "W39",
+            "text": "500",
+            "lemma": "500",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W40",
+            "text": "B.C.E.",
+            "lemma": "B.C.E.",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W41",
+            "text": "to",
+            "lemma": "to",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W42",
+            "text": "200",
+            "lemma": "200",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W43",
+            "text": "C.E.",
+            "lemma": "C.E.",
+            "pos": "PROPN",
+            "dep": "nmod"
+          },
+          {
+            "id": "W44",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W45",
+            "text": "nearby",
+            "lemma": "nearby",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W46",
+            "text": "sites",
+            "lemma": "site",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W47",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      },
+      "S2": {
+        "text": "They precede other art traditions like the Ife bronzes (12th–15th century CE) and Benin bronzes (13th century CE onward).",
+        "words": [
+          {
+            "id": "W1",
+            "text": "They",
+            "lemma": "they",
+            "pos": "PRON",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W2",
+            "text": "precede",
+            "lemma": "precede",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W3",
+            "text": "other",
+            "lemma": "other",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W4",
+            "text": "art",
+            "lemma": "art",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W5",
+            "text": "traditions",
+            "lemma": "tradition",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W6",
+            "text": "like",
+            "lemma": "like",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W7",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W8",
+            "text": "Ife",
+            "lemma": "Ife",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W9",
+            "text": "bronzes",
+            "lemma": "bronze",
+            "pos": "VERB",
+            "dep": "pobj"
+          },
+          {
+            "id": "W10",
+            "text": "(",
+            "lemma": "(",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W11",
+            "text": "12th–15th",
+            "lemma": "12th–15th",
+            "pos": "NUM",
+            "dep": "compound"
+          },
+          {
+            "id": "W12",
+            "text": "century",
+            "lemma": "century",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W13",
+            "text": "CE",
+            "lemma": "CE",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W14",
+            "text": ")",
+            "lemma": ")",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W15",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W16",
+            "text": "Benin",
+            "lemma": "Benin",
+            "pos": "PROPN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W17",
+            "text": "bronzes",
+            "lemma": "bronze",
+            "pos": "VERB",
+            "dep": "conj"
+          },
+          {
+            "id": "W18",
+            "text": "(",
+            "lemma": "(",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W19",
+            "text": "13th",
+            "lemma": "13th",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W20",
+            "text": "century",
+            "lemma": "century",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W21",
+            "text": "CE",
+            "lemma": "CE",
+            "pos": "PROPN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W22",
+            "text": "onward",
+            "lemma": "onward",
+            "pos": "ADV",
+            "dep": "advmod"
+          },
+          {
+            "id": "W23",
+            "text": ")",
+            "lemma": ")",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W24",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      },
+      "S3": {
+        "text": "Their discovery reshaped global understanding of Africa’s ancient civilizations and artistic heritage.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Their",
+            "lemma": "their",
+            "pos": "PRON",
+            "dep": "poss"
+          },
+          {
+            "id": "W2",
+            "text": "discovery",
+            "lemma": "discovery",
+            "pos": "NOUN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W3",
+            "text": "reshaped",
+            "lemma": "reshape",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W4",
+            "text": "global",
+            "lemma": "global",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W5",
+            "text": "understanding",
+            "lemma": "understanding",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W6",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W7",
+            "text": "Africa",
+            "lemma": "Africa",
+            "pos": "PROPN",
+            "dep": "poss"
+          },
+          {
+            "id": "W8",
+            "text": "’s",
+            "lemma": "’s",
+            "pos": "PART",
+            "dep": "case"
+          },
+          {
+            "id": "W9",
+            "text": "ancient",
+            "lemma": "ancient",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W10",
+            "text": "civilizations",
+            "lemma": "civilization",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W11",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W12",
+            "text": "artistic",
+            "lemma": "artistic",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W13",
+            "text": "heritage",
+            "lemma": "heritage",
+            "pos": "NOUN",
+            "dep": "conj"
+          },
+          {
+            "id": "W14",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      },
+      "S4": {
+        "text": "The objects came from an area that had no significant controlled archaeological excavation until Professor Peter Breunig and his team began their digs in 2005, in the Nok region, in collaboration with Nigerian archaeologists.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "The",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W2",
+            "text": "objects",
+            "lemma": "object",
+            "pos": "NOUN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W3",
+            "text": "came",
+            "lemma": "come",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W4",
+            "text": "from",
+            "lemma": "from",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W5",
+            "text": "an",
+            "lemma": "an",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W6",
+            "text": "area",
+            "lemma": "area",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W7",
+            "text": "that",
+            "lemma": "that",
+            "pos": "PRON",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W8",
+            "text": "had",
+            "lemma": "have",
+            "pos": "VERB",
+            "dep": "relcl"
+          },
+          {
+            "id": "W9",
+            "text": "no",
+            "lemma": "no",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W10",
+            "text": "significant",
+            "lemma": "significant",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W11",
+            "text": "controlled",
+            "lemma": "control",
+            "pos": "VERB",
+            "dep": "amod"
+          },
+          {
+            "id": "W12",
+            "text": "archaeological",
+            "lemma": "archaeological",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W13",
+            "text": "excavation",
+            "lemma": "excavation",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W14",
+            "text": "until",
+            "lemma": "until",
+            "pos": "SCONJ",
+            "dep": "mark"
+          },
+          {
+            "id": "W15",
+            "text": "Professor",
+            "lemma": "Professor",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W16",
+            "text": "Peter",
+            "lemma": "Peter",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W17",
+            "text": "Breunig",
+            "lemma": "Breunig",
+            "pos": "PROPN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W18",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W19",
+            "text": "his",
+            "lemma": "his",
+            "pos": "PRON",
+            "dep": "poss"
+          },
+          {
+            "id": "W20",
+            "text": "team",
+            "lemma": "team",
+            "pos": "NOUN",
+            "dep": "conj"
+          },
+          {
+            "id": "W21",
+            "text": "began",
+            "lemma": "begin",
+            "pos": "VERB",
+            "dep": "advcl"
+          },
+          {
+            "id": "W22",
+            "text": "their",
+            "lemma": "their",
+            "pos": "PRON",
+            "dep": "poss"
+          },
+          {
+            "id": "W23",
+            "text": "digs",
+            "lemma": "dig",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W24",
+            "text": "in",
+            "lemma": "in",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W25",
+            "text": "2005",
+            "lemma": "2005",
+            "pos": "NUM",
+            "dep": "pobj"
+          },
+          {
+            "id": "W26",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W27",
+            "text": "in",
+            "lemma": "in",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W28",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W29",
+            "text": "Nok",
+            "lemma": "Nok",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W30",
+            "text": "region",
+            "lemma": "region",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W31",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W32",
+            "text": "in",
+            "lemma": "in",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W33",
+            "text": "collaboration",
+            "lemma": "collaboration",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W34",
+            "text": "with",
+            "lemma": "with",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W35",
+            "text": "Nigerian",
+            "lemma": "nigerian",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W36",
+            "text": "archaeologists",
+            "lemma": "archaeologist",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W37",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      },
+      "S5": {
+        "text": "The other areas, Sokoto and Katsina, still await archaeological excavation, although they are heavily pockmarked by local, amateur treasure hunters.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "The",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W2",
+            "text": "other",
+            "lemma": "other",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W3",
+            "text": "areas",
+            "lemma": "area",
+            "pos": "NOUN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W4",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W5",
+            "text": "Sokoto",
+            "lemma": "Sokoto",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W6",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W7",
+            "text": "Katsina",
+            "lemma": "Katsina",
+            "pos": "PROPN",
+            "dep": "conj"
+          },
+          {
+            "id": "W8",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W9",
+            "text": "still",
+            "lemma": "still",
+            "pos": "ADV",
+            "dep": "advmod"
+          },
+          {
+            "id": "W10",
+            "text": "await",
+            "lemma": "await",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W11",
+            "text": "archaeological",
+            "lemma": "archaeological",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W12",
+            "text": "excavation",
+            "lemma": "excavation",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W13",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W14",
+            "text": "although",
+            "lemma": "although",
+            "pos": "SCONJ",
+            "dep": "mark"
+          },
+          {
+            "id": "W15",
+            "text": "they",
+            "lemma": "they",
+            "pos": "PRON",
+            "dep": "nsubjpass"
+          },
+          {
+            "id": "W16",
+            "text": "are",
+            "lemma": "be",
+            "pos": "AUX",
+            "dep": "auxpass"
+          },
+          {
+            "id": "W17",
+            "text": "heavily",
+            "lemma": "heavily",
+            "pos": "ADV",
+            "dep": "advmod"
+          },
+          {
+            "id": "W18",
+            "text": "pockmarked",
+            "lemma": "pockmark",
+            "pos": "VERB",
+            "dep": "advcl"
+          },
+          {
+            "id": "W19",
+            "text": "by",
+            "lemma": "by",
+            "pos": "ADP",
+            "dep": "agent"
+          },
+          {
+            "id": "W20",
+            "text": "local",
+            "lemma": "local",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W21",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W22",
+            "text": "amateur",
+            "lemma": "amateur",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W23",
+            "text": "treasure",
+            "lemma": "treasure",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W24",
+            "text": "hunters",
+            "lemma": "hunter",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W25",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      },
+      "S6": {
+        "text": "Consequently, we know almost nothing about the cultures that created these works of art.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Consequently",
+            "lemma": "consequently",
+            "pos": "ADV",
+            "dep": "advmod"
+          },
+          {
+            "id": "W2",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W3",
+            "text": "we",
+            "lemma": "we",
+            "pos": "PRON",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W4",
+            "text": "know",
+            "lemma": "know",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W5",
+            "text": "almost",
+            "lemma": "almost",
+            "pos": "ADV",
+            "dep": "advmod"
+          },
+          {
+            "id": "W6",
+            "text": "nothing",
+            "lemma": "nothing",
+            "pos": "PRON",
+            "dep": "dobj"
+          },
+          {
+            "id": "W7",
+            "text": "about",
+            "lemma": "about",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W8",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W9",
+            "text": "cultures",
+            "lemma": "culture",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W10",
+            "text": "that",
+            "lemma": "that",
+            "pos": "PRON",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W11",
+            "text": "created",
+            "lemma": "create",
+            "pos": "VERB",
+            "dep": "relcl"
+          },
+          {
+            "id": "W12",
+            "text": "these",
+            "lemma": "these",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W13",
+            "text": "works",
+            "lemma": "work",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W14",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W15",
+            "text": "art",
+            "lemma": "art",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W16",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_47": {
+    "tag": "h3",
+    "sentences": {
+      "S1": {
+        "text": "Archaeological Discoveries and Grae's collection",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Archaeological",
+            "lemma": "archaeological",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W2",
+            "text": "Discoveries",
+            "lemma": "Discoveries",
+            "pos": "PROPN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W3",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W4",
+            "text": "Grae",
+            "lemma": "Grae",
+            "pos": "PROPN",
+            "dep": "poss"
+          },
+          {
+            "id": "W5",
+            "text": "'s",
+            "lemma": "'s",
+            "pos": "PART",
+            "dep": "case"
+          },
+          {
+            "id": "W6",
+            "text": "collection",
+            "lemma": "collection",
+            "pos": "NOUN",
+            "dep": "conj"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_48": {
+    "tag": "p",
+    "sentences": {
+      "S1": {
+        "text": "Full Lecture: 1:20:25 | Hosted by",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Full",
+            "lemma": "full",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W2",
+            "text": "Lecture",
+            "lemma": "Lecture",
+            "pos": "PROPN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W3",
+            "text": ":",
+            "lemma": ":",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W4",
+            "text": "1:20:25",
+            "lemma": "1:20:25",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W5",
+            "text": "|",
+            "lemma": "|",
+            "pos": "NOUN",
+            "dep": "npadvmod"
+          },
+          {
+            "id": "W6",
+            "text": "Hosted",
+            "lemma": "host",
+            "pos": "VERB",
+            "dep": "acl"
+          },
+          {
+            "id": "W7",
+            "text": "by",
+            "lemma": "by",
+            "pos": "ADP",
+            "dep": "agent"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_49": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Yale University Art Gallery",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Yale",
+            "lemma": "Yale",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W2",
+            "text": "University",
+            "lemma": "University",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W3",
+            "text": "Art",
+            "lemma": "Art",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W4",
+            "text": "Gallery",
+            "lemma": "Gallery",
+            "pos": "PROPN",
+            "dep": "ROOT"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_50": {
+    "tag": "h4",
+    "sentences": {
+      "S1": {
+        "text": "About lecture",
+        "words": [
+          {
+            "id": "W1",
+            "text": "About lecture"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_51": {
+    "tag": "p",
+    "sentences": {
+      "S1": {
+        "text": "After decades of limited research following the foundational work of Bernard Fagg in the mid-20th century, Professor Breunig and his team brings to light the results of fieldwork initiated in 2005.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "After",
+            "lemma": "after",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W2",
+            "text": "decades",
+            "lemma": "decade",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W3",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W4",
+            "text": "limited",
+            "lemma": "limited",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W5",
+            "text": "research",
+            "lemma": "research",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W6",
+            "text": "following",
+            "lemma": "follow",
+            "pos": "VERB",
+            "dep": "prep"
+          },
+          {
+            "id": "W7",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W8",
+            "text": "foundational",
+            "lemma": "foundational",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W9",
+            "text": "work",
+            "lemma": "work",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W10",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W11",
+            "text": "Bernard",
+            "lemma": "Bernard",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W12",
+            "text": "Fagg",
+            "lemma": "Fagg",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W13",
+            "text": "in",
+            "lemma": "in",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W14",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W15",
+            "text": "mid-20th",
+            "lemma": "mid-20th",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W16",
+            "text": "century",
+            "lemma": "century",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W17",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W18",
+            "text": "Professor",
+            "lemma": "Professor",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W19",
+            "text": "Breunig",
+            "lemma": "Breunig",
+            "pos": "PROPN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W20",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W21",
+            "text": "his",
+            "lemma": "his",
+            "pos": "PRON",
+            "dep": "poss"
+          },
+          {
+            "id": "W22",
+            "text": "team",
+            "lemma": "team",
+            "pos": "NOUN",
+            "dep": "conj"
+          },
+          {
+            "id": "W23",
+            "text": "brings",
+            "lemma": "bring",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W24",
+            "text": "to",
+            "lemma": "to",
+            "pos": "PART",
+            "dep": "aux"
+          },
+          {
+            "id": "W25",
+            "text": "light",
+            "lemma": "light",
+            "pos": "VERB",
+            "dep": "xcomp"
+          },
+          {
+            "id": "W26",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W27",
+            "text": "results",
+            "lemma": "result",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W28",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W29",
+            "text": "fieldwork",
+            "lemma": "fieldwork",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W30",
+            "text": "initiated",
+            "lemma": "initiate",
+            "pos": "VERB",
+            "dep": "acl"
+          },
+          {
+            "id": "W31",
+            "text": "in",
+            "lemma": "in",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W32",
+            "text": "2005",
+            "lemma": "2005",
+            "pos": "NUM",
+            "dep": "pobj"
+          },
+          {
+            "id": "W33",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_52": {
+    "tag": "button",
+    "sentences": {
+      "S1": {
+        "text": "Show more...",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Show",
+            "lemma": "show",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W2",
+            "text": "more",
+            "lemma": "more",
+            "pos": "ADJ",
+            "dep": "dobj"
+          },
+          {
+            "id": "W3",
+            "text": "...",
+            "lemma": "...",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_53": {
+    "tag": "p",
+    "sentences": {
+      "S1": {
+        "text": "His long-term archaeological project, conducted in close collaboration with Nigerian institutions, has transformed our understanding of Nok culture.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "His",
+            "lemma": "his",
+            "pos": "PRON",
+            "dep": "poss"
+          },
+          {
+            "id": "W2",
+            "text": "long",
+            "lemma": "long",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W3",
+            "text": "-",
+            "lemma": "-",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W4",
+            "text": "term",
+            "lemma": "term",
+            "pos": "NOUN",
+            "dep": "nmod"
+          },
+          {
+            "id": "W5",
+            "text": "archaeological",
+            "lemma": "archaeological",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W6",
+            "text": "project",
+            "lemma": "project",
+            "pos": "NOUN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W7",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W8",
+            "text": "conducted",
+            "lemma": "conduct",
+            "pos": "VERB",
+            "dep": "acl"
+          },
+          {
+            "id": "W9",
+            "text": "in",
+            "lemma": "in",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W10",
+            "text": "close",
+            "lemma": "close",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W11",
+            "text": "collaboration",
+            "lemma": "collaboration",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W12",
+            "text": "with",
+            "lemma": "with",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W13",
+            "text": "Nigerian",
+            "lemma": "nigerian",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W14",
+            "text": "institutions",
+            "lemma": "institution",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W15",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W16",
+            "text": "has",
+            "lemma": "have",
+            "pos": "AUX",
+            "dep": "aux"
+          },
+          {
+            "id": "W17",
+            "text": "transformed",
+            "lemma": "transform",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W18",
+            "text": "our",
+            "lemma": "our",
+            "pos": "PRON",
+            "dep": "poss"
+          },
+          {
+            "id": "W19",
+            "text": "understanding",
+            "lemma": "understanding",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W20",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W21",
+            "text": "Nok",
+            "lemma": "Nok",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W22",
+            "text": "culture",
+            "lemma": "culture",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W23",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      },
+      "S2": {
+        "text": "Unlike earlier studies that relied heavily on looted artifacts and surface finds, Breunig's work emphasizes contextual excavation, radiocarbon dating, and interdisciplinary analysis, placing Nok culture within a broader narrative of African prehistory.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Unlike",
+            "lemma": "unlike",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W2",
+            "text": "earlier",
+            "lemma": "early",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W3",
+            "text": "studies",
+            "lemma": "study",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W4",
+            "text": "that",
+            "lemma": "that",
+            "pos": "PRON",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W5",
+            "text": "relied",
+            "lemma": "rely",
+            "pos": "VERB",
+            "dep": "relcl"
+          },
+          {
+            "id": "W6",
+            "text": "heavily",
+            "lemma": "heavily",
+            "pos": "ADV",
+            "dep": "advmod"
+          },
+          {
+            "id": "W7",
+            "text": "on",
+            "lemma": "on",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W8",
+            "text": "looted",
+            "lemma": "loot",
+            "pos": "VERB",
+            "dep": "amod"
+          },
+          {
+            "id": "W9",
+            "text": "artifacts",
+            "lemma": "artifact",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W10",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W11",
+            "text": "surface",
+            "lemma": "surface",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W12",
+            "text": "finds",
+            "lemma": "find",
+            "pos": "VERB",
+            "dep": "conj"
+          },
+          {
+            "id": "W13",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W14",
+            "text": "Breunig",
+            "lemma": "Breunig",
+            "pos": "PROPN",
+            "dep": "poss"
+          },
+          {
+            "id": "W15",
+            "text": "'s",
+            "lemma": "'s",
+            "pos": "PART",
+            "dep": "case"
+          },
+          {
+            "id": "W16",
+            "text": "work",
+            "lemma": "work",
+            "pos": "NOUN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W17",
+            "text": "emphasizes",
+            "lemma": "emphasize",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W18",
+            "text": "contextual",
+            "lemma": "contextual",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W19",
+            "text": "excavation",
+            "lemma": "excavation",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W20",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W21",
+            "text": "radiocarbon",
+            "lemma": "radiocarbon",
+            "pos": "NOUN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W22",
+            "text": "dating",
+            "lemma": "date",
+            "pos": "VERB",
+            "dep": "conj"
+          },
+          {
+            "id": "W23",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W24",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W25",
+            "text": "interdisciplinary",
+            "lemma": "interdisciplinary",
+            "pos": "NOUN",
+            "dep": "amod"
+          },
+          {
+            "id": "W26",
+            "text": "analysis",
+            "lemma": "analysis",
+            "pos": "NOUN",
+            "dep": "conj"
+          },
+          {
+            "id": "W27",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W28",
+            "text": "placing",
+            "lemma": "place",
+            "pos": "VERB",
+            "dep": "acl"
+          },
+          {
+            "id": "W29",
+            "text": "Nok",
+            "lemma": "Nok",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W30",
+            "text": "culture",
+            "lemma": "culture",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W31",
+            "text": "within",
+            "lemma": "within",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W32",
+            "text": "a",
+            "lemma": "a",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W33",
+            "text": "broader",
+            "lemma": "broad",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W34",
+            "text": "narrative",
+            "lemma": "narrative",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W35",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W36",
+            "text": "African",
+            "lemma": "african",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W37",
+            "text": "prehistory",
+            "lemma": "prehistory",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W38",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_54": {
+    "tag": "h4",
+    "sentences": {
+      "S1": {
+        "text": "Grae's collection",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Grae",
+            "lemma": "Grae",
+            "pos": "PROPN",
+            "dep": "poss"
+          },
+          {
+            "id": "W2",
+            "text": "'s",
+            "lemma": "'s",
+            "pos": "PART",
+            "dep": "case"
+          },
+          {
+            "id": "W3",
+            "text": "collection",
+            "lemma": "collection",
+            "pos": "NOUN",
+            "dep": "ROOT"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_55": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "The Grae Collection",
+        "words": [
+          {
+            "id": "W1",
+            "text": "The Grae Collection"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_56": {
+    "tag": "p",
+    "sentences": {
+      "S1": {
+        "text": "of Nok terracottas, is the most important and extensive of authentic ancient Nigerian art outside Nigeria.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W2",
+            "text": "Nok",
+            "lemma": "Nok",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W3",
+            "text": "terracottas",
+            "lemma": "terracotta",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W4",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W5",
+            "text": "is",
+            "lemma": "be",
+            "pos": "AUX",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W6",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W7",
+            "text": "most",
+            "lemma": "most",
+            "pos": "ADV",
+            "dep": "advmod"
+          },
+          {
+            "id": "W8",
+            "text": "important",
+            "lemma": "important",
+            "pos": "ADJ",
+            "dep": "attr"
+          },
+          {
+            "id": "W9",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W10",
+            "text": "extensive",
+            "lemma": "extensive",
+            "pos": "ADJ",
+            "dep": "conj"
+          },
+          {
+            "id": "W11",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W12",
+            "text": "authentic",
+            "lemma": "authentic",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W13",
+            "text": "ancient",
+            "lemma": "ancient",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W14",
+            "text": "Nigerian",
+            "lemma": "nigerian",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W15",
+            "text": "art",
+            "lemma": "art",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W16",
+            "text": "outside",
+            "lemma": "outside",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W17",
+            "text": "Nigeria",
+            "lemma": "Nigeria",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W18",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      },
+      "S2": {
+        "text": "Donated to Yale, adds a layer of historical depth, revealing how artifacts tied to anti-colonial movements and Black diaspora activism entered Western institutions.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Donated",
+            "lemma": "donate",
+            "pos": "VERB",
+            "dep": "advcl"
+          },
+          {
+            "id": "W2",
+            "text": "to",
+            "lemma": "to",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W3",
+            "text": "Yale",
+            "lemma": "Yale",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W4",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W5",
+            "text": "adds",
+            "lemma": "add",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W6",
+            "text": "a",
+            "lemma": "a",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W7",
+            "text": "layer",
+            "lemma": "layer",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W8",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W9",
+            "text": "historical",
+            "lemma": "historical",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W10",
+            "text": "depth",
+            "lemma": "depth",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W11",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W12",
+            "text": "revealing",
+            "lemma": "reveal",
+            "pos": "VERB",
+            "dep": "advcl"
+          },
+          {
+            "id": "W13",
+            "text": "how",
+            "lemma": "how",
+            "pos": "SCONJ",
+            "dep": "advmod"
+          },
+          {
+            "id": "W14",
+            "text": "artifacts",
+            "lemma": "artifact",
+            "pos": "NOUN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W15",
+            "text": "tied",
+            "lemma": "tie",
+            "pos": "VERB",
+            "dep": "acl"
+          },
+          {
+            "id": "W16",
+            "text": "to",
+            "lemma": "to",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W17",
+            "text": "anti",
+            "lemma": "anti",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W18",
+            "text": "-",
+            "lemma": "-",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W19",
+            "text": "colonial",
+            "lemma": "colonial",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W20",
+            "text": "movements",
+            "lemma": "movement",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W21",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W22",
+            "text": "Black",
+            "lemma": "Black",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W23",
+            "text": "diaspora",
+            "lemma": "diaspora",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W24",
+            "text": "activism",
+            "lemma": "activism",
+            "pos": "NOUN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W25",
+            "text": "entered",
+            "lemma": "enter",
+            "pos": "VERB",
+            "dep": "ccomp"
+          },
+          {
+            "id": "W26",
+            "text": "Western",
+            "lemma": "western",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W27",
+            "text": "institutions",
+            "lemma": "institution",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W28",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_57": {
+    "tag": "button",
+    "sentences": {
+      "S1": {
+        "text": "Show more...",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Show",
+            "lemma": "show",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W2",
+            "text": "more",
+            "lemma": "more",
+            "pos": "ADJ",
+            "dep": "dobj"
+          },
+          {
+            "id": "W3",
+            "text": "...",
+            "lemma": "...",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_58": {
+    "tag": "p",
+    "sentences": {
+      "S1": {
+        "text": "Collected by civil rights leader Bayard Rustin during Nigeria’s independence era, these ancient sculptures—preserved unrestored—reflect a legacy of cultural reclamation and solidarity.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Collected",
+            "lemma": "collect",
+            "pos": "VERB",
+            "dep": "advcl"
+          },
+          {
+            "id": "W2",
+            "text": "by",
+            "lemma": "by",
+            "pos": "ADP",
+            "dep": "agent"
+          },
+          {
+            "id": "W3",
+            "text": "civil",
+            "lemma": "civil",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W4",
+            "text": "rights",
+            "lemma": "right",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W5",
+            "text": "leader",
+            "lemma": "leader",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W6",
+            "text": "Bayard",
+            "lemma": "Bayard",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W7",
+            "text": "Rustin",
+            "lemma": "Rustin",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W8",
+            "text": "during",
+            "lemma": "during",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W9",
+            "text": "Nigeria",
+            "lemma": "Nigeria",
+            "pos": "PROPN",
+            "dep": "poss"
+          },
+          {
+            "id": "W10",
+            "text": "’s",
+            "lemma": "’s",
+            "pos": "PART",
+            "dep": "case"
+          },
+          {
+            "id": "W11",
+            "text": "independence",
+            "lemma": "independence",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W12",
+            "text": "era",
+            "lemma": "era",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W13",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W14",
+            "text": "these",
+            "lemma": "these",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W15",
+            "text": "ancient",
+            "lemma": "ancient",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W16",
+            "text": "sculptures",
+            "lemma": "sculpture",
+            "pos": "NOUN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W17",
+            "text": "—",
+            "lemma": "—",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W18",
+            "text": "preserved",
+            "lemma": "preserve",
+            "pos": "VERB",
+            "dep": "acl"
+          },
+          {
+            "id": "W19",
+            "text": "unrestored",
+            "lemma": "unrestored",
+            "pos": "ADJ",
+            "dep": "oprd"
+          },
+          {
+            "id": "W20",
+            "text": "—",
+            "lemma": "—",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W21",
+            "text": "reflect",
+            "lemma": "reflect",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W22",
+            "text": "a",
+            "lemma": "a",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W23",
+            "text": "legacy",
+            "lemma": "legacy",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W24",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W25",
+            "text": "cultural",
+            "lemma": "cultural",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W26",
+            "text": "reclamation",
+            "lemma": "reclamation",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W27",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W28",
+            "text": "solidarity",
+            "lemma": "solidarity",
+            "pos": "NOUN",
+            "dep": "conj"
+          },
+          {
+            "id": "W29",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      },
+      "S2": {
+        "text": "The collection serves as a vital resource for scholars and students, offering deep insights into early African art and culture.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "The",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W2",
+            "text": "collection",
+            "lemma": "collection",
+            "pos": "NOUN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W3",
+            "text": "serves",
+            "lemma": "serve",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W4",
+            "text": "as",
+            "lemma": "as",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W5",
+            "text": "a",
+            "lemma": "a",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W6",
+            "text": "vital",
+            "lemma": "vital",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W7",
+            "text": "resource",
+            "lemma": "resource",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W8",
+            "text": "for",
+            "lemma": "for",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W9",
+            "text": "scholars",
+            "lemma": "scholar",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W10",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W11",
+            "text": "students",
+            "lemma": "student",
+            "pos": "NOUN",
+            "dep": "conj"
+          },
+          {
+            "id": "W12",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W13",
+            "text": "offering",
+            "lemma": "offer",
+            "pos": "VERB",
+            "dep": "advcl"
+          },
+          {
+            "id": "W14",
+            "text": "deep",
+            "lemma": "deep",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W15",
+            "text": "insights",
+            "lemma": "insight",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W16",
+            "text": "into",
+            "lemma": "into",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W17",
+            "text": "early",
+            "lemma": "early",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W18",
+            "text": "African",
+            "lemma": "african",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W19",
+            "text": "art",
+            "lemma": "art",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W20",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W21",
+            "text": "culture",
+            "lemma": "culture",
+            "pos": "NOUN",
+            "dep": "conj"
+          },
+          {
+            "id": "W22",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      },
+      "S3": {
+        "text": "The essay highlights this unique provenance, challenging colonial narratives and reframing how collections are understood: not as detached relics, but as testaments to activism, identity, and ethical stewardship.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "The",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W2",
+            "text": "essay",
+            "lemma": "essay",
+            "pos": "NOUN",
+            "dep": "nsubj"
+          },
+          {
+            "id": "W3",
+            "text": "highlights",
+            "lemma": "highlight",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W4",
+            "text": "this",
+            "lemma": "this",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W5",
+            "text": "unique",
+            "lemma": "unique",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W6",
+            "text": "provenance",
+            "lemma": "provenance",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W7",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W8",
+            "text": "challenging",
+            "lemma": "challenge",
+            "pos": "VERB",
+            "dep": "acl"
+          },
+          {
+            "id": "W9",
+            "text": "colonial",
+            "lemma": "colonial",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W10",
+            "text": "narratives",
+            "lemma": "narrative",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W11",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W12",
+            "text": "reframing",
+            "lemma": "reframe",
+            "pos": "VERB",
+            "dep": "conj"
+          },
+          {
+            "id": "W13",
+            "text": "how",
+            "lemma": "how",
+            "pos": "SCONJ",
+            "dep": "advmod"
+          },
+          {
+            "id": "W14",
+            "text": "collections",
+            "lemma": "collection",
+            "pos": "NOUN",
+            "dep": "nsubjpass"
+          },
+          {
+            "id": "W15",
+            "text": "are",
+            "lemma": "be",
+            "pos": "AUX",
+            "dep": "auxpass"
+          },
+          {
+            "id": "W16",
+            "text": "understood",
+            "lemma": "understand",
+            "pos": "VERB",
+            "dep": "ccomp"
+          },
+          {
+            "id": "W17",
+            "text": ":",
+            "lemma": ":",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W18",
+            "text": "not",
+            "lemma": "not",
+            "pos": "PART",
+            "dep": "neg"
+          },
+          {
+            "id": "W19",
+            "text": "as",
+            "lemma": "as",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W20",
+            "text": "detached",
+            "lemma": "detach",
+            "pos": "VERB",
+            "dep": "amod"
+          },
+          {
+            "id": "W21",
+            "text": "relics",
+            "lemma": "relic",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W22",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W23",
+            "text": "but",
+            "lemma": "but",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W24",
+            "text": "as",
+            "lemma": "as",
+            "pos": "ADP",
+            "dep": "conj"
+          },
+          {
+            "id": "W25",
+            "text": "testaments",
+            "lemma": "testament",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W26",
+            "text": "to",
+            "lemma": "to",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W27",
+            "text": "activism",
+            "lemma": "activism",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W28",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W29",
+            "text": "identity",
+            "lemma": "identity",
+            "pos": "NOUN",
+            "dep": "conj"
+          },
+          {
+            "id": "W30",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W31",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W32",
+            "text": "ethical",
+            "lemma": "ethical",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W33",
+            "text": "stewardship",
+            "lemma": "stewardship",
+            "pos": "NOUN",
+            "dep": "conj"
+          },
+          {
+            "id": "W34",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_59": {
+    "tag": "h3",
+    "sentences": {
+      "S1": {
+        "text": "Resources",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Resources"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_60": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Yale University Art Gallery Bulletin 2010 – Nok Terracotta Acquisition",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Yale",
+            "lemma": "Yale",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W2",
+            "text": "University",
+            "lemma": "University",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W3",
+            "text": "Art",
+            "lemma": "Art",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W4",
+            "text": "Gallery",
+            "lemma": "Gallery",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W5",
+            "text": "Bulletin",
+            "lemma": "Bulletin",
+            "pos": "PROPN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W6",
+            "text": "2010",
+            "lemma": "2010",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W7",
+            "text": "–",
+            "lemma": "–",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W8",
+            "text": "Nok",
+            "lemma": "Nok",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W9",
+            "text": "Terracotta",
+            "lemma": "Terracotta",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W10",
+            "text": "Acquisition",
+            "lemma": "Acquisition",
+            "pos": "PROPN",
+            "dep": "appos"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_61": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Yemisi Shyllon Museum of Art - A virtual exhibit and educational overview introducing key aspects of Nok culture",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Yemisi",
+            "lemma": "Yemisi",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W2",
+            "text": "Shyllon",
+            "lemma": "Shyllon",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W3",
+            "text": "Museum",
+            "lemma": "Museum",
+            "pos": "PROPN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W4",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W5",
+            "text": "Art",
+            "lemma": "Art",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W6",
+            "text": "-",
+            "lemma": "-",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W7",
+            "text": "A",
+            "lemma": "a",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W8",
+            "text": "virtual",
+            "lemma": "virtual",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W9",
+            "text": "exhibit",
+            "lemma": "exhibit",
+            "pos": "NOUN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W10",
+            "text": "and",
+            "lemma": "and",
+            "pos": "CCONJ",
+            "dep": "cc"
+          },
+          {
+            "id": "W11",
+            "text": "educational",
+            "lemma": "educational",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W12",
+            "text": "overview",
+            "lemma": "overview",
+            "pos": "NOUN",
+            "dep": "conj"
+          },
+          {
+            "id": "W13",
+            "text": "introducing",
+            "lemma": "introduce",
+            "pos": "VERB",
+            "dep": "acl"
+          },
+          {
+            "id": "W14",
+            "text": "key",
+            "lemma": "key",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W15",
+            "text": "aspects",
+            "lemma": "aspect",
+            "pos": "NOUN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W16",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W17",
+            "text": "Nok",
+            "lemma": "Nok",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W18",
+            "text": "culture",
+            "lemma": "culture",
+            "pos": "NOUN",
+            "dep": "pobj"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_62": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Transition Magazine – “Was Bayard Rustin the Most Important Collector of African Antiquities in the 1950s?”",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Transition",
+            "lemma": "transition",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W2",
+            "text": "Magazine",
+            "lemma": "Magazine",
+            "pos": "PROPN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W3",
+            "text": "–",
+            "lemma": "–",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W4",
+            "text": "“",
+            "lemma": "\"",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W5",
+            "text": "Was",
+            "lemma": "be",
+            "pos": "AUX",
+            "dep": "aux"
+          },
+          {
+            "id": "W6",
+            "text": "Bayard",
+            "lemma": "Bayard",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W7",
+            "text": "Rustin",
+            "lemma": "rustin",
+            "pos": "VERB",
+            "dep": "acl"
+          },
+          {
+            "id": "W8",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W9",
+            "text": "Most",
+            "lemma": "most",
+            "pos": "ADV",
+            "dep": "advmod"
+          },
+          {
+            "id": "W10",
+            "text": "Important",
+            "lemma": "Important",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W11",
+            "text": "Collector",
+            "lemma": "Collector",
+            "pos": "PROPN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W12",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W13",
+            "text": "African",
+            "lemma": "African",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W14",
+            "text": "Antiquities",
+            "lemma": "Antiquities",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W15",
+            "text": "in",
+            "lemma": "in",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W16",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W17",
+            "text": "1950s",
+            "lemma": "1950s",
+            "pos": "NUM",
+            "dep": "pobj"
+          },
+          {
+            "id": "W18",
+            "text": "?",
+            "lemma": "?",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W19",
+            "text": "”",
+            "lemma": "\"",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_63": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Reconstructing Nok Artistic Practices, led by Prof. Peter Breunig",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Reconstructing",
+            "lemma": "reconstruct",
+            "pos": "VERB",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W2",
+            "text": "Nok",
+            "lemma": "Nok",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W3",
+            "text": "Artistic",
+            "lemma": "Artistic",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W4",
+            "text": "Practices",
+            "lemma": "Practices",
+            "pos": "PROPN",
+            "dep": "dobj"
+          },
+          {
+            "id": "W5",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W6",
+            "text": "led",
+            "lemma": "lead",
+            "pos": "VERB",
+            "dep": "acl"
+          },
+          {
+            "id": "W7",
+            "text": "by",
+            "lemma": "by",
+            "pos": "ADP",
+            "dep": "agent"
+          },
+          {
+            "id": "W8",
+            "text": "Prof.",
+            "lemma": "Prof.",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W9",
+            "text": "Peter",
+            "lemma": "Peter",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W10",
+            "text": "Breunig",
+            "lemma": "Breunig",
+            "pos": "PROPN",
+            "dep": "pobj"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_64": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "The Metropolitan Museum of Art – “Nok Terracottas (500 B.C.–200 A.D.)”",
+        "words": [
+          {
+            "id": "W1",
+            "text": "The",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W2",
+            "text": "Metropolitan",
+            "lemma": "Metropolitan",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W3",
+            "text": "Museum",
+            "lemma": "Museum",
+            "pos": "PROPN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W4",
+            "text": "of",
+            "lemma": "of",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W5",
+            "text": "Art",
+            "lemma": "Art",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W6",
+            "text": "–",
+            "lemma": "–",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W7",
+            "text": "“",
+            "lemma": "\"",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W8",
+            "text": "Nok",
+            "lemma": "Nok",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W9",
+            "text": "Terracottas",
+            "lemma": "Terracottas",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W10",
+            "text": "(",
+            "lemma": "(",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W11",
+            "text": "500",
+            "lemma": "500",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W12",
+            "text": "B.C.–200",
+            "lemma": "B.C.–200",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W13",
+            "text": "A.D.",
+            "lemma": "A.D.",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W14",
+            "text": ")",
+            "lemma": ")",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W15",
+            "text": "”",
+            "lemma": "\"",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_65": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Bernard Fagg – “Recent Work in West Africa: New Light on the Nok Culture,” *World Archaeology*,Vol.",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Bernard",
+            "lemma": "Bernard",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W2",
+            "text": "Fagg",
+            "lemma": "Fagg",
+            "pos": "PROPN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W3",
+            "text": "–",
+            "lemma": "–",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W4",
+            "text": "“",
+            "lemma": "\"",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W5",
+            "text": "Recent",
+            "lemma": "recent",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W6",
+            "text": "Work",
+            "lemma": "Work",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W7",
+            "text": "in",
+            "lemma": "in",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W8",
+            "text": "West",
+            "lemma": "West",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W9",
+            "text": "Africa",
+            "lemma": "Africa",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W10",
+            "text": ":",
+            "lemma": ":",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W11",
+            "text": "New",
+            "lemma": "New",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W12",
+            "text": "Light",
+            "lemma": "Light",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W13",
+            "text": "on",
+            "lemma": "on",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W14",
+            "text": "the",
+            "lemma": "the",
+            "pos": "DET",
+            "dep": "det"
+          },
+          {
+            "id": "W15",
+            "text": "Nok",
+            "lemma": "Nok",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W16",
+            "text": "Culture",
+            "lemma": "Culture",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W17",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W18",
+            "text": "”",
+            "lemma": "\"",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W19",
+            "text": "*",
+            "lemma": "*",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W20",
+            "text": "World",
+            "lemma": "World",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W21",
+            "text": "Archaeology*,Vol",
+            "lemma": "Archaeology*,Vol",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W22",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      },
+      "S2": {
+        "text": "1, No. 1 (1969)",
+        "words": [
+          {
+            "id": "W1",
+            "text": "1",
+            "lemma": "1",
+            "pos": "NUM",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W2",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W3",
+            "text": "No",
+            "lemma": "no",
+            "pos": "NOUN",
+            "dep": "intj"
+          },
+          {
+            "id": "W4",
+            "text": ".",
+            "lemma": ".",
+            "pos": "NOUN",
+            "dep": "npadvmod"
+          },
+          {
+            "id": "W5",
+            "text": "1",
+            "lemma": "1",
+            "pos": "NUM",
+            "dep": "nummod"
+          },
+          {
+            "id": "W6",
+            "text": "(",
+            "lemma": "(",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W7",
+            "text": "1969",
+            "lemma": "1969",
+            "pos": "NUM",
+            "dep": "appos"
+          },
+          {
+            "id": "W8",
+            "text": ")",
+            "lemma": ")",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_66": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Mark Cartwright – “Nok Culture,” *World History Encyclopedia* (2019)",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Mark",
+            "lemma": "Mark",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W2",
+            "text": "Cartwright",
+            "lemma": "Cartwright",
+            "pos": "PROPN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W3",
+            "text": "–",
+            "lemma": "–",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W4",
+            "text": "“",
+            "lemma": "\"",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W5",
+            "text": "Nok",
+            "lemma": "Nok",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W6",
+            "text": "Culture",
+            "lemma": "Culture",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W7",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W8",
+            "text": "”",
+            "lemma": "\"",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W9",
+            "text": "*",
+            "lemma": "*",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W10",
+            "text": "World",
+            "lemma": "World",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W11",
+            "text": "History",
+            "lemma": "history",
+            "pos": "NOUN",
+            "dep": "compound"
+          },
+          {
+            "id": "W12",
+            "text": "Encyclopedia",
+            "lemma": "Encyclopedia",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W13",
+            "text": "*",
+            "lemma": "*",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W14",
+            "text": "(",
+            "lemma": "(",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W15",
+            "text": "2019",
+            "lemma": "2019",
+            "pos": "NUM",
+            "dep": "appos"
+          },
+          {
+            "id": "W16",
+            "text": ")",
+            "lemma": ")",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_67": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "Peter Breunig (Ed.) – *Nok: African Sculpture in Archaeological Context* (Africa Magna Verlag, 2014)",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Peter",
+            "lemma": "Peter",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W2",
+            "text": "Breunig",
+            "lemma": "Breunig",
+            "pos": "PROPN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W3",
+            "text": "(",
+            "lemma": "(",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W4",
+            "text": "Ed",
+            "lemma": "Ed",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W5",
+            "text": ".",
+            "lemma": ".",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W6",
+            "text": ")",
+            "lemma": ")",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W7",
+            "text": "–",
+            "lemma": "–",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W8",
+            "text": "*",
+            "lemma": "*",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W9",
+            "text": "Nok",
+            "lemma": "Nok",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W10",
+            "text": ":",
+            "lemma": ":",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W11",
+            "text": "African",
+            "lemma": "African",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W12",
+            "text": "Sculpture",
+            "lemma": "Sculpture",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W13",
+            "text": "in",
+            "lemma": "in",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W14",
+            "text": "Archaeological",
+            "lemma": "archaeological",
+            "pos": "ADJ",
+            "dep": "amod"
+          },
+          {
+            "id": "W15",
+            "text": "Context",
+            "lemma": "Context",
+            "pos": "PROPN",
+            "dep": "pobj"
+          },
+          {
+            "id": "W16",
+            "text": "*",
+            "lemma": "*",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W17",
+            "text": "(",
+            "lemma": "(",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W18",
+            "text": "Africa",
+            "lemma": "Africa",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W19",
+            "text": "Magna",
+            "lemma": "Magna",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W20",
+            "text": "Verlag",
+            "lemma": "Verlag",
+            "pos": "PROPN",
+            "dep": "appos"
+          },
+          {
+            "id": "W21",
+            "text": ",",
+            "lemma": ",",
+            "pos": "PUNCT",
+            "dep": "punct"
+          },
+          {
+            "id": "W22",
+            "text": "2014",
+            "lemma": "2014",
+            "pos": "NUM",
+            "dep": "appos"
+          },
+          {
+            "id": "W23",
+            "text": ")",
+            "lemma": ")",
+            "pos": "PUNCT",
+            "dep": "punct"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_68": {
+    "tag": "h4",
+    "sentences": {
+      "S1": {
+        "text": "Similar Items",
+        "words": [
+          {
+            "id": "W1",
+            "text": "Similar Items"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_69": {
+    "tag": "button",
+    "sentences": {
+      "S1": {
+        "text": "←",
+        "words": [
+          {
+            "id": "W1",
+            "text": "←"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_70": {
+    "tag": "button",
+    "sentences": {
+      "S1": {
+        "text": "→",
+        "words": [
+          {
+            "id": "W1",
+            "text": "→"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_71": {
+    "tag": "p",
+    "sentences": {
+      "S1": {
+        "text": "©Yale University Art Gallery",
+        "words": [
+          {
+            "id": "W1",
+            "text": "©",
+            "lemma": "©",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W2",
+            "text": "Yale",
+            "lemma": "Yale",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W3",
+            "text": "University",
+            "lemma": "University",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W4",
+            "text": "Art",
+            "lemma": "Art",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W5",
+            "text": "Gallery",
+            "lemma": "Gallery",
+            "pos": "PROPN",
+            "dep": "ROOT"
+          }
+        ]
+      }
+    }
+  },
+  "BLOCK_72": {
+    "tag": "a",
+    "sentences": {
+      "S1": {
+        "text": "← Back to Main Gallery",
+        "words": [
+          {
+            "id": "W1",
+            "text": "←",
+            "lemma": "←",
+            "pos": "PROPN",
+            "dep": "ROOT"
+          },
+          {
+            "id": "W2",
+            "text": "Back",
+            "lemma": "back",
+            "pos": "ADV",
+            "dep": "advmod"
+          },
+          {
+            "id": "W3",
+            "text": "to",
+            "lemma": "to",
+            "pos": "ADP",
+            "dep": "prep"
+          },
+          {
+            "id": "W4",
+            "text": "Main",
+            "lemma": "Main",
+            "pos": "PROPN",
+            "dep": "compound"
+          },
+          {
+            "id": "W5",
+            "text": "Gallery",
+            "lemma": "Gallery",
+            "pos": "PROPN",
+            "dep": "pobj"
+          }
+        ]
+      }
+    }
+  }
+}
