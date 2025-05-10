@@ -3,12 +3,17 @@ import sys
 import json
 import uuid
 import spacy
+import argparse
+import subprocess
 from bs4 import BeautifulSoup, Comment
 
-# Load spaCy English model
-nlp = spacy.load("en_core_web_sm")
+SPACY_MODELS = {
+    "en": "en_core_web_sm",
+    "fr": "fr_core_news_sm",
+    "es": "es_core_news_sm",
+    "de": "de_core_news_sm"
+}
 
-# Define translatable tags and attributes
 TRANSLATABLE_TAGS = {
     "p", "span", "div", "h1", "h2", "h3", "h4", "h5", "h6",
     "label", "button", "li", "td", "th", "a", "strong", "em",
@@ -24,14 +29,32 @@ TRANSLATABLE_ATTRS = {
 }
 
 SEO_META_FIELDS = {
-    "name": {"description", "keywords", "robots", "author", "viewport", "theme-color"},
+    "name": {
+        "description", "keywords", "robots", "author", "viewport", "theme-color"
+    },
     "property": {
         "og:title", "og:description", "og:image", "og:url",
         "twitter:title", "twitter:description", "twitter:image", "twitter:card"
     }
 }
 
-SKIP_PARENTS = {"script", "style", "code", "pre", "noscript", "template", "svg", "canvas"}
+SKIP_PARENTS = {
+    "script", "style", "code", "pre", "noscript", "template", "svg", "canvas"
+}
+
+def load_spacy_model(lang_code):
+    if lang_code not in SPACY_MODELS:
+        print(f"Unsupported language '{lang_code}'. Choose from: {', '.join(SPACY_MODELS)}.")
+        sys.exit(1)
+
+    model_name = SPACY_MODELS[lang_code]
+
+    try:
+        return spacy.load(model_name)
+    except OSError:
+        print(f"spaCy model '{model_name}' not found. Downloading automatically...")
+        subprocess.run(["python", "-m", "spacy", "download", model_name], check=True)
+        return spacy.load(model_name)
 
 def is_translatable_text(tag):
     return (
@@ -41,121 +64,107 @@ def is_translatable_text(tag):
         tag.strip()
     )
 
-def flatten_sentence_tokens(text, block_id, sentence_index):
-    flat_map = {}
-    sentence_id = f"{block_id}_S{sentence_index}"
-    flat_map[sentence_id] = text
-    doc = nlp(text)
-    for i, token in enumerate(doc):
-        if not token.is_space:
-            word_key = f"{sentence_id}_W{i+1}"
-            flat_map[word_key] = token.text
-    return flat_map
+def generate_token():
+    return f"__TRANS_{uuid.uuid4().hex}__"
 
-def extract_translatable_html(input_path):
+def process_text_block(block_id, text, nlp):
+    structured = {}
+    flattened = {}
+
+    doc = nlp(text)
+    for s_idx, sent in enumerate(doc.sents, 1):
+        s_key = f"S{s_idx}"
+        flattened[f"{block_id}_{s_key}"] = sent.text
+        structured[s_key] = {"text": sent.text, "words": {}}
+
+        for w_idx, token in enumerate(sent, 1):
+            w_key = f"W{w_idx}"
+            word_key = f"{block_id}_{s_key}_{w_key}"
+            flattened[word_key] = token.text
+            structured[s_key]["words"][w_key] = token.text
+
+    return structured, flattened
+
+def extract_translatable_html(input_path, lang_code):
+    nlp = load_spacy_model(lang_code)
+
     with open(input_path, "r", encoding="utf-8") as f:
         soup = BeautifulSoup(f, "html.parser")
-        # Remove <script type="application/ld+json">
-        for script in soup.find_all("script", {"type": "application/ld+json"}):
-            script.extract()
 
-    flat_token_map = {}
-    block_count = 0
+    structured_output = {}
+    flattened_output = {}
+    block_counter = 1
 
-    # Text nodes in elements
     for element in soup.find_all(string=True):
-        if any(parent.has_attr("translate") and parent["translate"].lower() == "no" for parent in element.parents):
-            continue
         if is_translatable_text(element):
-            block_count += 1
-            block_id = f"BLOCK_{block_count}"
-            doc = nlp(element.strip())
-            sentence_index = 1
-            for sent in doc.sents:
-                sentence = sent.text.strip()
-                if sentence:
-                    flat_token_map[block_id] = sentence
-                    flat_map = flatten_sentence_tokens(sentence, block_id, sentence_index)
-                    flat_token_map.update(flat_map)
-                    sentence_index += 1
-            element.replace_with(" ".join([f"__{block_id}_S{i}__" for i in range(1, sentence_index)]))
+            text = element.strip()
+            block_id = f"BLOCK_{block_counter}"
+            structured, flattened = process_text_block(block_id, text, nlp)
+            structured_output[block_id] = {
+                "tag": element.parent.name,
+                "tokens": structured
+            }
+            flattened_output.update(flattened)
 
-    # Translatable attributes
+            token = generate_token()
+            element.replace_with(token)
+            block_counter += 1
+
     for tag in soup.find_all():
-        if any(parent.has_attr("translate") and parent["translate"].lower() == "no" for parent in tag.parents):
-            continue
         for attr in TRANSLATABLE_ATTRS:
             if attr in tag.attrs and isinstance(tag[attr], str):
                 value = tag[attr].strip()
                 if value:
-                    block_count += 1
-                    block_id = f"BLOCK_{block_count}"
-                    doc = nlp(value)
-                    sentence_index = 1
-                    tokens = []
-                    for sent in doc.sents:
-                        sentence = sent.text.strip()
-                        if sentence:
-                            flat_token_map[block_id] = sentence
-                            flat_map = flatten_sentence_tokens(sentence, block_id, sentence_index)
-                            flat_token_map.update(flat_map)
-                            tokens.append(f"__{block_id}_S{sentence_index}__")
-                            sentence_index += 1
-                    tag[attr] = " ".join(tokens)
+                    block_id = f"BLOCK_{block_counter}"
+                    structured, flattened = process_text_block(block_id, value, nlp)
+                    structured_output[block_id] = {"attr": attr, "tokens": structured}
+                    flattened_output.update(flattened)
 
-    # SEO meta content
+                    token = generate_token()
+                    tag[attr] = token
+                    block_counter += 1
+
     for meta in soup.find_all("meta"):
         name = meta.get("name", "").lower()
         prop = meta.get("property", "").lower()
         content = meta.get("content", "").strip()
-        if any(parent.has_attr("translate") and parent["translate"].lower() == "no" for parent in meta.parents):
-            continue
         if content and (name in SEO_META_FIELDS["name"] or prop in SEO_META_FIELDS["property"]):
-            block_count += 1
-            block_id = f"BLOCK_{block_count}"
-            doc = nlp(content)
-            sentence_index = 1
-            tokens = []
-            for sent in doc.sents:
-                sentence = sent.text.strip()
-                if sentence:
-                    flat_token_map[block_id] = sentence
-                    flat_map = flatten_sentence_tokens(sentence, block_id, sentence_index)
-                    flat_token_map.update(flat_map)
-                    tokens.append(f"__{block_id}_S{sentence_index}__")
-                    sentence_index += 1
-            meta["content"] = " ".join(tokens)
+            block_id = f"BLOCK_{block_counter}"
+            structured, flattened = process_text_block(block_id, content, nlp)
+            structured_output[block_id] = {"meta": name or prop, "tokens": structured}
+            flattened_output.update(flattened)
 
-    # Title
+            token = generate_token()
+            meta["content"] = token
+            block_counter += 1
+
     title_tag = soup.title
     if title_tag and title_tag.string and title_tag.string.strip():
-        if not (title_tag.has_attr("translate") and title_tag["translate"].lower() == "no"):
-            block_count += 1
-            block_id = f"BLOCK_{block_count}"
-            doc = nlp(title_tag.string.strip())
-            sentence_index = 1
-            tokens = []
-            for sent in doc.sents:
-                sentence = sent.text.strip()
-                if sentence:
-                    flat_token_map[block_id] = sentence
-                    flat_map = flatten_sentence_tokens(sentence, block_id, sentence_index)
-                    flat_token_map.update(flat_map)
-                    tokens.append(f"__{block_id}_S{sentence_index}__")
-                    sentence_index += 1
-            title_tag.string.replace_with(" ".join(tokens))
+        block_id = f"BLOCK_{block_counter}"
+        text = title_tag.string.strip()
+        structured, flattened = process_text_block(block_id, text, nlp)
+        structured_output[block_id] = {"tag": "title", "tokens": structured}
+        flattened_output.update(flattened)
+
+        token = generate_token()
+        title_tag.string.replace_with(token)
+        block_counter += 1
 
     with open("translatable_flat.json", "w", encoding="utf-8") as f:
-        json.dump(flat_token_map, f, indent=2, ensure_ascii=False)
+        json.dump(flattened_output, f, indent=2, ensure_ascii=False)
+
+    with open("translatable_structured.json", "w", encoding="utf-8") as f:
+        json.dump(structured_output, f, indent=2, ensure_ascii=False)
 
     with open("non_translatable.html", "w", encoding="utf-8") as f:
         f.write(str(soup))
 
-    print("✅ Step 1 complete: created translatable_flat.json and non_translatable.html")
+    print("✅ Step 1 complete: saved translatable_flat.json, translatable_structured.json, and non_translatable.html.")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python translate_extract_step1_flattened.py <input_file>")
-        sys.exit(1)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input_file", help="HTML file to process")
+    parser.add_argument("--lang", choices=SPACY_MODELS.keys(), default="en", help="Language code (default: en)")
+    args = parser.parse_args()
 
-    extract_translatable_html(sys.argv[1])
+    extract_translatable_html(args.input_file, args.lang)
