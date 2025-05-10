@@ -183,9 +183,11 @@ def extract_translatable_html(input_path, lang_code):
         name = meta.get("name", "").lower()
         prop = meta.get("property", "").lower()
         content = meta.get("content", "").strip()
-        if name in EXCLUDED_META_NAMES or 
-        prop in EXCLUDED_META_PROPERTIES:
-        continue  
+        
+        if name in EXCLUDED_META_NAMES 
+    or prop in EXCLUDED_META_PROPERTIES:
+            continue
+
         if content and (name in SEO_META_FIELDS["name"] or prop in SEO_META_FIELDS["property"]):
             block_id = f"BLOCK_{block_counter}"
             structured, flattened, sentence_tokens = process_text_block(block_id, content, nlp)
