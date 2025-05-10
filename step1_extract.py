@@ -214,6 +214,14 @@ def extract_translatable_html(input_path, lang_code):
     with open("non_translatable.html", "w", encoding="utf-8") as f:
         f.write(str(soup))
 
+    # Generate translatable_flat_sentences.json (sentence-level only)
+    flat_sentences_only = {
+        k: v for k, v in flattened_output.items()
+        if "_S" in k and "_W" not in k
+    }
+    with open("translatable_flat_sentences.json", "w", encoding="utf-8") as f:
+        json.dump(flat_sentences_only, f, indent=2, ensure_ascii=False)
+
     print("✅ Step 1 complete: saved translatable_flat.json, translatable_structured.json, and non_translatable.html.")
 
 
