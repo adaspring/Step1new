@@ -1,0 +1,2365 @@
+{
+  "BLOCK_1": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "ARTEAK",
+        "words": {
+          "W1": "ARTEAK"
+        }
+      }
+    }
+  },
+  "BLOCK_2": {
+    "tag": "div",
+    "tokens": {
+      "S1": {
+        "text": "☰",
+        "words": {
+          "W1": "☰"
+        }
+      }
+    }
+  },
+  "BLOCK_3": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Home",
+        "words": {
+          "W1": "Home"
+        }
+      }
+    }
+  },
+  "BLOCK_4": {
+    "tag": "div",
+    "tokens": {
+      "S1": {
+        "text": ">",
+        "words": {
+          "W1": ">"
+        }
+      }
+    }
+  },
+  "BLOCK_5": {
+    "tag": "span",
+    "tokens": {
+      "S1": {
+        "text": "Nok Terracottas",
+        "words": {
+          "W1": "Nok",
+          "W2": "Terracottas"
+        }
+      }
+    }
+  },
+  "BLOCK_6": {
+    "tag": "div",
+    "tokens": {
+      "S1": {
+        "text": "×",
+        "words": {
+          "W1": "×"
+        }
+      }
+    }
+  },
+  "BLOCK_7": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Home",
+        "words": {
+          "W1": "Home"
+        }
+      }
+    }
+  },
+  "BLOCK_8": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Nok Terracottas",
+        "words": {
+          "W1": "Nok",
+          "W2": "Terracottas"
+        }
+      }
+    }
+  },
+  "BLOCK_9": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Large Man",
+        "words": {
+          "W1": "Large",
+          "W2": "Man"
+        }
+      }
+    }
+  },
+  "BLOCK_10": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Short Man",
+        "words": {
+          "W1": "Short",
+          "W2": "Man"
+        }
+      }
+    }
+  },
+  "BLOCK_11": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Man Head",
+        "words": {
+          "W1": "Man",
+          "W2": "Head"
+        }
+      }
+    }
+  },
+  "BLOCK_12": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "About Nok",
+        "words": {
+          "W1": "About",
+          "W2": "Nok"
+        }
+      }
+    }
+  },
+  "BLOCK_13": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "African Bronzes",
+        "words": {
+          "W1": "African",
+          "W2": "Bronzes"
+        }
+      }
+    }
+  },
+  "BLOCK_14": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Spoon",
+        "words": {
+          "W1": "Spoon"
+        }
+      }
+    }
+  },
+  "BLOCK_15": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Sun",
+        "words": {
+          "W1": "Sun"
+        }
+      }
+    }
+  },
+  "BLOCK_16": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Twins",
+        "words": {
+          "W1": "Twins"
+        }
+      }
+    }
+  },
+  "BLOCK_17": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Snake",
+        "words": {
+          "W1": "Snake"
+        }
+      }
+    }
+  },
+  "BLOCK_18": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "About Bronzes",
+        "words": {
+          "W1": "About",
+          "W2": "Bronzes"
+        }
+      }
+    }
+  },
+  "BLOCK_19": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Ritual Artifacts",
+        "words": {
+          "W1": "Ritual",
+          "W2": "Artifacts"
+        }
+      }
+    }
+  },
+  "BLOCK_20": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Bōcio/Fetiche",
+        "words": {
+          "W1": "Bōcio",
+          "W2": "/",
+          "W3": "Fetiche"
+        }
+      }
+    }
+  },
+  "BLOCK_21": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "About Artifacts",
+        "words": {
+          "W1": "About",
+          "W2": "Artifacts"
+        }
+      }
+    }
+  },
+  "BLOCK_22": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "About ARTEAK",
+        "words": {
+          "W1": "About",
+          "W2": "ARTEAK"
+        }
+      }
+    }
+  },
+  "BLOCK_23": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Contact",
+        "words": {
+          "W1": "Contact"
+        }
+      }
+    }
+  },
+  "BLOCK_24": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Large Man Figure",
+        "words": {
+          "W1": "Large",
+          "W2": "Man",
+          "W3": "Figure"
+        }
+      }
+    }
+  },
+  "BLOCK_25": {
+    "tag": "button",
+    "tokens": {
+      "S1": {
+        "text": "←",
+        "words": {
+          "W1": "←"
+        }
+      }
+    }
+  },
+  "BLOCK_26": {
+    "tag": "button",
+    "tokens": {
+      "S1": {
+        "text": "→",
+        "words": {
+          "W1": "→"
+        }
+      }
+    }
+  },
+  "BLOCK_27": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "Material: Terracotta | Height: 37cm \n                Provenance: French private collection \n                Thermoluminescence certificate (2011)",
+        "words": {
+          "W1": "Material",
+          "W2": ":",
+          "W3": "Terracotta",
+          "W4": "|",
+          "W5": "Height",
+          "W6": ":",
+          "W7": "37",
+          "W8": "cm",
+          "W9": "\n                ",
+          "W10": "Provenance",
+          "W11": ":",
+          "W12": "French",
+          "W13": "private",
+          "W14": "collection",
+          "W15": "\n                ",
+          "W16": "Thermoluminescence",
+          "W17": "certificate",
+          "W18": "(",
+          "W19": "2011",
+          "W20": ")"
+        }
+      }
+    }
+  },
+  "BLOCK_28": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "+info",
+        "words": {
+          "W1": "+",
+          "W2": "info"
+        }
+      }
+    }
+  },
+  "BLOCK_29": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "+pictures",
+        "words": {
+          "W1": "+",
+          "W2": "pictures"
+        }
+      }
+    }
+  },
+  "BLOCK_30": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Short Man Figure",
+        "words": {
+          "W1": "Short",
+          "W2": "Man",
+          "W3": "Figure"
+        }
+      }
+    }
+  },
+  "BLOCK_31": {
+    "tag": "button",
+    "tokens": {
+      "S1": {
+        "text": "←",
+        "words": {
+          "W1": "←"
+        }
+      }
+    }
+  },
+  "BLOCK_32": {
+    "tag": "button",
+    "tokens": {
+      "S1": {
+        "text": "→",
+        "words": {
+          "W1": "→"
+        }
+      }
+    }
+  },
+  "BLOCK_33": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "Material: Terracotta | Height: 32cm \n                Provenance: French private collection \n                Thermoluminescence certificate (1999)",
+        "words": {
+          "W1": "Material",
+          "W2": ":",
+          "W3": "Terracotta",
+          "W4": "|",
+          "W5": "Height",
+          "W6": ":",
+          "W7": "32",
+          "W8": "cm",
+          "W9": "\n                ",
+          "W10": "Provenance",
+          "W11": ":",
+          "W12": "French",
+          "W13": "private",
+          "W14": "collection",
+          "W15": "\n                ",
+          "W16": "Thermoluminescence",
+          "W17": "certificate",
+          "W18": "(",
+          "W19": "1999",
+          "W20": ")"
+        }
+      }
+    }
+  },
+  "BLOCK_34": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "+info",
+        "words": {
+          "W1": "+",
+          "W2": "info"
+        }
+      }
+    }
+  },
+  "BLOCK_35": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "+pictures",
+        "words": {
+          "W1": "+",
+          "W2": "pictures"
+        }
+      }
+    }
+  },
+  "BLOCK_36": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Man Head",
+        "words": {
+          "W1": "Man",
+          "W2": "Head"
+        }
+      }
+    }
+  },
+  "BLOCK_37": {
+    "tag": "button",
+    "tokens": {
+      "S1": {
+        "text": "←",
+        "words": {
+          "W1": "←"
+        }
+      }
+    }
+  },
+  "BLOCK_38": {
+    "tag": "button",
+    "tokens": {
+      "S1": {
+        "text": "→",
+        "words": {
+          "W1": "→"
+        }
+      }
+    }
+  },
+  "BLOCK_39": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "Material: Terracotta | Height: 24cm \n                Provenance:",
+        "words": {
+          "W1": "Material",
+          "W2": ":",
+          "W3": "Terracotta",
+          "W4": "|",
+          "W5": "Height",
+          "W6": ":",
+          "W7": "24",
+          "W8": "cm",
+          "W9": "\n                ",
+          "W10": "Provenance",
+          "W11": ":"
+        }
+      },
+      "S2": {
+        "text": "French private collection \n                Thermoluminescence certificate (2009)",
+        "words": {
+          "W1": "French",
+          "W2": "private",
+          "W3": "collection",
+          "W4": "\n                ",
+          "W5": "Thermoluminescence",
+          "W6": "certificate",
+          "W7": "(",
+          "W8": "2009",
+          "W9": ")"
+        }
+      }
+    }
+  },
+  "BLOCK_40": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "+info",
+        "words": {
+          "W1": "+",
+          "W2": "info"
+        }
+      }
+    }
+  },
+  "BLOCK_41": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "+pictures",
+        "words": {
+          "W1": "+",
+          "W2": "pictures"
+        }
+      }
+    }
+  },
+  "BLOCK_42": {
+    "tag": "h2",
+    "tokens": {
+      "S1": {
+        "text": "About Nok Terracottas",
+        "words": {
+          "W1": "About",
+          "W2": "Nok",
+          "W3": "Terracottas"
+        }
+      }
+    }
+  },
+  "BLOCK_43": {
+    "tag": "h3",
+    "tokens": {
+      "S1": {
+        "text": "Nok Terracottas: Echoes of an Ancient Legacy",
+        "words": {
+          "W1": "Nok",
+          "W2": "Terracottas",
+          "W3": ":",
+          "W4": "Echoes",
+          "W5": "of",
+          "W6": "an",
+          "W7": "Ancient",
+          "W8": "Legacy"
+        }
+      }
+    }
+  },
+  "BLOCK_44": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "These expressive figures, often with detailed hairstyles and pierced features, reveal a rich cultural and symbolic tradition.",
+        "words": {
+          "W1": "These",
+          "W2": "expressive",
+          "W3": "figures",
+          "W4": ",",
+          "W5": "often",
+          "W6": "with",
+          "W7": "detailed",
+          "W8": "hairstyles",
+          "W9": "and",
+          "W10": "pierced",
+          "W11": "features",
+          "W12": ",",
+          "W13": "reveal",
+          "W14": "a",
+          "W15": "rich",
+          "W16": "cultural",
+          "W17": "and",
+          "W18": "symbolic",
+          "W19": "tradition",
+          "W20": "."
+        }
+      },
+      "S2": {
+        "text": "Technical studies reveals the use of refined clay, controlled firing, and hollow modeling techniques.",
+        "words": {
+          "W1": "Technical",
+          "W2": "studies",
+          "W3": "reveals",
+          "W4": "the",
+          "W5": "use",
+          "W6": "of",
+          "W7": "refined",
+          "W8": "clay",
+          "W9": ",",
+          "W10": "controlled",
+          "W11": "firing",
+          "W12": ",",
+          "W13": "and",
+          "W14": "hollow",
+          "W15": "modeling",
+          "W16": "techniques",
+          "W17": "."
+        }
+      },
+      "S3": {
+        "text": "Dating back to 1500 BCE and 500 CE, the Nok terracotta sculptures are among the earliest known examples of three-dimensional figurative art not just in sub-Saharan Africa, but in Africa as a whole.",
+        "words": {
+          "W1": "Dating",
+          "W2": "back",
+          "W3": "to",
+          "W4": "1500",
+          "W5": "BCE",
+          "W6": "and",
+          "W7": "500",
+          "W8": "CE",
+          "W9": ",",
+          "W10": "the",
+          "W11": "Nok",
+          "W12": "terracotta",
+          "W13": "sculptures",
+          "W14": "are",
+          "W15": "among",
+          "W16": "the",
+          "W17": "earliest",
+          "W18": "known",
+          "W19": "examples",
+          "W20": "of",
+          "W21": "three",
+          "W22": "-",
+          "W23": "dimensional",
+          "W24": "figurative",
+          "W25": "art",
+          "W26": "not",
+          "W27": "just",
+          "W28": "in",
+          "W29": "sub",
+          "W30": "-",
+          "W31": "Saharan",
+          "W32": "Africa",
+          "W33": ",",
+          "W34": "but",
+          "W35": "in",
+          "W36": "Africa",
+          "W37": "as",
+          "W38": "a",
+          "W39": "whole",
+          "W40": "."
+        }
+      }
+    }
+  },
+  "BLOCK_45": {
+    "tag": "button",
+    "tokens": {
+      "S1": {
+        "text": "Show more...",
+        "words": {
+          "W1": "Show",
+          "W2": "more",
+          "W3": "..."
+        }
+      }
+    }
+  },
+  "BLOCK_46": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "They are originated from central Nigeria surrounding the village of Nok, from c. 900 to 300 B.C.E., the northern Nigerian states of Katsina, from c. 200 B.C.E to 500 C.E. and Sokoto, from c. 500 B.C.E. to 200 C.E. and nearby sites.",
+        "words": {
+          "W1": "They",
+          "W2": "are",
+          "W3": "originated",
+          "W4": "from",
+          "W5": "central",
+          "W6": "Nigeria",
+          "W7": "surrounding",
+          "W8": "the",
+          "W9": "village",
+          "W10": "of",
+          "W11": "Nok",
+          "W12": ",",
+          "W13": "from",
+          "W14": "c.",
+          "W15": "900",
+          "W16": "to",
+          "W17": "300",
+          "W18": "B.C.E.",
+          "W19": ",",
+          "W20": "the",
+          "W21": "northern",
+          "W22": "Nigerian",
+          "W23": "states",
+          "W24": "of",
+          "W25": "Katsina",
+          "W26": ",",
+          "W27": "from",
+          "W28": "c.",
+          "W29": "200",
+          "W30": "B.C.E",
+          "W31": "to",
+          "W32": "500",
+          "W33": "C.E.",
+          "W34": "and",
+          "W35": "Sokoto",
+          "W36": ",",
+          "W37": "from",
+          "W38": "c.",
+          "W39": "500",
+          "W40": "B.C.E.",
+          "W41": "to",
+          "W42": "200",
+          "W43": "C.E.",
+          "W44": "and",
+          "W45": "nearby",
+          "W46": "sites",
+          "W47": "."
+        }
+      },
+      "S2": {
+        "text": "They precede other art traditions like the Ife bronzes (12th–15th century CE) and Benin bronzes (13th century CE onward).",
+        "words": {
+          "W1": "They",
+          "W2": "precede",
+          "W3": "other",
+          "W4": "art",
+          "W5": "traditions",
+          "W6": "like",
+          "W7": "the",
+          "W8": "Ife",
+          "W9": "bronzes",
+          "W10": "(",
+          "W11": "12th–15th",
+          "W12": "century",
+          "W13": "CE",
+          "W14": ")",
+          "W15": "and",
+          "W16": "Benin",
+          "W17": "bronzes",
+          "W18": "(",
+          "W19": "13th",
+          "W20": "century",
+          "W21": "CE",
+          "W22": "onward",
+          "W23": ")",
+          "W24": "."
+        }
+      },
+      "S3": {
+        "text": "Their discovery reshaped global understanding of Africa’s ancient civilizations and artistic heritage.",
+        "words": {
+          "W1": "Their",
+          "W2": "discovery",
+          "W3": "reshaped",
+          "W4": "global",
+          "W5": "understanding",
+          "W6": "of",
+          "W7": "Africa",
+          "W8": "’s",
+          "W9": "ancient",
+          "W10": "civilizations",
+          "W11": "and",
+          "W12": "artistic",
+          "W13": "heritage",
+          "W14": "."
+        }
+      },
+      "S4": {
+        "text": "The objects came from an area that had no significant controlled archaeological excavation until Professor Peter Breunig and his team began their digs in 2005, in the Nok region, in collaboration with Nigerian archaeologists.",
+        "words": {
+          "W1": "The",
+          "W2": "objects",
+          "W3": "came",
+          "W4": "from",
+          "W5": "an",
+          "W6": "area",
+          "W7": "that",
+          "W8": "had",
+          "W9": "no",
+          "W10": "significant",
+          "W11": "controlled",
+          "W12": "archaeological",
+          "W13": "excavation",
+          "W14": "until",
+          "W15": "Professor",
+          "W16": "Peter",
+          "W17": "Breunig",
+          "W18": "and",
+          "W19": "his",
+          "W20": "team",
+          "W21": "began",
+          "W22": "their",
+          "W23": "digs",
+          "W24": "in",
+          "W25": "2005",
+          "W26": ",",
+          "W27": "in",
+          "W28": "the",
+          "W29": "Nok",
+          "W30": "region",
+          "W31": ",",
+          "W32": "in",
+          "W33": "collaboration",
+          "W34": "with",
+          "W35": "Nigerian",
+          "W36": "archaeologists",
+          "W37": "."
+        }
+      },
+      "S5": {
+        "text": "The other areas, Sokoto and Katsina, still await archaeological excavation, although they are heavily pockmarked by local, amateur treasure hunters.",
+        "words": {
+          "W1": "The",
+          "W2": "other",
+          "W3": "areas",
+          "W4": ",",
+          "W5": "Sokoto",
+          "W6": "and",
+          "W7": "Katsina",
+          "W8": ",",
+          "W9": "still",
+          "W10": "await",
+          "W11": "archaeological",
+          "W12": "excavation",
+          "W13": ",",
+          "W14": "although",
+          "W15": "they",
+          "W16": "are",
+          "W17": "heavily",
+          "W18": "pockmarked",
+          "W19": "by",
+          "W20": "local",
+          "W21": ",",
+          "W22": "amateur",
+          "W23": "treasure",
+          "W24": "hunters",
+          "W25": "."
+        }
+      },
+      "S6": {
+        "text": "Consequently, we know almost nothing about the cultures that created these works of art.",
+        "words": {
+          "W1": "Consequently",
+          "W2": ",",
+          "W3": "we",
+          "W4": "know",
+          "W5": "almost",
+          "W6": "nothing",
+          "W7": "about",
+          "W8": "the",
+          "W9": "cultures",
+          "W10": "that",
+          "W11": "created",
+          "W12": "these",
+          "W13": "works",
+          "W14": "of",
+          "W15": "art",
+          "W16": "."
+        }
+      }
+    }
+  },
+  "BLOCK_47": {
+    "tag": "h3",
+    "tokens": {
+      "S1": {
+        "text": "Archaeological Discoveries and Grae's collection",
+        "words": {
+          "W1": "Archaeological",
+          "W2": "Discoveries",
+          "W3": "and",
+          "W4": "Grae",
+          "W5": "'s",
+          "W6": "collection"
+        }
+      }
+    }
+  },
+  "BLOCK_48": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "Full Lecture: 1:20:25 | Hosted by",
+        "words": {
+          "W1": "Full",
+          "W2": "Lecture",
+          "W3": ":",
+          "W4": "1:20:25",
+          "W5": "|",
+          "W6": "Hosted",
+          "W7": "by"
+        }
+      }
+    }
+  },
+  "BLOCK_49": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Yale University Art Gallery",
+        "words": {
+          "W1": "Yale",
+          "W2": "University",
+          "W3": "Art",
+          "W4": "Gallery"
+        }
+      }
+    }
+  },
+  "BLOCK_50": {
+    "tag": "h4",
+    "tokens": {
+      "S1": {
+        "text": "About lecture",
+        "words": {
+          "W1": "About",
+          "W2": "lecture"
+        }
+      }
+    }
+  },
+  "BLOCK_51": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "After decades of limited research following the foundational work of Bernard Fagg in the mid-20th century, Professor Breunig and his team brings to light the results of fieldwork initiated in 2005.",
+        "words": {
+          "W1": "After",
+          "W2": "decades",
+          "W3": "of",
+          "W4": "limited",
+          "W5": "research",
+          "W6": "following",
+          "W7": "the",
+          "W8": "foundational",
+          "W9": "work",
+          "W10": "of",
+          "W11": "Bernard",
+          "W12": "Fagg",
+          "W13": "in",
+          "W14": "the",
+          "W15": "mid-20th",
+          "W16": "century",
+          "W17": ",",
+          "W18": "Professor",
+          "W19": "Breunig",
+          "W20": "and",
+          "W21": "his",
+          "W22": "team",
+          "W23": "brings",
+          "W24": "to",
+          "W25": "light",
+          "W26": "the",
+          "W27": "results",
+          "W28": "of",
+          "W29": "fieldwork",
+          "W30": "initiated",
+          "W31": "in",
+          "W32": "2005",
+          "W33": "."
+        }
+      }
+    }
+  },
+  "BLOCK_52": {
+    "tag": "button",
+    "tokens": {
+      "S1": {
+        "text": "Show more...",
+        "words": {
+          "W1": "Show",
+          "W2": "more",
+          "W3": "..."
+        }
+      }
+    }
+  },
+  "BLOCK_53": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "His long-term archaeological project, conducted in close collaboration with Nigerian institutions, has transformed our understanding of Nok culture.",
+        "words": {
+          "W1": "His",
+          "W2": "long",
+          "W3": "-",
+          "W4": "term",
+          "W5": "archaeological",
+          "W6": "project",
+          "W7": ",",
+          "W8": "conducted",
+          "W9": "in",
+          "W10": "close",
+          "W11": "collaboration",
+          "W12": "with",
+          "W13": "Nigerian",
+          "W14": "institutions",
+          "W15": ",",
+          "W16": "has",
+          "W17": "transformed",
+          "W18": "our",
+          "W19": "understanding",
+          "W20": "of",
+          "W21": "Nok",
+          "W22": "culture",
+          "W23": "."
+        }
+      },
+      "S2": {
+        "text": "Unlike earlier studies that relied heavily on looted artifacts and surface finds, Breunig's work emphasizes contextual excavation, radiocarbon dating, and interdisciplinary analysis, placing Nok culture within a broader narrative of African prehistory.",
+        "words": {
+          "W1": "Unlike",
+          "W2": "earlier",
+          "W3": "studies",
+          "W4": "that",
+          "W5": "relied",
+          "W6": "heavily",
+          "W7": "on",
+          "W8": "looted",
+          "W9": "artifacts",
+          "W10": "and",
+          "W11": "surface",
+          "W12": "finds",
+          "W13": ",",
+          "W14": "Breunig",
+          "W15": "'s",
+          "W16": "work",
+          "W17": "emphasizes",
+          "W18": "contextual",
+          "W19": "excavation",
+          "W20": ",",
+          "W21": "radiocarbon",
+          "W22": "dating",
+          "W23": ",",
+          "W24": "and",
+          "W25": "interdisciplinary",
+          "W26": "analysis",
+          "W27": ",",
+          "W28": "placing",
+          "W29": "Nok",
+          "W30": "culture",
+          "W31": "within",
+          "W32": "a",
+          "W33": "broader",
+          "W34": "narrative",
+          "W35": "of",
+          "W36": "African",
+          "W37": "prehistory",
+          "W38": "."
+        }
+      }
+    }
+  },
+  "BLOCK_54": {
+    "tag": "h4",
+    "tokens": {
+      "S1": {
+        "text": "Grae's collection",
+        "words": {
+          "W1": "Grae",
+          "W2": "'s",
+          "W3": "collection"
+        }
+      }
+    }
+  },
+  "BLOCK_55": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "The Grae Collection",
+        "words": {
+          "W1": "The",
+          "W2": "Grae",
+          "W3": "Collection"
+        }
+      }
+    }
+  },
+  "BLOCK_56": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "of Nok terracottas, is the most important and extensive of authentic ancient Nigerian art outside Nigeria.",
+        "words": {
+          "W1": "of",
+          "W2": "Nok",
+          "W3": "terracottas",
+          "W4": ",",
+          "W5": "is",
+          "W6": "the",
+          "W7": "most",
+          "W8": "important",
+          "W9": "and",
+          "W10": "extensive",
+          "W11": "of",
+          "W12": "authentic",
+          "W13": "ancient",
+          "W14": "Nigerian",
+          "W15": "art",
+          "W16": "outside",
+          "W17": "Nigeria",
+          "W18": "."
+        }
+      },
+      "S2": {
+        "text": "Donated to Yale, adds a layer of historical depth, revealing how artifacts tied to anti-colonial movements and Black diaspora activism entered Western institutions.",
+        "words": {
+          "W1": "Donated",
+          "W2": "to",
+          "W3": "Yale",
+          "W4": ",",
+          "W5": "adds",
+          "W6": "a",
+          "W7": "layer",
+          "W8": "of",
+          "W9": "historical",
+          "W10": "depth",
+          "W11": ",",
+          "W12": "revealing",
+          "W13": "how",
+          "W14": "artifacts",
+          "W15": "tied",
+          "W16": "to",
+          "W17": "anti",
+          "W18": "-",
+          "W19": "colonial",
+          "W20": "movements",
+          "W21": "and",
+          "W22": "Black",
+          "W23": "diaspora",
+          "W24": "activism",
+          "W25": "entered",
+          "W26": "Western",
+          "W27": "institutions",
+          "W28": "."
+        }
+      }
+    }
+  },
+  "BLOCK_57": {
+    "tag": "button",
+    "tokens": {
+      "S1": {
+        "text": "Show more...",
+        "words": {
+          "W1": "Show",
+          "W2": "more",
+          "W3": "..."
+        }
+      }
+    }
+  },
+  "BLOCK_58": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "Collected by civil rights leader Bayard Rustin during Nigeria’s independence era, these ancient sculptures—preserved unrestored—reflect a legacy of cultural reclamation and solidarity.",
+        "words": {
+          "W1": "Collected",
+          "W2": "by",
+          "W3": "civil",
+          "W4": "rights",
+          "W5": "leader",
+          "W6": "Bayard",
+          "W7": "Rustin",
+          "W8": "during",
+          "W9": "Nigeria",
+          "W10": "’s",
+          "W11": "independence",
+          "W12": "era",
+          "W13": ",",
+          "W14": "these",
+          "W15": "ancient",
+          "W16": "sculptures",
+          "W17": "—",
+          "W18": "preserved",
+          "W19": "unrestored",
+          "W20": "—",
+          "W21": "reflect",
+          "W22": "a",
+          "W23": "legacy",
+          "W24": "of",
+          "W25": "cultural",
+          "W26": "reclamation",
+          "W27": "and",
+          "W28": "solidarity",
+          "W29": "."
+        }
+      },
+      "S2": {
+        "text": "The collection serves as a vital resource for scholars and students, offering deep insights into early African art and culture.",
+        "words": {
+          "W1": "The",
+          "W2": "collection",
+          "W3": "serves",
+          "W4": "as",
+          "W5": "a",
+          "W6": "vital",
+          "W7": "resource",
+          "W8": "for",
+          "W9": "scholars",
+          "W10": "and",
+          "W11": "students",
+          "W12": ",",
+          "W13": "offering",
+          "W14": "deep",
+          "W15": "insights",
+          "W16": "into",
+          "W17": "early",
+          "W18": "African",
+          "W19": "art",
+          "W20": "and",
+          "W21": "culture",
+          "W22": "."
+        }
+      },
+      "S3": {
+        "text": "The essay highlights this unique provenance, challenging colonial narratives and reframing how collections are understood: not as detached relics, but as testaments to activism, identity, and ethical stewardship.",
+        "words": {
+          "W1": "The",
+          "W2": "essay",
+          "W3": "highlights",
+          "W4": "this",
+          "W5": "unique",
+          "W6": "provenance",
+          "W7": ",",
+          "W8": "challenging",
+          "W9": "colonial",
+          "W10": "narratives",
+          "W11": "and",
+          "W12": "reframing",
+          "W13": "how",
+          "W14": "collections",
+          "W15": "are",
+          "W16": "understood",
+          "W17": ":",
+          "W18": "not",
+          "W19": "as",
+          "W20": "detached",
+          "W21": "relics",
+          "W22": ",",
+          "W23": "but",
+          "W24": "as",
+          "W25": "testaments",
+          "W26": "to",
+          "W27": "activism",
+          "W28": ",",
+          "W29": "identity",
+          "W30": ",",
+          "W31": "and",
+          "W32": "ethical",
+          "W33": "stewardship",
+          "W34": "."
+        }
+      }
+    }
+  },
+  "BLOCK_59": {
+    "tag": "h3",
+    "tokens": {
+      "S1": {
+        "text": "Resources",
+        "words": {
+          "W1": "Resources"
+        }
+      }
+    }
+  },
+  "BLOCK_60": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Yale University Art Gallery Bulletin 2010 – Nok Terracotta Acquisition",
+        "words": {
+          "W1": "Yale",
+          "W2": "University",
+          "W3": "Art",
+          "W4": "Gallery",
+          "W5": "Bulletin",
+          "W6": "2010",
+          "W7": "–",
+          "W8": "Nok",
+          "W9": "Terracotta",
+          "W10": "Acquisition"
+        }
+      }
+    }
+  },
+  "BLOCK_61": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Yemisi Shyllon Museum of Art - A virtual exhibit and educational overview introducing key aspects of Nok culture",
+        "words": {
+          "W1": "Yemisi",
+          "W2": "Shyllon",
+          "W3": "Museum",
+          "W4": "of",
+          "W5": "Art",
+          "W6": "-",
+          "W7": "A",
+          "W8": "virtual",
+          "W9": "exhibit",
+          "W10": "and",
+          "W11": "educational",
+          "W12": "overview",
+          "W13": "introducing",
+          "W14": "key",
+          "W15": "aspects",
+          "W16": "of",
+          "W17": "Nok",
+          "W18": "culture"
+        }
+      }
+    }
+  },
+  "BLOCK_62": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Transition Magazine – “Was Bayard Rustin the Most Important Collector of African Antiquities in the 1950s?”",
+        "words": {
+          "W1": "Transition",
+          "W2": "Magazine",
+          "W3": "–",
+          "W4": "“",
+          "W5": "Was",
+          "W6": "Bayard",
+          "W7": "Rustin",
+          "W8": "the",
+          "W9": "Most",
+          "W10": "Important",
+          "W11": "Collector",
+          "W12": "of",
+          "W13": "African",
+          "W14": "Antiquities",
+          "W15": "in",
+          "W16": "the",
+          "W17": "1950s",
+          "W18": "?",
+          "W19": "”"
+        }
+      }
+    }
+  },
+  "BLOCK_63": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Reconstructing Nok Artistic Practices, led by Prof. Peter Breunig",
+        "words": {
+          "W1": "Reconstructing",
+          "W2": "Nok",
+          "W3": "Artistic",
+          "W4": "Practices",
+          "W5": ",",
+          "W6": "led",
+          "W7": "by",
+          "W8": "Prof.",
+          "W9": "Peter",
+          "W10": "Breunig"
+        }
+      }
+    }
+  },
+  "BLOCK_64": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "The Metropolitan Museum of Art – “Nok Terracottas (500 B.C.–200 A.D.)”",
+        "words": {
+          "W1": "The",
+          "W2": "Metropolitan",
+          "W3": "Museum",
+          "W4": "of",
+          "W5": "Art",
+          "W6": "–",
+          "W7": "“",
+          "W8": "Nok",
+          "W9": "Terracottas",
+          "W10": "(",
+          "W11": "500",
+          "W12": "B.C.–200",
+          "W13": "A.D.",
+          "W14": ")",
+          "W15": "”"
+        }
+      }
+    }
+  },
+  "BLOCK_65": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Bernard Fagg – “Recent Work in West Africa: New Light on the Nok Culture,” *World Archaeology*,Vol.",
+        "words": {
+          "W1": "Bernard",
+          "W2": "Fagg",
+          "W3": "–",
+          "W4": "“",
+          "W5": "Recent",
+          "W6": "Work",
+          "W7": "in",
+          "W8": "West",
+          "W9": "Africa",
+          "W10": ":",
+          "W11": "New",
+          "W12": "Light",
+          "W13": "on",
+          "W14": "the",
+          "W15": "Nok",
+          "W16": "Culture",
+          "W17": ",",
+          "W18": "”",
+          "W19": "*",
+          "W20": "World",
+          "W21": "Archaeology*,Vol",
+          "W22": "."
+        }
+      },
+      "S2": {
+        "text": "1, No. 1 (1969)",
+        "words": {
+          "W1": "1",
+          "W2": ",",
+          "W3": "No",
+          "W4": ".",
+          "W5": "1",
+          "W6": "(",
+          "W7": "1969",
+          "W8": ")"
+        }
+      }
+    }
+  },
+  "BLOCK_66": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Mark Cartwright – “Nok Culture,” *World History Encyclopedia* (2019)",
+        "words": {
+          "W1": "Mark",
+          "W2": "Cartwright",
+          "W3": "–",
+          "W4": "“",
+          "W5": "Nok",
+          "W6": "Culture",
+          "W7": ",",
+          "W8": "”",
+          "W9": "*",
+          "W10": "World",
+          "W11": "History",
+          "W12": "Encyclopedia",
+          "W13": "*",
+          "W14": "(",
+          "W15": "2019",
+          "W16": ")"
+        }
+      }
+    }
+  },
+  "BLOCK_67": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Peter Breunig (Ed.) – *Nok: African Sculpture in Archaeological Context* (Africa Magna Verlag, 2014)",
+        "words": {
+          "W1": "Peter",
+          "W2": "Breunig",
+          "W3": "(",
+          "W4": "Ed",
+          "W5": ".",
+          "W6": ")",
+          "W7": "–",
+          "W8": "*",
+          "W9": "Nok",
+          "W10": ":",
+          "W11": "African",
+          "W12": "Sculpture",
+          "W13": "in",
+          "W14": "Archaeological",
+          "W15": "Context",
+          "W16": "*",
+          "W17": "(",
+          "W18": "Africa",
+          "W19": "Magna",
+          "W20": "Verlag",
+          "W21": ",",
+          "W22": "2014",
+          "W23": ")"
+        }
+      }
+    }
+  },
+  "BLOCK_68": {
+    "tag": "h4",
+    "tokens": {
+      "S1": {
+        "text": "Similar Items",
+        "words": {
+          "W1": "Similar",
+          "W2": "Items"
+        }
+      }
+    }
+  },
+  "BLOCK_69": {
+    "tag": "button",
+    "tokens": {
+      "S1": {
+        "text": "←",
+        "words": {
+          "W1": "←"
+        }
+      }
+    }
+  },
+  "BLOCK_70": {
+    "tag": "button",
+    "tokens": {
+      "S1": {
+        "text": "→",
+        "words": {
+          "W1": "→"
+        }
+      }
+    }
+  },
+  "BLOCK_71": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "©Yale University Art Gallery",
+        "words": {
+          "W1": "©",
+          "W2": "Yale",
+          "W3": "University",
+          "W4": "Art",
+          "W5": "Gallery"
+        }
+      }
+    }
+  },
+  "BLOCK_72": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "← Back to Main Gallery",
+        "words": {
+          "W1": "←",
+          "W2": "Back",
+          "W3": "to",
+          "W4": "Main",
+          "W5": "Gallery"
+        }
+      }
+    }
+  },
+  "BLOCK_73": {
+    "attr": "aria-label",
+    "tokens": {
+      "S1": {
+        "text": "Menu",
+        "words": {
+          "W1": "Menu"
+        }
+      }
+    }
+  },
+  "BLOCK_74": {
+    "attr": "aria-label",
+    "tokens": {
+      "S1": {
+        "text": "Previous image",
+        "words": {
+          "W1": "Previous",
+          "W2": "image"
+        }
+      }
+    }
+  },
+  "BLOCK_75": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Nok terracotta bust with hands and beard",
+        "words": {
+          "W1": "Nok",
+          "W2": "terracotta",
+          "W3": "bust",
+          "W4": "with",
+          "W5": "hands",
+          "W6": "and",
+          "W7": "beard"
+        }
+      }
+    }
+  },
+  "BLOCK_76": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Nok terracotta bust with hands and beard",
+        "words": {
+          "W1": "Nok",
+          "W2": "terracotta",
+          "W3": "bust",
+          "W4": "with",
+          "W5": "hands",
+          "W6": "and",
+          "W7": "beard"
+        }
+      }
+    }
+  },
+  "BLOCK_77": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thermoluminescence Certificate",
+        "words": {
+          "W1": "Thermoluminescence",
+          "W2": "Certificate"
+        }
+      }
+    }
+  },
+  "BLOCK_78": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Nok terracotta bust with hands and beard",
+        "words": {
+          "W1": "Nok",
+          "W2": "terracotta",
+          "W3": "bust",
+          "W4": "with",
+          "W5": "hands",
+          "W6": "and",
+          "W7": "beard"
+        }
+      }
+    }
+  },
+  "BLOCK_79": {
+    "attr": "aria-label",
+    "tokens": {
+      "S1": {
+        "text": "Next image",
+        "words": {
+          "W1": "Next",
+          "W2": "image"
+        }
+      }
+    }
+  },
+  "BLOCK_80": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 1",
+        "words": {
+          "W1": "Thumb",
+          "W2": "1"
+        }
+      }
+    }
+  },
+  "BLOCK_81": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 2",
+        "words": {
+          "W1": "Thumb",
+          "W2": "2"
+        }
+      }
+    }
+  },
+  "BLOCK_82": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 3",
+        "words": {
+          "W1": "Thumb",
+          "W2": "3"
+        }
+      }
+    }
+  },
+  "BLOCK_83": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 4",
+        "words": {
+          "W1": "Thumb",
+          "W2": "4"
+        }
+      }
+    }
+  },
+  "BLOCK_84": {
+    "attr": "aria-label",
+    "tokens": {
+      "S1": {
+        "text": "Previous image",
+        "words": {
+          "W1": "Previous",
+          "W2": "image"
+        }
+      }
+    }
+  },
+  "BLOCK_85": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Nok terracotta bust with amazing energy",
+        "words": {
+          "W1": "Nok",
+          "W2": "terracotta",
+          "W3": "bust",
+          "W4": "with",
+          "W5": "amazing",
+          "W6": "energy"
+        }
+      }
+    }
+  },
+  "BLOCK_86": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Nok terracotta bust with rare hat",
+        "words": {
+          "W1": "Nok",
+          "W2": "terracotta",
+          "W3": "bust",
+          "W4": "with",
+          "W5": "rare",
+          "W6": "hat"
+        }
+      }
+    }
+  },
+  "BLOCK_87": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Nok terracotta bust",
+        "words": {
+          "W1": "Nok",
+          "W2": "terracotta",
+          "W3": "bust"
+        }
+      }
+    }
+  },
+  "BLOCK_88": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thermoluminescence certificate",
+        "words": {
+          "W1": "Thermoluminescence",
+          "W2": "certificate"
+        }
+      }
+    }
+  },
+  "BLOCK_89": {
+    "attr": "aria-label",
+    "tokens": {
+      "S1": {
+        "text": "Next image",
+        "words": {
+          "W1": "Next",
+          "W2": "image"
+        }
+      }
+    }
+  },
+  "BLOCK_90": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 1",
+        "words": {
+          "W1": "Thumb",
+          "W2": "1"
+        }
+      }
+    }
+  },
+  "BLOCK_91": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 2",
+        "words": {
+          "W1": "Thumb",
+          "W2": "2"
+        }
+      }
+    }
+  },
+  "BLOCK_92": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 3",
+        "words": {
+          "W1": "Thumb",
+          "W2": "3"
+        }
+      }
+    }
+  },
+  "BLOCK_93": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 4",
+        "words": {
+          "W1": "Thumb",
+          "W2": "4"
+        }
+      }
+    }
+  },
+  "BLOCK_94": {
+    "attr": "aria-label",
+    "tokens": {
+      "S1": {
+        "text": "Previous image",
+        "words": {
+          "W1": "Previous",
+          "W2": "image"
+        }
+      }
+    }
+  },
+  "BLOCK_95": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Nok terracotta man head with beard",
+        "words": {
+          "W1": "Nok",
+          "W2": "terracotta",
+          "W3": "man",
+          "W4": "head",
+          "W5": "with",
+          "W6": "beard"
+        }
+      }
+    }
+  },
+  "BLOCK_96": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Nok terracotta man back head",
+        "words": {
+          "W1": "Nok",
+          "W2": "terracotta",
+          "W3": "man",
+          "W4": "back",
+          "W5": "head"
+        }
+      }
+    }
+  },
+  "BLOCK_97": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Nok terracotta man head",
+        "words": {
+          "W1": "Nok",
+          "W2": "terracotta",
+          "W3": "man",
+          "W4": "head"
+        }
+      }
+    }
+  },
+  "BLOCK_98": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thermoluminescence certificate",
+        "words": {
+          "W1": "Thermoluminescence",
+          "W2": "certificate"
+        }
+      }
+    }
+  },
+  "BLOCK_99": {
+    "attr": "aria-label",
+    "tokens": {
+      "S1": {
+        "text": "Next image",
+        "words": {
+          "W1": "Next",
+          "W2": "image"
+        }
+      }
+    }
+  },
+  "BLOCK_100": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 1",
+        "words": {
+          "W1": "Thumb",
+          "W2": "1"
+        }
+      }
+    }
+  },
+  "BLOCK_101": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 2",
+        "words": {
+          "W1": "Thumb",
+          "W2": "2"
+        }
+      }
+    }
+  },
+  "BLOCK_102": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 3",
+        "words": {
+          "W1": "Thumb",
+          "W2": "3"
+        }
+      }
+    }
+  },
+  "BLOCK_103": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 4",
+        "words": {
+          "W1": "Thumb",
+          "W2": "4"
+        }
+      }
+    }
+  },
+  "BLOCK_104": {
+    "attr": "aria-label",
+    "tokens": {
+      "S1": {
+        "text": "Academic lecture on Nok culture terracottas from Yale University",
+        "words": {
+          "W1": "Academic",
+          "W2": "lecture",
+          "W3": "on",
+          "W4": "Nok",
+          "W5": "culture",
+          "W6": "terracottas",
+          "W7": "from",
+          "W8": "Yale",
+          "W9": "University"
+        }
+      }
+    }
+  },
+  "BLOCK_105": {
+    "attr": "title",
+    "tokens": {
+      "S1": {
+        "text": "Nok Terracottas: Key Findings by Prof. Peter Breunig",
+        "words": {
+          "W1": "Nok",
+          "W2": "Terracottas",
+          "W3": ":",
+          "W4": "Key",
+          "W5": "Findings",
+          "W6": "by",
+          "W7": "Prof.",
+          "W8": "Peter",
+          "W9": "Breunig"
+        }
+      }
+    }
+  },
+  "BLOCK_106": {
+    "attr": "aria-label",
+    "tokens": {
+      "S1": {
+        "text": "Previous image",
+        "words": {
+          "W1": "Previous",
+          "W2": "image"
+        }
+      }
+    }
+  },
+  "BLOCK_107": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Nok terracotta bust with hands and beard",
+        "words": {
+          "W1": "Nok",
+          "W2": "terracotta",
+          "W3": "bust",
+          "W4": "with",
+          "W5": "hands",
+          "W6": "and",
+          "W7": "beard"
+        }
+      }
+    }
+  },
+  "BLOCK_108": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thermoluminescence Certificate",
+        "words": {
+          "W1": "Thermoluminescence",
+          "W2": "Certificate"
+        }
+      }
+    }
+  },
+  "BLOCK_109": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Nok terracotta bust with hands and beard",
+        "words": {
+          "W1": "Nok",
+          "W2": "terracotta",
+          "W3": "bust",
+          "W4": "with",
+          "W5": "hands",
+          "W6": "and",
+          "W7": "beard"
+        }
+      }
+    }
+  },
+  "BLOCK_110": {
+    "attr": "aria-label",
+    "tokens": {
+      "S1": {
+        "text": "Next image",
+        "words": {
+          "W1": "Next",
+          "W2": "image"
+        }
+      }
+    }
+  },
+  "BLOCK_111": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 1",
+        "words": {
+          "W1": "Thumb",
+          "W2": "1"
+        }
+      }
+    }
+  },
+  "BLOCK_112": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 2",
+        "words": {
+          "W1": "Thumb",
+          "W2": "2"
+        }
+      }
+    }
+  },
+  "BLOCK_113": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Thumb 3",
+        "words": {
+          "W1": "Thumb",
+          "W2": "3"
+        }
+      }
+    }
+  },
+  "BLOCK_114": {
+    "meta": "viewport",
+    "tokens": {
+      "S1": {
+        "text": "width=device-width, initial-scale=1.0",
+        "words": {
+          "W1": "width",
+          "W2": "=",
+          "W3": "device",
+          "W4": "-",
+          "W5": "width",
+          "W6": ",",
+          "W7": "initial",
+          "W8": "-",
+          "W9": "scale=1.0"
+        }
+      }
+    }
+  },
+  "BLOCK_115": {
+    "meta": "description",
+    "tokens": {
+      "S1": {
+        "text": "Explore Nok Terracottas - Ancient African sculptures from Nigeria (500 BCE–200 CE) with distinctive elongated features",
+        "words": {
+          "W1": "Explore",
+          "W2": "Nok",
+          "W3": "Terracottas",
+          "W4": "-",
+          "W5": "Ancient",
+          "W6": "African",
+          "W7": "sculptures",
+          "W8": "from",
+          "W9": "Nigeria",
+          "W10": "(",
+          "W11": "500",
+          "W12": "BCE–200",
+          "W13": "CE",
+          "W14": ")",
+          "W15": "with",
+          "W16": "distinctive",
+          "W17": "elongated",
+          "W18": "features"
+        }
+      }
+    }
+  },
+  "BLOCK_116": {
+    "meta": "keywords",
+    "tokens": {
+      "S1": {
+        "text": "Nok Terracottas, African sculptures, ancient art, Nigerian artifacts, clay sculptures",
+        "words": {
+          "W1": "Nok",
+          "W2": "Terracottas",
+          "W3": ",",
+          "W4": "African",
+          "W5": "sculptures",
+          "W6": ",",
+          "W7": "ancient",
+          "W8": "art",
+          "W9": ",",
+          "W10": "Nigerian",
+          "W11": "artifacts",
+          "W12": ",",
+          "W13": "clay",
+          "W14": "sculptures"
+        }
+      }
+    }
+  },
+  "BLOCK_117": {
+    "meta": "og:title",
+    "tokens": {
+      "S1": {
+        "text": "Nok Terracottas | ARTEA",
+        "words": {
+          "W1": "Nok",
+          "W2": "Terracottas",
+          "W3": "|",
+          "W4": "ARTEA"
+        }
+      }
+    }
+  },
+  "BLOCK_118": {
+    "meta": "og:description",
+    "tokens": {
+      "S1": {
+        "text": "Discover the ancient Nok Terracotta sculptures from Nigeria",
+        "words": {
+          "W1": "Discover",
+          "W2": "the",
+          "W3": "ancient",
+          "W4": "Nok",
+          "W5": "Terracotta",
+          "W6": "sculptures",
+          "W7": "from",
+          "W8": "Nigeria"
+        }
+      }
+    }
+  },
+  "BLOCK_119": {
+    "meta": "og:url",
+    "tokens": {
+      "S1": {
+        "text": "https://artea.netlify.app/nok-terracottas.html",
+        "words": {
+          "W1": "https://artea.netlify.app/nok-terracottas.html"
+        }
+      }
+    }
+  },
+  "BLOCK_120": {
+    "tag": "title",
+    "tokens": {
+      "S1": {
+        "text": "Nok Terracottas | ARTEA",
+        "words": {
+          "W1": "Nok",
+          "W2": "Terracottas",
+          "W3": "|",
+          "W4": "ARTEA"
+        }
+      }
+    }
+  },
+  "BLOCK_121": {
+    "jsonld": "name",
+    "tokens": {
+      "S1": {
+        "text": "Nok Terracottas: Archaeological Insights by Prof. Peter Breunig",
+        "words": {
+          "W1": "Nok",
+          "W2": "Terracottas",
+          "W3": ":",
+          "W4": "Archaeological",
+          "W5": "Insights",
+          "W6": "by",
+          "W7": "Prof.",
+          "W8": "Peter",
+          "W9": "Breunig"
+        }
+      }
+    }
+  },
+  "BLOCK_122": {
+    "jsonld": "description",
+    "tokens": {
+      "S1": {
+        "text": "Definitive lecture on Nok culture terracotta sculptures by Professor Peter Breunig, hosted by Yale University Art Gallery.",
+        "words": {
+          "W1": "Definitive",
+          "W2": "lecture",
+          "W3": "on",
+          "W4": "Nok",
+          "W5": "culture",
+          "W6": "terracotta",
+          "W7": "sculptures",
+          "W8": "by",
+          "W9": "Professor",
+          "W10": "Peter",
+          "W11": "Breunig",
+          "W12": ",",
+          "W13": "hosted",
+          "W14": "by",
+          "W15": "Yale",
+          "W16": "University",
+          "W17": "Art",
+          "W18": "Gallery",
+          "W19": "."
+        }
+      },
+      "S2": {
+        "text": "Covers excavation methodologies, cultural context, and artistic significance.",
+        "words": {
+          "W1": "Covers",
+          "W2": "excavation",
+          "W3": "methodologies",
+          "W4": ",",
+          "W5": "cultural",
+          "W6": "context",
+          "W7": ",",
+          "W8": "and",
+          "W9": "artistic",
+          "W10": "significance",
+          "W11": "."
+        }
+      }
+    }
+  },
+  "BLOCK_123": {
+    "jsonld": "duration",
+    "tokens": {
+      "S1": {
+        "text": "PT1H20M25S",
+        "words": {
+          "W1": "PT1H20M25S"
+        }
+      }
+    }
+  },
+  "BLOCK_124": {
+    "jsonld": "name",
+    "tokens": {
+      "S1": {
+        "text": "Yale University Art Gallery",
+        "words": {
+          "W1": "Yale",
+          "W2": "University",
+          "W3": "Art",
+          "W4": "Gallery"
+        }
+      }
+    }
+  },
+  "BLOCK_125": {
+    "jsonld": "name",
+    "tokens": {
+      "S1": {
+        "text": "Peter Breunig",
+        "words": {
+          "W1": "Peter",
+          "W2": "Breunig"
+        }
+      }
+    }
+  },
+  "BLOCK_126": {
+    "jsonld": "name",
+    "tokens": {
+      "S1": {
+        "text": "Goethe University Frankfurt",
+        "words": {
+          "W1": "Goethe",
+          "W2": "University",
+          "W3": "Frankfurt"
+        }
+      }
+    }
+  }
+}
