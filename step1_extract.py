@@ -184,8 +184,8 @@ def extract_translatable_html(input_path, lang_code):
         prop = meta.get("property", "").lower()
         content = meta.get("content", "").strip()
         
-        if name in EXCLUDED_META_NAMES or 
-        prop in EXCLUDED_META_PROPERTIES:
+        if (name in EXCLUDED_META_NAMES or 
+            prop in EXCLUDED_META_PROPERTIES):
             continue
 
         if content and (name in SEO_META_FIELDS["name"] or prop in SEO_META_FIELDS["property"]):
