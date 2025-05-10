@@ -1,11 +1,14 @@
 import os
 import sys
 import json
+import uuid
 import spacy
 from bs4 import BeautifulSoup, Comment
 
+# Load spaCy English model
 nlp = spacy.load("en_core_web_sm")
 
+# Define translatable tags and attributes
 TRANSLATABLE_TAGS = {
     "p", "span", "div", "h1", "h2", "h3", "h4", "h5", "h6",
     "label", "button", "li", "td", "th", "a", "strong", "em",
@@ -38,119 +41,108 @@ def is_translatable_text(tag):
         tag.strip()
     )
 
-def is_lexical_content(text):
-    doc = nlp(text)
-    return any(token.is_alpha or token.is_digit for token in doc if not token.is_space)
-
-def flatten_and_structure(text, block_id, sentence_index):
+def flatten_sentence_tokens(text, block_id, sentence_index):
     flat_map = {}
-    structured = {}
-
     sentence_id = f"{block_id}_S{sentence_index}"
     flat_map[sentence_id] = text
     doc = nlp(text)
-
-    tokens = [token for token in doc if not token.is_space]
-    joined = " ".join([token.text for token in tokens])
-    if len(tokens) <= 3 and joined == text:
-        structured["text"] = text
-        structured["words"] = [{"id": "W1", "text": text}]
-        return flat_map, structured
-
-    structured["text"] = text
-    structured["words"] = []
-    for i, token in enumerate(tokens):
-        word_id = f"W{i+1}"
-        flat_map[f"{sentence_id}_{word_id}"] = token.text
-        structured["words"].append({
-            "id": word_id,
-            "text": token.text,
-            "lemma": token.lemma_,
-            "pos": token.pos_,
-            "dep": token.dep_
-        })
-
-    return flat_map, structured
-
-def process_json_ld(obj, block_id, flat_token_map, structured_map, sentence_index=1):
-    if isinstance(obj, dict):
-        for key, value in obj.items():
-            obj[key], sentence_index = process_json_ld(value, block_id, flat_token_map, structured_map, sentence_index)
-    elif isinstance(obj, list):
-        for i in range(len(obj)):
-            obj[i], sentence_index = process_json_ld(obj[i], block_id, flat_token_map, structured_map, sentence_index)
-    elif isinstance(obj, str) and is_lexical_content(obj):
-        flat_map, structured = flatten_and_structure(obj, block_id, sentence_index)
-        flat_token_map.update(flat_map)
-        if block_id not in structured_map:
-            structured_map[block_id] = {"tag": "script[type=application/ld+json]", "sentences": {}}
-        structured_map[block_id]["sentences"][f"S{sentence_index}"] = structured
-        return f"__{block_id}_S{sentence_index}__", sentence_index + 1
-    return obj, sentence_index
+    for i, token in enumerate(doc):
+        if not token.is_space:
+            word_key = f"{sentence_id}_W{i+1}"
+            flat_map[word_key] = token.text
+    return flat_map
 
 def extract_translatable_html(input_path):
     with open(input_path, "r", encoding="utf-8") as f:
         soup = BeautifulSoup(f, "html.parser")
 
     flat_token_map = {}
-    structured_map = {}
     block_count = 0
 
-    # 1. Extract normal visible text
+    # Text nodes in elements
     for element in soup.find_all(string=True):
         if is_translatable_text(element):
+            block_count += 1
+            block_id = f"BLOCK_{block_count}"
             doc = nlp(element.strip())
-            sentences = [sent.text.strip() for sent in doc.sents if is_lexical_content(sent.text.strip())]
-            if not sentences:
-                continue
-
             sentence_index = 1
-            token_placeholders = []
-            temp_flat_map = {}
-            temp_structured = {}
-            for sentence in sentences:
-                flat_map, structured = flatten_and_structure(sentence, f"BLOCK_{block_count+1}", sentence_index)
-                temp_flat_map.update(flat_map)
-                temp_structured[f"S{sentence_index}"] = structured
-                token_placeholders.append(f"__BLOCK_{block_count+1}_S{sentence_index}__")
-                sentence_index += 1
+            for sent in doc.sents:
+                sentence = sent.text.strip()
+                if sentence:
+                    flat_map = flatten_sentence_tokens(sentence, block_id, sentence_index)
+                    flat_token_map.update(flat_map)
+                    sentence_index += 1
+            # Replace element with tokens
+            element.replace_with(" ".join([f"__{block_id}_S{i}__" for i in range(1, sentence_index)]))
 
-            if token_placeholders:
-                block_count += 1
-                block_id = f"BLOCK_{block_count}"
-                flat_token_map.update(temp_flat_map)
-                structured_map[block_id] = {
-                    "tag": element.parent.name,
-                    "sentences": temp_structured
-                }
-                element.replace_with(" ".join(token_placeholders))
+    # Translatable attributes
+    for tag in soup.find_all():
+        for attr in TRANSLATABLE_ATTRS:
+            if attr in tag.attrs and isinstance(tag[attr], str):
+                value = tag[attr].strip()
+                if value:
+                    block_count += 1
+                    block_id = f"BLOCK_{block_count}"
+                    doc = nlp(value)
+                    sentence_index = 1
+                    tokens = []
+                    for sent in doc.sents:
+                        sentence = sent.text.strip()
+                        if sentence:
+                            flat_map = flatten_sentence_tokens(sentence, block_id, sentence_index)
+                            flat_token_map.update(flat_map)
+                            tokens.append(f"__{block_id}_S{sentence_index}__")
+                            sentence_index += 1
+                    tag[attr] = " ".join(tokens)
 
-    # 2. Extract from application/ld+json blocks
-    for script in soup.find_all("script", type="application/ld+json"):
-        try:
-            json_data = json.loads(script.string)
-        except Exception:
-            continue  # skip if malformed
+    # SEO meta content
+    for meta in soup.find_all("meta"):
+        name = meta.get("name", "").lower()
+        prop = meta.get("property", "").lower()
+        content = meta.get("content", "").strip()
+        if content and (name in SEO_META_FIELDS["name"] or prop in SEO_META_FIELDS["property"]):
+            block_count += 1
+            block_id = f"BLOCK_{block_count}"
+            doc = nlp(content)
+            sentence_index = 1
+            tokens = []
+            for sent in doc.sents:
+                sentence = sent.text.strip()
+                if sentence:
+                    flat_map = flatten_sentence_tokens(sentence, block_id, sentence_index)
+                    flat_token_map.update(flat_map)
+                    tokens.append(f"__{block_id}_S{sentence_index}__")
+                    sentence_index += 1
+            meta["content"] = " ".join(tokens)
+
+    # Title
+    title_tag = soup.title
+    if title_tag and title_tag.string and title_tag.string.strip():
         block_count += 1
         block_id = f"BLOCK_{block_count}"
-        processed_data, _ = process_json_ld(json_data, block_id, flat_token_map, structured_map)
-        script.string.replace_with(json.dumps(processed_data, ensure_ascii=False, indent=2))
-    
-    # 3. Write output files
+        doc = nlp(title_tag.string.strip())
+        sentence_index = 1
+        tokens = []
+        for sent in doc.sents:
+            sentence = sent.text.strip()
+            if sentence:
+                flat_map = flatten_sentence_tokens(sentence, block_id, sentence_index)
+                flat_token_map.update(flat_map)
+                tokens.append(f"__{block_id}_S{sentence_index}__")
+                sentence_index += 1
+        title_tag.string.replace_with(" ".join(tokens))
+
     with open("translatable_flat.json", "w", encoding="utf-8") as f:
         json.dump(flat_token_map, f, indent=2, ensure_ascii=False)
-
-    with open("translatable_structured.json", "w", encoding="utf-8") as f:
-        json.dump(structured_map, f, indent=2, ensure_ascii=False)
 
     with open("non_translatable.html", "w", encoding="utf-8") as f:
         f.write(str(soup))
 
-    print("✅ Step 1 complete: extracted text, including from JSON-LD.")
+    print("✅ Step 1 complete: created translatable_flat.json and non_translatable.html")
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python step1_extract.py <input_file>")
+        print("Usage: python translate_extract_step1_flattened.py <input_file>")
         sys.exit(1)
 
     extract_translatable_html(sys.argv[1])
