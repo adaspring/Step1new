@@ -136,8 +136,7 @@ def is_translatable_text(tag):
     default_translatable = (
         parent_tag in TRANSLATABLE_TAGS and
         parent_tag not in SKIP_PARENTS and
-        not isinstance(tag, Comment)
-    
+        not isinstance(tag, Comment))
     # Explicit "yes" overrides default logic
     if translate_override == "yes":
         return True  # Force allow if parent says "yes"
