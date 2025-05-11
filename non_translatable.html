@@ -1,0 +1,28 @@
+<!-- Additional Test Cases for translate= attribute logic --><!-- Case 1: Parent translate="yes" with child translate="no" → NOT translated --><html><head></head><body><div translate="yes">
+  <p translate="no">Case 1: This should NOT be translated</p>
+</div>
+
+<!-- Case 2: Parent translate="no" with child translate="yes" → Translated -->
+<div translate="no">
+  <p translate="yes">BLOCK_1_S1</p>
+</div>
+
+<!-- Case 3: Grandparent translate="no" with parent translate="yes" → Translated -->
+<div translate="no">
+  <div translate="yes">
+    <p>BLOCK_2_S1</p>
+  </div>
+</div>
+
+<!-- Case 4: Parent translate="yes" and two children, one with no override, one with translate="no" -->
+<div translate="yes">
+  <p>BLOCK_3_S1</p>
+  <p translate="no">Case 4b: This should NOT be translated</p>
+</div>
+
+
+
+<p>E = mc²</p>          → Skipped (no lexical context)
+   <p>BLOCK_4_S1</p> → Kept (lexical words exist)
+   <div class="math">x²</div> → Skipped (math markup)
+</body></html>
