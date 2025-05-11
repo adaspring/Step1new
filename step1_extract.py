@@ -170,11 +170,11 @@ def extract_translatable_html(input_path, lang_code):
     block_counter = 1
 
     
-elements = list(soup.find_all(string=True))  # Fix 1: Precompute elements
-for element in elements:
-    if is_translatable_text(element):
-        text = element.strip()
-        if not text:
+   elements = list(soup.find_all(string=True))  # Fix 1: Precompute elements
+   for element in elements:
+       if is_translatable_text(element):
+          text = element.strip()
+          if not text:
             continue
 
         structured, flattened, sentence_tokens = process_text_block(f"BLOCK_{block_counter}", text, nlp)
