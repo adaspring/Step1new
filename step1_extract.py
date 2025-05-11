@@ -5,6 +5,7 @@ import uuid
 import spacy
 import argparse
 import subprocess
+import re
 from bs4 import BeautifulSoup, Comment, NavigableString
 
 SPACY_MODELS = {
@@ -103,50 +104,45 @@ def load_spacy_model(lang_code):
 
 
 def is_translatable_text(tag):
+    """Determine if the given tag's text should be translated."""
     # Check translate attribute inheritance hierarchy
     current_element = tag.parent
     translate_override = None
     
     while current_element is not None:
         current_translate = current_element.get("translate", "").lower()
-        
         if current_translate in {"yes", "no"}:
             translate_override = current_translate
             break  # Closest explicit declaration wins
         current_element = current_element.parent
 
-        text = tag.strip()
-        if not text:
-            return False
+    # Check text content after parent checks
+    text = tag.strip()
+    if not text:
+        return False
 
-    # Math and symbol skipping
-        if is_pure_symbol(text) or 
-   is_math_fragment(text) or 
-   has_math_html_markup(tag):
-            return False
+    # Math and symbol skipping (with proper line continuation)
+    if (is_pure_symbol(text) or 
+        is_math_fragment(text) or 
+        has_math_html_markup(tag)):
+        return False
 
     # If any parent says "no", block translation
     if translate_override == "no":
         return False
 
     # If no explicit "yes", check default translatability
+    parent_tag = tag.parent.name if tag.parent else None
     default_translatable = (
-        tag.parent.name in TRANSLATABLE_TAGS and
-        tag.parent.name not in SKIP_PARENTS and
-        not isinstance(tag, Comment) and
-        tag.strip()
-    )
-
+        parent_tag in TRANSLATABLE_TAGS and
+        parent_tag not in SKIP_PARENTS and
+        not isinstance(tag, Comment)
+    
     # Explicit "yes" overrides default logic
     if translate_override == "yes":
-        return default_translatable or True  # Force allow if parent says "yes"
+        return True  # Force allow if parent says "yes"
         
     return default_translatable
-
-
-
-
-
 
 
 def process_text_block(block_id, text, nlp):
