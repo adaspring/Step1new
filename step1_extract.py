@@ -68,7 +68,7 @@ def is_pure_symbol(text):
     return not re.search(r'[A-Za-z]', text)
 
 def has_real_words(text):
-    return re.search(r'\b\p{L}{3,}\b', text) is not None
+       return re.search(r'\b\p{L}{3,}\b', text, re.UNICODE) is not None
 
 def has_math_html_markup(element):
     """Check for math-specific HTML markup (MathML, LaTeX, etc.)."""
@@ -88,8 +88,7 @@ def is_math_fragment(text):
         (\$.*?\$|\\\(.*?\\\))      # LaTeX "$E=mc^2$"
     '''
     has_math = re.search(equation_pattern, text, re.VERBOSE)
-    return has_math and not 
-    has_real_words(text)
+    return (has_math and not has_real_words(text))  # <-- Fixed line continuation
 
 
 def load_spacy_model(lang_code):
