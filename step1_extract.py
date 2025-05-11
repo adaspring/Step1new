@@ -170,14 +170,18 @@ def extract_translatable_html(input_path, lang_code):
     block_counter = 1
 
     for element in soup.find_all(string=True):
-        if is_translatable_text(element):
-            text = element.strip()
+    if is_translatable_text(element):
+        text = element.strip()
+        if not text:
+            continue  # skip empty strings
+
+        structured, flattened, sentence_tokens = process_text_block(f"BLOCK_{block_counter}", text, nlp)
+
+        if sentence_tokens:  # Only count it if something is extracted
             block_id = f"BLOCK_{block_counter}"
-            structured, flattened, sentence_tokens = process_text_block(block_id, text, nlp)
             structured_output[block_id] = {"tag": element.parent.name, "tokens": structured}
             flattened_output.update(flattened)
-            if sentence_tokens:
-                element.replace_with(sentence_tokens[0][0])
+            element.replace_with(sentence_tokens[0][0])
             block_counter += 1
 
     for tag in soup.find_all():
