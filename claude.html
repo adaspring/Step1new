@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example Title</title>
+  
+  <!-- SEO meta tags - Complete coverage -->
+  <meta name="description" content="This is a description.">
+  <meta name="keywords" content="test, html, translation">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Test Author">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4285f4">
+  
+  <!-- Open Graph and Twitter tags -->
+  <meta property="og:title" content="Open Graph Title">
+  <meta property="og:description" content="Open Graph Description">
+  <meta property="og:image" content="https://example.com/image.jpg">
+  <meta property="og:url" content="https://example.com">
+  <meta property="twitter:title" content="Twitter Card Title">
+  <meta property="twitter:description" content="Twitter Card Description">
+  <meta property="twitter:image" content="https://example.com/twitter-image.jpg">
+  <meta property="twitter:card" content="summary_large_image">
+</head>
+<body>
+
+<!-- HTML Comment Test -->
+<!-- This is a comment that should be skipped -->
+
+<!-- Translatable tags -->
+<p>This is a paragraph.</p>
+<span>This is a span.</span>
+<div>This is a div.</div>
+<h1>Main Heading</h1>
+<h2>Subheading</h2>
+<h3>Sub-subheading</h3>
+<h4>Sub-sub-subheading</h4>
+<h5>5th level heading</h5>
+<h6>6th level heading</h6>
+<label>Label Text</label>
+<button>Click me</button>
+<li>List item</li>
+<td>Table cell</td>
+<th>Table header</th>
+<a href="#">Link text</a>
+<strong>Strong text</strong>
+<em>Emphasized text</em>
+<b>Bold text</b>
+<i>Italic text</i>
+<caption>Caption text</caption>
+<summary>Summary text</summary>
+<figcaption>Figure caption</figcaption>
+<option>Option 1</option>
+<optgroup label="Group Label">Group</optgroup>
+<legend>Legend text</legend>
+<mark>Marked text</mark>
+<output>Output value</output>
+<details>Details here</details>
+<time datetime="2024-01-01">January 1, 2024</time>
+
+<!-- Complex nested elements -->
+<div>
+  <p>This paragraph has <span>nested <strong>elements</strong> inside</span> it.</p>
+  <div>Multiple <em>sentences</em>. Second sentence with <b>formatting</b>. Third one.</div>
+</div>
+
+<!-- Empty or whitespace-only elements -->
+<p></p>
+<div> </div>
+<span>
+</span>
+
+<!-- Translatable attributes -->
+<img src="img.jpg" alt="Image description" title="Image title" data-caption="Caption for image">
+<input placeholder="Enter name" aria-label="Name input" aria-placeholder="Placeholder text" data-label="Name field">
+<button aria-valuetext="Button value" aria-roledescription="Primary action">Button with attributes</button>
+<div data-i18n="Translation key" data-tooltip="Tooltip text" data-title="Custom title" data-error="Error message">Data attributes</div>
+
+<!-- Elements with blocked attributes (should not extract these) -->
+<div class="not-translatable" id="block-me" style="color: red;" lang="fr" rel="nofollow" type="text" dir="rtl" charset="utf-8" bgcolor="white" name="test" content="test content" align="center" autocomplete="off" download href="#" src="image.jpg">Blocked by attribute</div>
+
+<!-- Skipped parent tags -->
+<script>var example = "This should be skipped";</script>
+<style>.class { content: "This should be skipped too"; }</style>
+<code>Some inline code</code>
+<pre>Preformatted text</pre>
+<noscript>This is a noscript block</noscript>
+<template><div>Template content</div></template>
+<svg><text>SVG text</text></svg>
+<canvas>Your browser does not support canvas</canvas>
+<frameset><frame src="frame_a.htm"></frameset>
+<noframes>This browser does not support frames.</noframes>
+<object data="movie.swf">Object content</object>
+<embed src="file.swf">
+<base href="https://example.com/">
+<map name="examplemap">Map content</map>
+
+<!-- Translate attribute edge cases -->
+<div translate="no">
+  <p>This should NOT be translated.</p>
+</div>
+
+<div translate="yes">
+  <span>This SHOULD be translated.</span>
+</div>
+
+<!-- Case 1: Parent translate="yes" with child translate="no" → NOT translated -->
+<div translate="yes">
+  <p translate="no">Case 1: This should NOT be translated</p>
+</div>
+
+<!-- Case 2: Parent translate="no" with child translate="yes" → Translated -->
+<div translate="no">
+  <p translate="yes">Case 2: This SHOULD be translated</p>
+</div>
+
+<!-- Case 3: Grandparent translate="no" with parent translate="yes" → Translated -->
+<div translate="no">
+  <div translate="yes">
+    <p>Case 3: This SHOULD be translated</p>
+  </div>
+</div>
+
+<!-- Case 4: Parent translate="yes" and two children, one with no override, one with translate="no" -->
+<div translate="yes">
+  <p>Case 4a: This SHOULD be translated</p>
+  <p translate="no">Case 4b: This should NOT be translated</p>
+</div>
+
+<!-- Case 5: Deep nesting with translate value changes -->
+<div translate="no">
+  <div>
+    <p>Case 5a: This should NOT be translated (inherits from grandparent)</p>
+    <div translate="yes">
+      <p>Case 5b: This SHOULD be translated</p>
+      <span translate="no">Case 5c: This should NOT be translated</span>
+    </div>
+  </div>
+</div>
+
+<!-- Case 6: Invalid translate values (should default to normal behavior) -->
+<div translate="maybe">
+  <p>Case 6: This should follow normal behavior (translate="maybe" is invalid)</p>
+</div>
+
+<!-- Malformed HTML -->
+<p>Unclosed paragraph
+<div>Nested inside unclosed paragraph</div>
+
+<!-- Multiple JSON-LD blocks -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Video Title",
+  "description": "This is a video about something.",
+  "uploadDate": "2024-05-11",
+  "thumbnailUrl": "https://example.com/thumbnail.jpg",
+  "about": "Subject of video",
+  "embedUrl": "https://example.com/embed.mp4"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Company Name",
+  "alternateName": "Brand Alias",
+  "description": "Company description with multiple sentences. This is the second sentence.",
+  "url": "https://example.com",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-800-555-1212",
+    "contactType": "customer service",
+    "name": "Customer Support",
+    "description": "24/7 customer support"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "ListItem",
+    "position": 1,
+    "name": "First item name",
+    "description": "First item description"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Second item name",
+    "description": "Second item description"
+  }
+]
+</script>
+
+<!-- Invalid JSON-LD (to test error handling) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "name": "Breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem"
+      "position": 1,
+      "name": "Home"
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
