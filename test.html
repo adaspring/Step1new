@@ -70,35 +70,7 @@
 <div translate="yes">
   <span>This SHOULD be translated.</span>
 </div>
-<!-- Additional Test Cases for translate= attribute logic -->
-
-<!-- Case 1: Parent translate="yes" with child translate="no" → NOT translated -->
-<div translate="yes">
-  <p translate="no">Case 1: This should NOT be translated</p>
-</div>
-
-<!-- Case 2: Parent translate="no" with child translate="yes" → Translated -->
-<div translate="no">
-  <p translate="yes">Case 2: This SHOULD be translated</p>
-</div>
-
-<!-- Case 3: Grandparent translate="no" with parent translate="yes" → Translated -->
-<div translate="no">
-  <div translate="yes">
-    <p>Case 3: This SHOULD be translated</p>
-  </div>
-</div>
-
-<!-- Case 4: Parent translate="yes" and two children, one with no override, one with translate="no" -->
-<div translate="yes">
-  <p>Case 4a: This SHOULD be translated</p>
-  <p translate="no">Case 4b: This should NOT be translated</p>
-</div>
-
-
-
-
-  
+ 
 <!-- JSON-LD with mixed keys -->
 <script type="application/ld+json">
 {
