@@ -5,7 +5,7 @@ import uuid
 import spacy
 import argparse
 import subprocess
-import re
+import regex as re
 from bs4 import BeautifulSoup, Comment, NavigableString
 
 SPACY_MODELS = {
@@ -67,6 +67,9 @@ def is_pure_symbol(text):
     """Skip text with no alphabetic characters."""
     return not re.search(r'[A-Za-z]', text)
 
+def has_real_words(text):
+    return re.search(r'\b\p{L}{3,}\b', text) is not None
+
 def has_math_html_markup(element):
     """Check for math-specific HTML markup (MathML, LaTeX, etc.)."""
     parent = element.parent
@@ -85,8 +88,9 @@ def is_math_fragment(text):
         (\$.*?\$|\\\(.*?\\\))      # LaTeX "$E=mc^2$"
     '''
     has_math = re.search(equation_pattern, text, re.VERBOSE)
-    has_lexical = re.search(r'\b[a-zA-Z]{3,}\b', text)
-    return has_math and not has_lexical
+    return has_math and not 
+    has_real_words(text)
+
 
 def load_spacy_model(lang_code):
     if lang_code not in SPACY_MODELS:
