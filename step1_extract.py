@@ -68,7 +68,7 @@ def is_pure_symbol(text):
     return not re.search(r'[A-Za-z]', text)
 
 def has_real_words(text):
-       return re.search(r'\b\p{L}{3,}\b', text, re.UNICODE) is not None
+    return re.search(r'\b\p{L}{3,}\b', text, re.UNICODE) is not None
 
 def has_math_html_markup(element):
     """Check for math-specific HTML markup (MathML, LaTeX, etc.)."""
