@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>BLOCK_38_S1</title>
+  <title>BLOCK_48_S1</title>
   <!-- SEO meta tags (included and excluded) -->
-  <meta content="BLOCK_36_S1" name="description"/>
+  <meta content="BLOCK_46_S1" name="description"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="BLOCK_37_S1" property="og:title"/>
+  <meta content="BLOCK_47_S1" property="og:title"/>
   <meta content="https://example.com" property="og:url"/>
 </head>
 <body>
@@ -39,8 +39,8 @@ Caption text
 <time datetime="2024-01-01">BLOCK_23_S1</time>
 
 <!-- Translatable attributes -->
-<img alt="BLOCK_29_S1" data-caption="BLOCK_30_S1" src="img.jpg" title="BLOCK_31_S1"/>
-<input aria-label="BLOCK_35_S1" aria-placeholder="BLOCK_34_S1" data-label="BLOCK_33_S1" placeholder="BLOCK_32_S1"/>
+<img alt="BLOCK_39_S1" data-caption="BLOCK_40_S1" src="img.jpg" title="BLOCK_41_S1"/>
+<input aria-label="BLOCK_42_S1" aria-placeholder="BLOCK_44_S1" data-label="BLOCK_45_S1" placeholder="BLOCK_43_S1"/>
 
 <!-- Elements with blocked attributes (should not extract these) -->
 <div class="not-translatable" id="block-me" style="color: red;">BLOCK_24_S1</div>
@@ -69,16 +69,44 @@ Caption text
 <div translate="yes">
   <span>BLOCK_27_S1</span>
 </div>
+<!-- Additional Test Cases for translate= attribute logic -->
 
+<!-- Case 1: Parent translate="yes" with child translate="no" → NOT translated -->
+<div translate="yes">
+  <p translate="no">Case 1: This should NOT be translated</p>
+</div>
+
+<!-- Case 2: Parent translate="no" with child translate="yes" → Translated -->
+<div translate="no">
+  <p translate="yes">BLOCK_31_S1</p>
+</div>
+
+<!-- Case 3: Grandparent translate="no" with parent translate="yes" → Translated -->
+<div translate="no">
+  <div translate="yes">
+    <p>BLOCK_33_S1</p>
+  </div>
+</div>
+
+<!-- Case 4: Parent translate="yes" and two children, one with no override, one with translate="no" -->
+<div translate="yes">
+  <p>BLOCK_36_S1</p>
+  <p translate="no">Case 4b: This should NOT be translated</p>
+</div>
+
+
+
+
+  
 <!-- JSON-LD with mixed keys -->
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  "name": "BLOCK_39_S1",
-  "description": "BLOCK_40_S1",
+  "name": "BLOCK_49_S1",
+  "description": "BLOCK_50_S1",
   "uploadDate": "2024-05-11",
   "thumbnailUrl": "https://example.com/thumbnail.jpg",
-  "about": "BLOCK_41_S1",
+  "about": "BLOCK_51_S1",
   "embedUrl": "https://example.com/embed.mp4"
 }</script>
 
