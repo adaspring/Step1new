@@ -5,7 +5,7 @@ import uuid
 import spacy
 import argparse
 import subprocess
-from bs4 import BeautifulSoup, Comment
+from bs4 import BeautifulSoup, Comment, NavigableString
 
 SPACY_MODELS = {
     "en": "en_core_web_sm",
@@ -169,19 +169,28 @@ def extract_translatable_html(input_path, lang_code):
     flattened_output = {}
     block_counter = 1
 
-    for element in soup.find_all(string=True):
+    
+elements = list(soup.find_all(string=True))  # Fix 1: Precompute elements
+for element in elements:
     if is_translatable_text(element):
         text = element.strip()
         if not text:
-            continue  # skip empty strings
+            continue
 
         structured, flattened, sentence_tokens = process_text_block(f"BLOCK_{block_counter}", text, nlp)
 
-        if sentence_tokens:  # Only count it if something is extracted
+        if sentence_tokens:
             block_id = f"BLOCK_{block_counter}"
-            structured_output[block_id] = {"tag": element.parent.name, "tokens": structured}
+            parent_tag = element.parent.name if element.parent else "no_parent"  # Fix 2: Parent check
+            structured_output[block_id] = {"tag": parent_tag, "tokens": structured}
             flattened_output.update(flattened)
-            element.replace_with(sentence_tokens[0][0])
+            
+            # Fix 3: Safe replacement
+            replacement_content = sentence_tokens[0][0]
+            if not isinstance(replacement_content, NavigableString):
+                replacement_content = NavigableString(str(replacement_content))
+            element.replace_with(replacement_content)
+            
             block_counter += 1
 
     for tag in soup.find_all():
