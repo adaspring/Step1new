@@ -61,6 +61,32 @@ EXCLUDED_META_NAMES = {"viewport"}
 EXCLUDED_META_PROPERTIES = {"og:url"}
 
 
+# Helper Functions -------------------------------------------------
+def is_pure_symbol(text):
+    """Skip text with no alphabetic characters."""
+    return not re.search(r'[A-Za-z]', text)
+
+def has_math_html_markup(element):
+    """Check for math-specific HTML markup (MathML, LaTeX, etc.)."""
+    parent = element.parent
+    return (
+        parent.name == 'math' or 
+        re.search(r'\$.*?\$|\\\(.*?\\\)', parent.text) or
+        any(cls in parent.get('class', []) for cls in ['math', 'equation', 'formula'])
+    )
+
+def is_math_fragment(text):
+    """Check if text is a math formula without lexical words."""
+    equation_pattern = r'''
+        (\w+\s*[=+\-*/^]\s*\S+)|  # Equations like "x = y+1"
+        (\d+[\+\-\*/]\d+)|         # Arithmetic "2+3"
+        ([a-zA-Z]+\^?\d+)|         # Exponents "x²"
+        (\$.*?\$|\\\(.*?\\\))      # LaTeX "$E=mc^2$"
+    '''
+    has_math = re.search(equation_pattern, text, re.VERBOSE)
+    has_lexical = re.search(r'[A-Za-z]', text)
+    return has_math and not has_lexical
+
 def load_spacy_model(lang_code):
     if lang_code not in SPACY_MODELS:
         print(f"Unsupported language '{lang_code}'. Choose from: {', '.join(SPACY_MODELS)}.")
@@ -106,6 +132,36 @@ def is_translatable_text(tag):
         return default_translatable or True  # Force allow if parent says "yes"
         
     return default_translatable
+
+# Updated Translatability Check -------------------------------------
+def is_translatable_text(element):
+    text = element.strip()
+    if not text:
+        return False
+
+    # Skip parents like <script>, <style>, etc.
+    if element.parent.name in SKIP_PARENTS:
+        return False
+
+    # Skip pure symbols (e.g., ">", "***")
+    if is_pure_symbol(text):
+        return False
+
+    # Skip math fragments or HTML-marked math
+    if is_math_fragment(text) or has_math_html_markup(element):
+        return False
+
+    # Original logic for translatability (check parents/tags)
+    return (
+        element.parent.name in TRANSLATABLE_TAGS and
+        not isinstance(element, Comment) and
+        element.parent.name not in SKIP_PARENTS
+    )
+
+
+
+
+
 
 
 def process_text_block(block_id, text, nlp):
