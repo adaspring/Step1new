@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8"/>
-  <title>BLOCK_39_S1</title>
+  <title>BLOCK_40_S1</title>
   <!-- SEO meta tags (included and excluded) -->
-  <meta content="BLOCK_37_S1" name="description"/>
+  <meta content="BLOCK_38_S1" name="description"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="BLOCK_38_S1" property="og:title"/>
+  <meta content="BLOCK_39_S1" property="og:title"/>
   <meta content="https://example.com" property="og:url"/>
 </head>
 <body>
@@ -39,8 +39,8 @@ Caption text
 <time datetime="2024-01-01">BLOCK_23_S1</time>
 
 <!-- Translatable attributes -->
-<img alt="BLOCK_30_S1" data-caption="BLOCK_32_S1" src="img.jpg" title="BLOCK_31_S1"/>
-<input aria-label="BLOCK_33_S1" aria-placeholder="BLOCK_34_S1" data-label="BLOCK_36_S1" placeholder="BLOCK_35_S1"/>
+<img alt="BLOCK_32_S1" data-caption="BLOCK_31_S1" src="img.jpg" title="BLOCK_33_S1"/>
+<input aria-label="BLOCK_34_S1" aria-placeholder="BLOCK_37_S1" data-label="BLOCK_36_S1" placeholder="BLOCK_35_S1"/>
 
 <!-- Elements with blocked attributes (should not extract these) -->
 <div class="not-translatable" id="block-me" style="color: red;">BLOCK_24_S1</div>
@@ -95,7 +95,9 @@ Caption text
   <p translate="no">Case 4b: This should NOT be translated</p>
 </div>
 
-
+<p>E = mc²</p>  → Skipped (no lexical context)
+   <p>BLOCK_30_S1</p> → Kept (lexical words exist)
+   <div class="math">x²</div> → Skipped (math markup)
 
 
   
@@ -103,11 +105,11 @@ Caption text
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "VideoObject",
-  "name": "BLOCK_40_S1",
-  "description": "BLOCK_41_S1",
+  "name": "BLOCK_41_S1",
+  "description": "BLOCK_42_S1",
   "uploadDate": "2024-05-11",
   "thumbnailUrl": "https://example.com/thumbnail.jpg",
-  "about": "BLOCK_42_S1",
+  "about": "BLOCK_43_S1",
   "embedUrl": "https://example.com/embed.mp4"
 }</script>
 
