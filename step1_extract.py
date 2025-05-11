@@ -78,7 +78,7 @@ def is_symbol_heavy(text):
     symbol_count = len(re.findall(r'[\p{P}\p{S}\d_]', text))
 
     # Consider it symbol-heavy if symbols greatly outweigh real words
-    return word_count == 0 or symbol_count > 3 * word_count
+    return word_count == 0 or symbol_count > 4 * word_count
 
 
 
