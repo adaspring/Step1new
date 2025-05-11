@@ -115,6 +115,16 @@ def is_translatable_text(tag):
             break  # Closest explicit declaration wins
         current_element = current_element.parent
 
+        text = tag.strip()
+        if not text:
+            return False
+
+    # Math and symbol skipping
+        if is_pure_symbol(text) or 
+   is_math_fragment(text) or 
+   has_math_html_markup(tag):
+            return False
+
     # If any parent says "no", block translation
     if translate_override == "no":
         return False
@@ -132,31 +142,6 @@ def is_translatable_text(tag):
         return default_translatable or True  # Force allow if parent says "yes"
         
     return default_translatable
-
-# Updated Translatability Check -------------------------------------
-def is_translatable_text(element):
-    text = element.strip()
-    if not text:
-        return False
-
-    # Skip parents like <script>, <style>, etc.
-    if element.parent.name in SKIP_PARENTS:
-        return False
-
-    # Skip pure symbols (e.g., ">", "***")
-    if is_pure_symbol(text):
-        return False
-
-    # Skip math fragments or HTML-marked math
-    if is_math_fragment(text) or has_math_html_markup(element):
-        return False
-
-    # Original logic for translatability (check parents/tags)
-    return (
-        element.parent.name in TRANSLATABLE_TAGS and
-        not isinstance(element, Comment) and
-        element.parent.name not in SKIP_PARENTS
-    )
 
 
 
