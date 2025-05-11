@@ -67,6 +67,21 @@ def is_pure_symbol(text):
     """Skip text with no alphabetic characters."""
     return not re.search(r'[A-Za-z]', text)
 
+def is_symbol_heavy(text):
+    """Detect if a string contains mostly symbols and very few real words (multilingual)."""
+
+    # Count all Unicode-aware words of length 3 or more
+    words = re.findall(r'\b\p{L}{3,}\b', text)
+    word_count = len(words)
+
+    # Count symbols, digits, and underscores
+    symbol_count = len(re.findall(r'[\p{P}\p{S}\d_]', text))
+
+    # Consider it symbol-heavy if symbols greatly outweigh real words
+    return word_count == 0 or symbol_count > 3 * word_count
+
+
+
 def has_real_words(text):
     return re.search(r'\b\p{L}{3,}\b', text, re.UNICODE) is not None
 
@@ -88,7 +103,7 @@ def is_math_fragment(text):
         (\$.*?\$|\\\(.*?\\\))      # LaTeX "$E=mc^2$"
     '''
     has_math = re.search(equation_pattern, text, re.VERBOSE)
-    return (has_math and not has_real_words(text))  # <-- Fixed line continuation
+    return (has_math or is_symbol_heavy(text) and not has_real_words(text))  # <-- Fixed line continuation
 
 
 def load_spacy_model(lang_code):
