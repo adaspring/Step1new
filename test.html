@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example Title</title>
+  <!-- SEO meta tags (included and excluded) -->
+  <meta name="description" content="This is a description.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Open Graph Title">
+  <meta property="og:url" content="https://example.com">
+</head>
+<body>
+
+<!-- Translatable tags -->
+<p>This is a paragraph.</p>
+<span>This is a span.</span>
+<div>This is a div.</div>
+<h1>Main Heading</h1>
+<h2>Subheading</h2>
+<h3>Sub-subheading</h3>
+<label>Label Text</label>
+<button>Click me</button>
+<li>List item</li>
+<td>Table cell</td>
+<th>Table header</th>
+<a href="#">Link text</a>
+<strong>Strong text</strong>
+<em>Emphasized text</em>
+<b>Bold text</b>
+<i>Italic text</i>
+<caption>Caption text</caption>
+<summary>Summary text</summary>
+<figcaption>Figure caption</figcaption>
+<option>Option 1</option>
+<optgroup label="Group Label">Group</optgroup>
+<legend>Legend text</legend>
+<mark>Marked text</mark>
+<output>Output value</output>
+<details>Details here</details>
+<time datetime="2024-01-01">January 1, 2024</time>
+
+<!-- Translatable attributes -->
+<img src="img.jpg" alt="Image description" title="Image title" data-caption="Caption for image">
+<input placeholder="Enter name" aria-label="Name input" aria-placeholder="Placeholder" data-label="Name field">
+
+<!-- Elements with blocked attributes (should not extract these) -->
+<div class="not-translatable" id="block-me" style="color: red;">Blocked by attribute</div>
+
+<!-- Skipped parent tags -->
+<script>var example = "This should be skipped";</script>
+<style>.class { display: none; }</style>
+<code>Some inline code</code>
+<pre>Preformatted text</pre>
+<noscript>This is a noscript block</noscript>
+<template><div>Template content</div></template>
+<svg><text>SVG text</text></svg>
+<canvas>Your browser does not support canvas</canvas>
+<frameset><frame src="frame_a.htm"></frameset>
+<noframes>This browser does not support frames.</noframes>
+<object data="movie.swf"></object>
+<embed src="file.swf">
+<base href="https://example.com/">
+<map name="examplemap"></map>
+
+<!-- Translate attribute edge cases -->
+<div translate="no">
+  <p>This should NOT be translated.</p>
+</div>
+
+<div translate="yes">
+  <span>This SHOULD be translated.</span>
+</div>
+
+<!-- JSON-LD with mixed keys -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Video Title",
+  "description": "This is a video about something.",
+  "uploadDate": "2024-05-11",
+  "thumbnailUrl": "https://example.com/thumbnail.jpg",
+  "about": "Subject of video",
+  "embedUrl": "https://example.com/embed.mp4"
+}
+</script>
+
+</body>
+</html>
