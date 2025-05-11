@@ -85,7 +85,7 @@ def is_math_fragment(text):
         (\$.*?\$|\\\(.*?\\\))      # LaTeX "$E=mc^2$"
     '''
     has_math = re.search(equation_pattern, text, re.VERBOSE)
-    has_lexical = re.search(r'[A-Za-z]', text)
+    has_lexical = re.search(r'\b[a-zA-Z]{3,}\b', text)
     return has_math and not has_lexical
 
 def load_spacy_model(lang_code):
