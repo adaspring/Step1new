@@ -75,7 +75,7 @@ def has_math_html_markup(element):
     parent = element.parent
     return (
         parent.name == 'math' or 
-        re.search(r'\$.*?\$|\\\(.*?\\\)', parent.text) or
+        re.search(r'\$.*?\$|\\\(.*?\\\)', parent.text or '') or
         any(cls in parent.get('class', []) for cls in ['math', 'equation', 'formula'])
     )
 
