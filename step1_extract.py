@@ -6,6 +6,7 @@ import spacy
 import argparse
 import subprocess
 import regex as re
+from langdetect import detect
 from pypinyin import lazy_pinyin
 from bs4 import BeautifulSoup, Comment, NavigableString
 
@@ -16,6 +17,9 @@ SPACY_MODELS = {
     "de": "de_core_news_sm",
     "zh": "zh_core_web_sm"
 }
+
+LOADED_SPACY_MODELS = {}
+
 
 TRANSLATABLE_TAGS = {
     "p", "span", "div", "h1", "h2", "h3", "h4", "h5", "h6",
@@ -69,6 +73,13 @@ def is_pure_symbol(text):
     """Skip text with no alphabetic characters."""
     return not re.search(r'[A-Za-z]', text)
 
+
+def detect_language(text):
+    try:
+        return detect(text)
+    except:
+        return "unknown"
+
 def is_symbol_heavy(text):
     """Skip only if there's zero real words and many symbols (multilingual safe)."""
 
@@ -113,19 +124,25 @@ def is_math_fragment(text):
     return (has_math and not has_real_words(text)) or is_symbol_heavy(text)  # <-- Fixed line continuation
 
 
-def load_spacy_model(lang_code):
+
+
+def get_spacy_model(lang_code):
     if lang_code not in SPACY_MODELS:
-        print(f"Unsupported language '{lang_code}'. Choose from: {', '.join(SPACY_MODELS)}.")
-        sys.exit(1)
+        return None
+
+    if lang_code in LOADED_SPACY_MODELS:
+        return LOADED_SPACY_MODELS[lang_code]
 
     model_name = SPACY_MODELS[lang_code]
-
     try:
-        return spacy.load(model_name)
+        nlp = spacy.load(model_name)
     except OSError:
-        print(f"spaCy model '{model_name}' not found. Downloading automatically...")
+        print(f"Downloading missing spaCy model '{model_name}'...")
         subprocess.run(["python", "-m", "spacy", "download", model_name], check=True)
-        return spacy.load(model_name)
+        nlp = spacy.load(model_name)
+
+    LOADED_SPACY_MODELS[lang_code] = nlp
+    return nlp
 
 
 def is_translatable_text(tag):
@@ -173,6 +190,8 @@ def is_translatable_text(tag):
 def contains_chinese(text):
     return re.search(r'[\u4e00-\u9fff]', text) is not None
 
+
+# Function definition
 def process_text_block(block_id, text, nlp):
     structured = {}
     flattened = {}
@@ -191,18 +210,21 @@ def process_text_block(block_id, text, nlp):
             w_key = f"W{w_idx}"
             word_id = f"{sentence_id}_{w_key}"
             flattened[word_id] = token.text
-            structured[s_key]["words"][w_key] = {  # Keep `{` on the same line
-               "text": token.text,
-               "pos": token.pos_,
-               "ent": token.ent_type_ or None,
-               "pinyin": (
-                  " ".join(lazy_pinyin(token.text)) 
-                  if contains_chinese(token.text) 
-                  else None
-               )
+            structured[s_key]["words"][w_key] = {
+                "text": token.text,
+                "pos": token.pos_,
+                "ent": token.ent_type_ or None,
+                "pinyin": (
+                    " ".join(lazy_pinyin(token.text))
+                    if contains_chinese(token.text)
+                    else None
+                )
             }
 
     return structured, flattened, sentence_tokens
+
+
+
 
 
 def extract_from_jsonld(obj, block_counter, nlp, structured_output, flattened_output):
