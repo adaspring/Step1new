@@ -1,0 +1,593 @@
+{
+  "BLOCK_1": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "This is a paragraph.",
+        "words": {
+          "W1": "This",
+          "W2": "is",
+          "W3": "a",
+          "W4": "paragraph",
+          "W5": "."
+        }
+      }
+    }
+  },
+  "BLOCK_2": {
+    "tag": "span",
+    "tokens": {
+      "S1": {
+        "text": "This is a span.",
+        "words": {
+          "W1": "This",
+          "W2": "is",
+          "W3": "a",
+          "W4": "span",
+          "W5": "."
+        }
+      }
+    }
+  },
+  "BLOCK_3": {
+    "tag": "div",
+    "tokens": {
+      "S1": {
+        "text": "This is a div.",
+        "words": {
+          "W1": "This",
+          "W2": "is",
+          "W3": "a",
+          "W4": "div",
+          "W5": "."
+        }
+      }
+    }
+  },
+  "BLOCK_4": {
+    "tag": "h1",
+    "tokens": {
+      "S1": {
+        "text": "Main Heading",
+        "words": {
+          "W1": "Main",
+          "W2": "Heading"
+        }
+      }
+    }
+  },
+  "BLOCK_5": {
+    "tag": "h2",
+    "tokens": {
+      "S1": {
+        "text": "Subheading",
+        "words": {
+          "W1": "Subheading"
+        }
+      }
+    }
+  },
+  "BLOCK_6": {
+    "tag": "h3",
+    "tokens": {
+      "S1": {
+        "text": "Sub-subheading",
+        "words": {
+          "W1": "Sub",
+          "W2": "-",
+          "W3": "subheading"
+        }
+      }
+    }
+  },
+  "BLOCK_7": {
+    "tag": "label",
+    "tokens": {
+      "S1": {
+        "text": "Label Text",
+        "words": {
+          "W1": "Label",
+          "W2": "Text"
+        }
+      }
+    }
+  },
+  "BLOCK_8": {
+    "tag": "button",
+    "tokens": {
+      "S1": {
+        "text": "Click me",
+        "words": {
+          "W1": "Click",
+          "W2": "me"
+        }
+      }
+    }
+  },
+  "BLOCK_9": {
+    "tag": "li",
+    "tokens": {
+      "S1": {
+        "text": "List item",
+        "words": {
+          "W1": "List",
+          "W2": "item"
+        }
+      }
+    }
+  },
+  "BLOCK_10": {
+    "tag": "a",
+    "tokens": {
+      "S1": {
+        "text": "Link text",
+        "words": {
+          "W1": "Link",
+          "W2": "text"
+        }
+      }
+    }
+  },
+  "BLOCK_11": {
+    "tag": "strong",
+    "tokens": {
+      "S1": {
+        "text": "Strong text",
+        "words": {
+          "W1": "Strong",
+          "W2": "text"
+        }
+      }
+    }
+  },
+  "BLOCK_12": {
+    "tag": "em",
+    "tokens": {
+      "S1": {
+        "text": "Emphasized text",
+        "words": {
+          "W1": "Emphasized",
+          "W2": "text"
+        }
+      }
+    }
+  },
+  "BLOCK_13": {
+    "tag": "b",
+    "tokens": {
+      "S1": {
+        "text": "Bold text",
+        "words": {
+          "W1": "Bold",
+          "W2": "text"
+        }
+      }
+    }
+  },
+  "BLOCK_14": {
+    "tag": "i",
+    "tokens": {
+      "S1": {
+        "text": "Italic text",
+        "words": {
+          "W1": "Italic",
+          "W2": "text"
+        }
+      }
+    }
+  },
+  "BLOCK_15": {
+    "tag": "summary",
+    "tokens": {
+      "S1": {
+        "text": "Summary text",
+        "words": {
+          "W1": "Summary",
+          "W2": "text"
+        }
+      }
+    }
+  },
+  "BLOCK_16": {
+    "tag": "figcaption",
+    "tokens": {
+      "S1": {
+        "text": "Figure caption",
+        "words": {
+          "W1": "Figure",
+          "W2": "caption"
+        }
+      }
+    }
+  },
+  "BLOCK_17": {
+    "tag": "option",
+    "tokens": {
+      "S1": {
+        "text": "Option 1",
+        "words": {
+          "W1": "Option",
+          "W2": "1"
+        }
+      }
+    }
+  },
+  "BLOCK_18": {
+    "tag": "optgroup",
+    "tokens": {
+      "S1": {
+        "text": "Group",
+        "words": {
+          "W1": "Group"
+        }
+      }
+    }
+  },
+  "BLOCK_19": {
+    "tag": "legend",
+    "tokens": {
+      "S1": {
+        "text": "Legend text",
+        "words": {
+          "W1": "Legend",
+          "W2": "text"
+        }
+      }
+    }
+  },
+  "BLOCK_20": {
+    "tag": "mark",
+    "tokens": {
+      "S1": {
+        "text": "Marked text",
+        "words": {
+          "W1": "Marked",
+          "W2": "text"
+        }
+      }
+    }
+  },
+  "BLOCK_21": {
+    "tag": "output",
+    "tokens": {
+      "S1": {
+        "text": "Output value",
+        "words": {
+          "W1": "Output",
+          "W2": "value"
+        }
+      }
+    }
+  },
+  "BLOCK_22": {
+    "tag": "details",
+    "tokens": {
+      "S1": {
+        "text": "Details here",
+        "words": {
+          "W1": "Details",
+          "W2": "here"
+        }
+      }
+    }
+  },
+  "BLOCK_23": {
+    "tag": "time",
+    "tokens": {
+      "S1": {
+        "text": "January 1, 2024",
+        "words": {
+          "W1": "January",
+          "W2": "1",
+          "W3": ",",
+          "W4": "2024"
+        }
+      }
+    }
+  },
+  "BLOCK_24": {
+    "tag": "div",
+    "tokens": {
+      "S1": {
+        "text": "Blocked by attribute",
+        "words": {
+          "W1": "Blocked",
+          "W2": "by",
+          "W3": "attribute"
+        }
+      }
+    }
+  },
+  "BLOCK_25": {
+    "tag": "div",
+    "tokens": {
+      "S1": {
+        "text": "Template content",
+        "words": {
+          "W1": "Template",
+          "W2": "content"
+        }
+      }
+    }
+  },
+  "BLOCK_26": {
+    "tag": "span",
+    "tokens": {
+      "S1": {
+        "text": "This SHOULD be translated.",
+        "words": {
+          "W1": "This",
+          "W2": "SHOULD",
+          "W3": "be",
+          "W4": "translated",
+          "W5": "."
+        }
+      }
+    }
+  },
+  "BLOCK_27": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "Case 2: This SHOULD be translated",
+        "words": {
+          "W1": "Case",
+          "W2": "2",
+          "W3": ":",
+          "W4": "This",
+          "W5": "SHOULD",
+          "W6": "be",
+          "W7": "translated"
+        }
+      }
+    }
+  },
+  "BLOCK_28": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "Case 3: This SHOULD be translated",
+        "words": {
+          "W1": "Case",
+          "W2": "3",
+          "W3": ":",
+          "W4": "This",
+          "W5": "SHOULD",
+          "W6": "be",
+          "W7": "translated"
+        }
+      }
+    }
+  },
+  "BLOCK_29": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "Case 4a: This SHOULD be translated",
+        "words": {
+          "W1": "Case",
+          "W2": "4a",
+          "W3": ":",
+          "W4": "This",
+          "W5": "SHOULD",
+          "W6": "be",
+          "W7": "translated"
+        }
+      }
+    }
+  },
+  "BLOCK_30": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "Einstein: E = mc²",
+        "words": {
+          "W1": "Einstein",
+          "W2": ":",
+          "W3": "E",
+          "W4": "=",
+          "W5": "mc²"
+        }
+      }
+    }
+  },
+  "BLOCK_31": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "Final price = base + tax",
+        "words": {
+          "W1": "Final",
+          "W2": "price",
+          "W3": "=",
+          "W4": "base",
+          "W5": "+",
+          "W6": "tax"
+        }
+      }
+    }
+  },
+  "BLOCK_32": {
+    "tag": "p",
+    "tokens": {
+      "S1": {
+        "text": "Final price = (2x(base)+ tax)/(2x4.8)",
+        "words": {
+          "W1": "Final",
+          "W2": "price",
+          "W3": "=",
+          "W4": "(",
+          "W5": "2x(base)+",
+          "W6": "tax)/(2x4.8",
+          "W7": ")"
+        }
+      }
+    }
+  },
+  "BLOCK_33": {
+    "attr": "alt",
+    "tokens": {
+      "S1": {
+        "text": "Image description",
+        "words": {
+          "W1": "Image",
+          "W2": "description"
+        }
+      }
+    }
+  },
+  "BLOCK_34": {
+    "attr": "data-caption",
+    "tokens": {
+      "S1": {
+        "text": "Caption for image",
+        "words": {
+          "W1": "Caption",
+          "W2": "for",
+          "W3": "image"
+        }
+      }
+    }
+  },
+  "BLOCK_35": {
+    "attr": "title",
+    "tokens": {
+      "S1": {
+        "text": "Image title",
+        "words": {
+          "W1": "Image",
+          "W2": "title"
+        }
+      }
+    }
+  },
+  "BLOCK_36": {
+    "attr": "aria-label",
+    "tokens": {
+      "S1": {
+        "text": "Name input",
+        "words": {
+          "W1": "Name",
+          "W2": "input"
+        }
+      }
+    }
+  },
+  "BLOCK_37": {
+    "attr": "placeholder",
+    "tokens": {
+      "S1": {
+        "text": "Enter name",
+        "words": {
+          "W1": "Enter",
+          "W2": "name"
+        }
+      }
+    }
+  },
+  "BLOCK_38": {
+    "attr": "data-label",
+    "tokens": {
+      "S1": {
+        "text": "Name field",
+        "words": {
+          "W1": "Name",
+          "W2": "field"
+        }
+      }
+    }
+  },
+  "BLOCK_39": {
+    "attr": "aria-placeholder",
+    "tokens": {
+      "S1": {
+        "text": "Placeholder",
+        "words": {
+          "W1": "Placeholder"
+        }
+      }
+    }
+  },
+  "BLOCK_40": {
+    "meta": "description",
+    "tokens": {
+      "S1": {
+        "text": "This is a description.",
+        "words": {
+          "W1": "This",
+          "W2": "is",
+          "W3": "a",
+          "W4": "description",
+          "W5": "."
+        }
+      }
+    }
+  },
+  "BLOCK_41": {
+    "meta": "og:title",
+    "tokens": {
+      "S1": {
+        "text": "Open Graph Title",
+        "words": {
+          "W1": "Open",
+          "W2": "Graph",
+          "W3": "Title"
+        }
+      }
+    }
+  },
+  "BLOCK_42": {
+    "tag": "title",
+    "tokens": {
+      "S1": {
+        "text": "Example Title",
+        "words": {
+          "W1": "Example",
+          "W2": "Title"
+        }
+      }
+    }
+  },
+  "BLOCK_43": {
+    "jsonld": "name",
+    "tokens": {
+      "S1": {
+        "text": "Video Title",
+        "words": {
+          "W1": "Video",
+          "W2": "Title"
+        }
+      }
+    }
+  },
+  "BLOCK_44": {
+    "jsonld": "description",
+    "tokens": {
+      "S1": {
+        "text": "This is a video about something.",
+        "words": {
+          "W1": "This",
+          "W2": "is",
+          "W3": "a",
+          "W4": "video",
+          "W5": "about",
+          "W6": "something",
+          "W7": "."
+        }
+      }
+    }
+  },
+  "BLOCK_45": {
+    "jsonld": "about",
+    "tokens": {
+      "S1": {
+        "text": "Subject of video",
+        "words": {
+          "W1": "Subject",
+          "W2": "of",
+          "W3": "video"
+        }
+      }
+    }
+  }
+}
