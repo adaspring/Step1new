@@ -34,7 +34,8 @@ jobs:
           python -m spacy download pt_core_news_sm
           python -m spacy download ru_core_news_sm
           python -m spacy download el_core_news_sm
-          
+          python -m spacy download xx_ent_wiki_sm  # multilingual fallback for Arabic, Hebrew, Thai, Hindi
+     
       - name: Run multilingual content extraction
         run: |
           python step1_extract.py "${{ github.event.inputs.html_file }}"
