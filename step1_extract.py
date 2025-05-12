@@ -249,7 +249,8 @@ def extract_from_jsonld(obj, block_counter, structured_output, flattened_output)
                 if (key_lc not in JSONLD_EXCLUDE_KEYS and 
                     (key_lc in TRANSLATABLE_JSONLD_KEYS or 
                      (not key_lc.startswith("@") and
-                      all(x not in key_lc for x in ["url", "date", "time", "type"]))):
+                      all(x not in key_lc for x in ["url", "date", "time", "type"]))
+                   ):
                     block_id = f"BLOCK_{block_counter}"
                     structured, flattened, tokens = process_text_with_language_detection(block_id, value)
                     obj[key] = tokens[0][0]
@@ -258,7 +259,7 @@ def extract_from_jsonld(obj, block_counter, structured_output, flattened_output)
                     block_counter += 1
             elif isinstance(value, (dict, list)):
                 block_counter = extract_from_jsonld(value, block_counter, structured_output, flattened_output)
-    elif isinstance(obj, list)):
+    elif isinstance(obj, list):  # Removed extra parenthesis here
         for i in range(len(obj)):
             block_counter = extract_from_jsonld(obj[i], block_counter, structured_output, flattened_output)
     return block_counter
