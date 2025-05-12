@@ -10,6 +10,7 @@ from langdetect import detect
 from pypinyin import lazy_pinyin
 from bs4 import BeautifulSoup, Comment, NavigableString
 
+# spaCy models mapped to language codes
 SPACY_MODELS = {
     "en": "en_core_web_sm",
     "fr": "fr_core_news_sm",
@@ -25,9 +26,10 @@ SPACY_MODELS = {
     "nb": "nb_core_news_sm"
 }
 
+# Cache for loaded spaCy models
 LOADED_SPACY_MODELS = {}
 
-
+# HTML elements containing translatable text
 TRANSLATABLE_TAGS = {
     "p", "span", "div", "h1", "h2", "h3", "h4", "h5", "h6",
     "label", "button", "li", "td", "th", "a", "strong", "em",
@@ -35,6 +37,7 @@ TRANSLATABLE_TAGS = {
     "legend", "mark", "output", "details", "time"
 }
 
+# HTML attributes containing translatable text
 TRANSLATABLE_ATTRS = {
     "alt", "title", "placeholder", "aria-label", "aria-placeholder",
     "aria-valuetext", "aria-roledescription", "value",
@@ -42,6 +45,7 @@ TRANSLATABLE_ATTRS = {
     "data-label", "data-error"
 }
 
+# SEO meta fields that should be translated
 SEO_META_FIELDS = {
     "name": {
         "description", "keywords", "robots", "author", "viewport", "theme-color"
@@ -52,66 +56,62 @@ SEO_META_FIELDS = {
     }
 }
 
+# JSON-LD keys containing translatable content
 TRANSLATABLE_JSONLD_KEYS = {
     "name", "description", "headline", "caption",
     "alternateName", "summary", "title", "about"
 }
 
+# Parent elements to skip during processing
 SKIP_PARENTS = {
     "script", "style", "code", "pre", "noscript", "template", "svg", "canvas",
     "frameset", "frame", "noframes", "object", "embed", "base", "map"
 }
 
+# Attributes to exclude from translation
 BLOCKED_ATTRS = {
     "accept", "align", "autocomplete", "bgcolor", "charset", "class", "content",
     "dir", "download", "href", "id", "lang", "name", "rel", "src", "style", "type"
 }
 
-JSONLD_EXCLUDE_KEYS = {
-    "duration", "uploadDate", "embedUrl", "contentUrl", "thumbnailUrl"
-}
+# JSON-LD keys to exclude from processing
+JSONLD_EXCLUDE_KEYS = {"duration", "uploadDate", "embedUrl", "contentUrl", "thumbnailUrl"}
 
+# Excluded meta fields
 EXCLUDED_META_NAMES = {"viewport"}
 EXCLUDED_META_PROPERTIES = {"og:url"}
 
-
 # Helper Functions -------------------------------------------------
+
 def is_pure_symbol(text):
-    """Skip text with no alphabetic characters."""
+    """Check if text contains no alphabetic characters."""
     return not re.search(r'[A-Za-z]', text)
 
-
 def detect_language(text):
+    """Wrapper for langdetect with error handling."""
     try:
         return detect(text)
     except:
         return "unknown"
 
 def is_symbol_heavy(text):
-    """Skip only if there's zero real words and many symbols (multilingual safe)."""
-
-    # Count real words of 3+ letters
+    """Determine if text contains mostly symbols/no real words."""
     words = re.findall(r'\b\p{L}{3,}\b', text)
-    word_count = len(words)
-
-    # If there's at least one real word, it's not symbol-heavy
-    if word_count > 0:
+    if len(words) > 0:
         return False
-
-    # Otherwise check for excessive symbols
     symbol_count = len(re.findall(r'[\p{P}\p{S}\d_]', text))
-    return symbol_count > 0  # treat as symbol-heavy if only symbols
+    return symbol_count > 0
 
 def is_exception_language(text):
-    # Allow Chinese, Arabic, etc., even if short
+    """Check for languages that should bypass symbol checks."""
     return contains_chinese(text) or re.search(r'[\u0600-\u06FF\u0400-\u04FF\u0370-\u03FF]', text)
 
-
 def has_real_words(text):
+    """Check for presence of real words (3+ letters)."""
     return re.search(r'\b\p{L}{3,}\b', text, re.UNICODE) is not None
 
 def has_math_html_markup(element):
-    """Check for math-specific HTML markup (MathML, LaTeX, etc.)."""
+    """Check for math-related HTML markup in parent elements."""
     parent = element.parent
     return (
         parent.name == 'math' or 
@@ -120,20 +120,18 @@ def has_math_html_markup(element):
     )
 
 def is_math_fragment(text):
-    """Check if text is a math formula without lexical words."""
+    """Identify mathematical expressions in text."""
     equation_pattern = r'''
-        (\w+\s*[=+\-*/^]\s*\S+)|  # Equations like "x = y+1"
-        (\d+[\+\-\*/]\d+)|         # Arithmetic "2+3"
-        ([a-zA-Z]+\^?\d+)|         # Exponents "x²"
-        (\$.*?\$|\\\(.*?\\\))      # LaTeX "$E=mc^2$"
+        (\w+\s*[=+\-*/^]\s*\S+)|  # Simple equations
+        (\d+[\+\-\*/]\d+)|         # Arithmetic operations
+        ([a-zA-Z]+\^?\d+)|          # Exponents
+        (\$.*?\$|\\\(.*?\\\))       # LaTeX markup
     '''
     has_math = re.search(equation_pattern, text, re.VERBOSE)
-    return (has_math and not has_real_words(text)) or is_symbol_heavy(text)  # <-- Fixed line continuation
-
-
-
+    return (has_math and not has_real_words(text)) or is_symbol_heavy(text)
 
 def get_spacy_model(lang_code):
+    """Load or download spaCy model for specified language."""
     if lang_code not in SPACY_MODELS:
         return None
 
@@ -151,10 +149,9 @@ def get_spacy_model(lang_code):
     LOADED_SPACY_MODELS[lang_code] = nlp
     return nlp
 
-
 def is_translatable_text(tag):
-    """Determine if the given tag's text should be translated."""
-    # Check translate attribute inheritance hierarchy
+    """Determine if element's text should be translated."""
+    # Check translate attribute inheritance
     current_element = tag.parent
     translate_override = None
     
@@ -162,15 +159,14 @@ def is_translatable_text(tag):
         current_translate = current_element.get("translate", "").lower()
         if current_translate in {"yes", "no"}:
             translate_override = current_translate
-            break  # Closest explicit declaration wins
+            break
         current_element = current_element.parent
 
-    # Check text content after parent checks
     text = tag.strip()
     if not text:
         return False
 
-    # Math and symbol skipping (with proper line continuation)
+    # Skip math/symbol content except for certain languages
     if ((not is_exception_language(text)) 
     and (
         is_pure_symbol(text) or 
@@ -178,77 +174,45 @@ def is_translatable_text(tag):
         has_math_html_markup(tag))):
         return False
 
-    # If any parent says "no", block translation
     if translate_override == "no":
         return False
 
-    # If no explicit "yes", check default translatability
     parent_tag = tag.parent.name if tag.parent else None
     default_translatable = (
         parent_tag in TRANSLATABLE_TAGS and
         parent_tag not in SKIP_PARENTS and
         not isinstance(tag, Comment))
-    # Explicit "yes" overrides default logic
-    if translate_override == "yes":
-        return True  # Force allow if parent says "yes"
         
-    return default_translatable
+    return default_translatable if translate_override is None else (translate_override == "yes")
 
 def contains_chinese(text):
+    """Check for presence of Chinese characters."""
     return re.search(r'[\u4e00-\u9fff]', text) is not None
 
+# Core Processing Functions ----------------------------------------
 
 def process_text_with_language_detection(block_id, text):
-    # Detect the language
+    """Process text using language-specific spaCy model."""
     try:
         detected_lang = detect(text)
-        
-        # Map detected language to supported spaCy language codes
-        # Many languages might map to the same models or have no direct mapping
         lang_mapping = {
-            "en": "en",
-            "fr": "fr",
-            "es": "es",
-            "de": "de",
-            "zh-cn": "zh",
-            "zh-tw": "zh",
-            "zh": "zh",
-            "ja": "ja",
-            "ko": "ko",
-            "ru": "ru",
-            "pt": "pt",
-            "it": "it",
-            "nl": "nl",
-            "no": "nb"
-            # Add more mappings as needed
+            "en": "en", "fr": "fr", "es": "es", "de": "de",
+            "zh-cn": "zh", "zh-tw": "zh", "zh": "zh",
+            "ja": "ja", "ko": "ko", "ru": "ru", "pt": "pt",
+            "it": "it", "nl": "nl", "no": "nb"
         }
-        
-        # Get the appropriate language code for spaCy
-        spacy_lang = lang_mapping.get(detected_lang, "en")  # Default to English if no mapping
-        
-        # Only use supported models
-        if spacy_lang in SPACY_MODELS:
-            nlp = get_spacy_model(spacy_lang)
-        else:
-            nlp = get_spacy_model("en")  # Fallback to English
-            
-        print(f"Processing text block {block_id} in {detected_lang} using {spacy_lang} model")
-        
-        # Process with the appropriate model
-        return process_text_block(block_id, text, nlp)
-        
+        spacy_lang = lang_mapping.get(detected_lang, "en")
+        if spacy_lang not in SPACY_MODELS:
+            spacy_lang = "en"
+        nlp = get_spacy_model(spacy_lang)
+        print(f"Processing block {block_id} ({detected_lang} → {spacy_lang} model)")
     except Exception as e:
-        print(f"Language detection failed: {e}. Using default model.")
+        print(f"Language detection failed: {e}. Using English model.")
         nlp = get_spacy_model("en")
-        return process_text_block(block_id, text, nlp)
+    return process_text_block(block_id, text, nlp)
 
-
-
-
-
-
-# Function definition
 def process_text_block(block_id, text, nlp):
+    """Process text into structured linguistic components."""
     structured = {}
     flattened = {}
     sentence_tokens = []
@@ -270,50 +234,37 @@ def process_text_block(block_id, text, nlp):
                 "text": token.text,
                 "pos": token.pos_,
                 "ent": token.ent_type_ or None,
-                "pinyin": (
-                    " ".join(lazy_pinyin(token.text))
-                    if contains_chinese(token.text)
-                    else None
-                )
+                "pinyin": " ".join(lazy_pinyin(token.text)) if contains_chinese(token.text) else None
             }
 
     return structured, flattened, sentence_tokens
 
-
-
-
-
-def extract_from_jsonld(obj, block_counter, nlp, structured_output, flattened_output):
+def extract_from_jsonld(obj, block_counter, structured_output, flattened_output):
+    """Recursively extract translatable content from JSON-LD data."""
     if isinstance(obj, dict):
         for key in list(obj.keys()):
             value = obj[key]
             if isinstance(value, str):
                 key_lc = key.lower()
-                if (
-                    key_lc not in JSONLD_EXCLUDE_KEYS and (
-                        key_lc in TRANSLATABLE_JSONLD_KEYS or (
-                            not key_lc.startswith("@") and
-                            all(x not in key_lc for x in ["url", "date", "time", "type"])
-                        )
-                    )
-                ):
+                if (key_lc not in JSONLD_EXCLUDE_KEYS and 
+                    (key_lc in TRANSLATABLE_JSONLD_KEYS or 
+                     (not key_lc.startswith("@") and
+                      all(x not in key_lc for x in ["url", "date", "time", "type"]))):
                     block_id = f"BLOCK_{block_counter}"
-                    structured, flattened, tokens = process_text_with_language_detection(block_id, value, nlp)
+                    structured, flattened, tokens = process_text_with_language_detection(block_id, value)
                     obj[key] = tokens[0][0]
                     structured_output[block_id] = {"jsonld": key, "tokens": structured}
                     flattened_output.update(flattened)
                     block_counter += 1
             elif isinstance(value, (dict, list)):
-                block_counter = extract_from_jsonld(value, block_counter, nlp, structured_output, flattened_output)
-    elif isinstance(obj, list):
+                block_counter = extract_from_jsonld(value, block_counter, structured_output, flattened_output)
+    elif isinstance(obj, list)):
         for i in range(len(obj)):
-            block_counter = extract_from_jsonld(obj[i], block_counter, nlp, structured_output, flattened_output)
+            block_counter = extract_from_jsonld(obj[i], block_counter, structured_output, flattened_output)
     return block_counter
 
-
-def extract_translatable_html(input_path, lang_code):
-    nlp = get_spacy_model(lang_code)
-
+def extract_translatable_html(input_path):
+    """Main extraction function with per-block language detection."""
     with open(input_path, "r", encoding="utf-8") as f:
         soup = BeautifulSoup(f, "html5lib")
 
@@ -321,46 +272,45 @@ def extract_translatable_html(input_path, lang_code):
     flattened_output = {}
     block_counter = 1
 
-    elements = list(soup.find_all(string=True))  # Fix 1: Precompute elements
+    # Process text nodes
+    elements = list(soup.find_all(string=True))
     for element in elements:
         if is_translatable_text(element):
             text = element.strip()
-            if not text:
-                continue
-
-            structured, flattened, sentence_tokens = process_text_with_language_detection(f"BLOCK_{block_counter}", text, nlp)
-
-            if sentence_tokens:
-                block_id = f"BLOCK_{block_counter}"
-                parent_tag = element.parent.name if element.parent else "no_parent"  # Fix 2: Parent check
-                structured_output[block_id] = {"tag": parent_tag, "tokens": structured}
-                flattened_output.update(flattened)
+            if text:
+                structured, flattened, sentence_tokens = process_text_with_language_detection(
+                    f"BLOCK_{block_counter}", text)
                 
-                # Fix 3: Safe replacement
-                replacement_content = sentence_tokens[0][0]
-                if not isinstance(replacement_content, NavigableString):
-                    replacement_content = NavigableString(str(replacement_content))
-                element.replace_with(replacement_content)
-                
-                block_counter += 1
+                if sentence_tokens:
+                    block_id = f"BLOCK_{block_counter}"
+                    parent_tag = element.parent.name if element.parent else "no_parent"
+                    structured_output[block_id] = {"tag": parent_tag, "tokens": structured}
+                    flattened_output.update(flattened)
+                    
+                    replacement_content = sentence_tokens[0][0]
+                    if not isinstance(replacement_content, NavigableString):
+                        replacement_content = NavigableString(str(replacement_content))
+                    element.replace_with(replacement_content)
+                    
+                    block_counter += 1
 
+    # Process attributes
     for tag in soup.find_all():
         for attr in TRANSLATABLE_ATTRS:
-            if (
-                attr in tag.attrs and 
+            if (attr in tag.attrs and 
                 isinstance(tag[attr], str) and 
-                attr not in BLOCKED_ATTRS
-            ):
+                attr not in BLOCKED_ATTRS):
                 value = tag[attr].strip()
                 if value:
                     block_id = f"BLOCK_{block_counter}"
-                    structured, flattened, sentence_tokens = process_text_with_language_detection(block_id, value, nlp)
+                    structured, flattened, sentence_tokens = process_text_with_language_detection(block_id, value)
                     structured_output[block_id] = {"attr": attr, "tokens": structured}
                     flattened_output.update(flattened)
                     if sentence_tokens:
                         tag[attr] = sentence_tokens[0][0]
                     block_counter += 1
 
+    # Process meta tags
     for meta in soup.find_all("meta"):
         name = meta.get("name", "").lower()
         prop = meta.get("property", "").lower()
@@ -369,39 +319,36 @@ def extract_translatable_html(input_path, lang_code):
         if name in EXCLUDED_META_NAMES or prop in EXCLUDED_META_PROPERTIES:
             continue
 
-        if content and (
-            (name and name in SEO_META_FIELDS["name"]) or
-            (prop and prop in SEO_META_FIELDS["property"])
-        ):
+        if content and ((name in SEO_META_FIELDS["name"]) or (prop in SEO_META_FIELDS["property"])):
             block_id = f"BLOCK_{block_counter}"
-            structured, flattened, sentence_tokens = process_text_with_language_detection(block_id, content, nlp)
+            structured, flattened, sentence_tokens = process_text_with_language_detection(block_id, content)
             structured_output[block_id] = {"meta": name or prop, "tokens": structured}
             flattened_output.update(flattened)
             if sentence_tokens:
                 meta["content"] = sentence_tokens[0][0]
             block_counter += 1
 
+    # Process title tag
     title_tag = soup.title
     if title_tag and title_tag.string and title_tag.string.strip():
         block_id = f"BLOCK_{block_counter}"
-        text = title_tag.string.strip()
-        structured, flattened, sentence_tokens = process_text_with_language_detection(block_id, text, nlp)
+        structured, flattened, sentence_tokens = process_text_with_language_detection(block_id, title_tag.string.strip())
         structured_output[block_id] = {"tag": "title", "tokens": structured}
         flattened_output.update(flattened)
         if sentence_tokens:
             title_tag.string.replace_with(sentence_tokens[0][0])
         block_counter += 1
 
+    # Process JSON-LD data
     for script_tag in soup.find_all("script", {"type": "application/ld+json"}):
         try:
-            raw_json = script_tag.string.strip()
-            data = json.loads(raw_json)
-            block_counter = extract_from_jsonld(data, block_counter, nlp, structured_output, flattened_output)
+            data = json.loads(script_tag.string.strip())
+            block_counter = extract_from_jsonld(data, block_counter, structured_output, flattened_output)
             script_tag.string.replace_with(json.dumps(data, ensure_ascii=False, indent=2))
         except Exception as e:
-            print(f"⚠️ Failed to parse or process JSON-LD: {e}")
-            continue
+            print(f"⚠️ Failed to process JSON-LD: {e}")
 
+    # Save output files
     with open("translatable_flat.json", "w", encoding="utf-8") as f:
         json.dump(flattened_output, f, indent=2, ensure_ascii=False)
 
@@ -411,19 +358,19 @@ def extract_translatable_html(input_path, lang_code):
     with open("non_translatable.html", "w", encoding="utf-8") as f:
         f.write(str(soup))
 
-    flat_sentences_only = {
-        k: v for k, v in flattened_output.items()
-        if "_S" in k and "_W" not in k
-    }
+    # Create sentences-only version
+    flat_sentences_only = {k: v for k, v in flattened_output.items() if "_S" in k and "_W" not in k}
     with open("translatable_flat_sentences.json", "w", encoding="utf-8") as f:
         json.dump(flat_sentences_only, f, indent=2, ensure_ascii=False)
 
-    print("✅ Step 1 complete: saved translatable_flat.json, translatable_structured.json, and non_translatable.html.")
-
+    print("✅ Extraction complete. Output files created:\n"
+          "- translatable_flat.json\n"
+          "- translatable_structured.json\n"
+          "- non_translatable.html\n"
+          "- translatable_flat_sentences.json")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("input_file", help="HTML file to process")
-    parser.add_argument("--lang", choices=SPACY_MODELS.keys(), default="en", help="Language code (default: en)")
+    parser = argparse.ArgumentParser(description="Extract translatable content from HTML with language detection")
+    parser.add_argument("input_file", help="Path to input HTML file")
     args = parser.parse_args()
-    extract_translatable_html(args.input_file, args.lang)
+    extract_translatable_html(args.input_file)
