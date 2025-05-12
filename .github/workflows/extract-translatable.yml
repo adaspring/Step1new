@@ -26,7 +26,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install beautifulsoup4 spacy html5lib langdetect regex pypinyin
           python -m spacy download en_core_web_sm  # Preload default English model
-
+          python -m spacy download zh_core_web_sm
+          python -m spacy download fr_core_news_sm
+          python -m spacy download es_core_news_sm
+          python -m spacy download de_core_news_sm
+          python -m spacy download it_core_news_sm
+          python -m spacy download pt_core_news_sm
+          python -m spacy download ru_core_news_sm
+          python -m spacy download el_core_news_sm
+          
       - name: Run multilingual content extraction
         run: |
           python step1_extract.py "${{ github.event.inputs.html_file }}"
