@@ -6,13 +6,15 @@ import spacy
 import argparse
 import subprocess
 import regex as re
+from pypinyin import lazy_pinyin
 from bs4 import BeautifulSoup, Comment, NavigableString
 
 SPACY_MODELS = {
     "en": "en_core_web_sm",
     "fr": "fr_core_news_sm",
     "es": "es_core_news_sm",
-    "de": "de_core_news_sm"
+    "de": "de_core_news_sm",
+    "zh": "zh_core_web_sm"
 }
 
 TRANSLATABLE_TAGS = {
