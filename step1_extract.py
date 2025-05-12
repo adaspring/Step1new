@@ -84,6 +84,10 @@ def is_symbol_heavy(text):
     symbol_count = len(re.findall(r'[\p{P}\p{S}\d_]', text))
     return symbol_count > 0  # treat as symbol-heavy if only symbols
 
+def is_exception_language(text):
+    # Allow Chinese, Arabic, etc., even if short
+    return contains_chinese(text) or re.search(r'[\u0600-\u06FF\u0400-\u04FF\u0370-\u03FF]', text)
+
 
 def has_real_words(text):
     return re.search(r'\b\p{L}{3,}\b', text, re.UNICODE) is not None
@@ -143,7 +147,9 @@ def is_translatable_text(tag):
         return False
 
     # Math and symbol skipping (with proper line continuation)
-    if (is_pure_symbol(text) or 
+    if (not is_exception_language(text)) 
+    and (
+        is_pure_symbol(text) or 
         is_math_fragment(text) or 
         has_math_html_markup(tag)):
         return False
