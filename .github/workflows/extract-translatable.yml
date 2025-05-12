@@ -8,7 +8,7 @@ on:
         required: true
         default: 'index.html'
       lang:
-        description: 'Language code (en, fr, es, de)'
+        description: 'Language code (en, fr, es, de, zh)'
         required: true
         default: 'en'
 
