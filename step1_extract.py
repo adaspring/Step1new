@@ -16,6 +16,13 @@ SPACY_MODELS = {
     "es": "es_core_news_sm",
     "de": "de_core_news_sm",
     "zh": "zh_core_web_sm"
+    "ja": "ja_core_news_sm",
+    "ko": "ko_core_news_sm",
+    "ru": "ru_core_news_sm",
+    "pt": "pt_core_news_sm",
+    "it": "it_core_news_sm",
+    "nl": "nl_core_news_sm",
+    "nb": "nb_core_news_sm"
 }
 
 LOADED_SPACY_MODELS = {}
