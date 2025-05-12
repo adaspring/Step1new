@@ -173,6 +173,56 @@ def is_translatable_text(tag):
 def contains_chinese(text):
     return re.search(r'[\u4e00-\u9fff]', text) is not None
 
+
+
+def process_text_with_language_detection(block_id, text):
+    # Detect the language
+    try:
+        detected_lang = detect(text)
+        
+        # Map detected language to supported spaCy language codes
+        # Many languages might map to the same models or have no direct mapping
+        lang_mapping = {
+            "en": "en",
+            "fr": "fr",
+            "es": "es",
+            "de": "de",
+            "zh-cn": "zh",
+            "zh-tw": "zh",
+            "zh": "zh",
+            "ja": "ja",
+            "ko": "ko",
+            "ru": "ru",
+            "pt": "pt",
+            "it": "it",
+            "nl": "nl",
+            "no": "nb"
+            # Add more mappings as needed
+        }
+        
+        # Get the appropriate language code for spaCy
+        spacy_lang = lang_mapping.get(detected_lang, "en")  # Default to English if no mapping
+        
+        # Only use supported models
+        if spacy_lang in SPACY_MODELS:
+            nlp = get_spacy_model(spacy_lang)
+        else:
+            nlp = get_spacy_model("en")  # Fallback to English
+            
+        print(f"Processing text block {block_id} in {detected_lang} using {spacy_lang} model")
+        
+        # Process with the appropriate model
+        return process_text_block(block_id, text, nlp)
+        
+    except Exception as e:
+        print(f"Language detection failed: {e}. Using default model.")
+        nlp = get_spacy_model("en")
+        return process_text_block(block_id, text, nlp)
+
+
+
+
+
 def process_text_block(block_id, text, nlp):
     structured = {}
     flattened = {}
