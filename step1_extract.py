@@ -102,7 +102,7 @@ def detect_language(text, default_lang="en"):
     
     # Then try word-based detection if we have enough words
     words = re.findall(r'\b\p{L}{3,}\b', text, re.UNICODE)
-    if len(words) >= 3:
+    if len(words) >= 1:
         # Manual word counting instead of using Counter
         lang_counts = {
             'en': 0,
