@@ -185,14 +185,17 @@ def process_text_block(block_id, text, nlp):
             w_key = f"W{w_idx}"
             word_id = f"{sentence_id}_{w_key}"
             flattened[word_id] = token.text
-            structured[s_key]["words"][w_key] = 
-            {
-                "text": token.text,
-                "pos": token.pos_,
-                "ent": token.ent_type_ or None,
-                "pinyin": " ".join(lazy_pinyin(token.text)) if 
-                contains_chinese(token.text) else None
+            structured[s_key]["words"][w_key] = {  # Keep `{` on the same line
+               "text": token.text,
+               "pos": token.pos_,
+               "ent": token.ent_type_ or None,
+               "pinyin": (
+                  " ".join(lazy_pinyin(token.text)) 
+                  if contains_chinese(token.text) 
+                  else None
+               )
             }
+
     return structured, flattened, sentence_tokens
 
 
