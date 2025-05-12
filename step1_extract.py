@@ -198,6 +198,55 @@ def contains_chinese(text):
     return re.search(r'[\u4e00-\u9fff]', text) is not None
 
 
+def process_text_with_language_detection(block_id, text):
+    # Detect the language
+    try:
+        detected_lang = detect(text)
+        
+        # Map detected language to supported spaCy language codes
+        # Many languages might map to the same models or have no direct mapping
+        lang_mapping = {
+            "en": "en",
+            "fr": "fr",
+            "es": "es",
+            "de": "de",
+            "zh-cn": "zh",
+            "zh-tw": "zh",
+            "zh": "zh",
+            "ja": "ja",
+            "ko": "ko",
+            "ru": "ru",
+            "pt": "pt",
+            "it": "it",
+            "nl": "nl",
+            "no": "nb"
+            # Add more mappings as needed
+        }
+        
+        # Get the appropriate language code for spaCy
+        spacy_lang = lang_mapping.get(detected_lang, "en")  # Default to English if no mapping
+        
+        # Only use supported models
+        if spacy_lang in SPACY_MODELS:
+            nlp = get_spacy_model(spacy_lang)
+        else:
+            nlp = get_spacy_model("en")  # Fallback to English
+            
+        print(f"Processing text block {block_id} in {detected_lang} using {spacy_lang} model")
+        
+        # Process with the appropriate model
+        return process_text_block(block_id, text, nlp)
+        
+    except Exception as e:
+        print(f"Language detection failed: {e}. Using default model.")
+        nlp = get_spacy_model("en")
+        return process_text_block(block_id, text, nlp)
+
+
+
+
+
+
 # Function definition
 def process_text_block(block_id, text, nlp):
     structured = {}
@@ -249,7 +298,7 @@ def extract_from_jsonld(obj, block_counter, nlp, structured_output, flattened_ou
                     )
                 ):
                     block_id = f"BLOCK_{block_counter}"
-                    structured, flattened, tokens = process_text_block(block_id, value, nlp)
+                    structured, flattened, tokens = process_text_with_language_detection(block_id, value, nlp)
                     obj[key] = tokens[0][0]
                     structured_output[block_id] = {"jsonld": key, "tokens": structured}
                     flattened_output.update(flattened)
@@ -279,7 +328,7 @@ def extract_translatable_html(input_path, lang_code):
             if not text:
                 continue
 
-            structured, flattened, sentence_tokens = process_text_block(f"BLOCK_{block_counter}", text, nlp)
+            structured, flattened, sentence_tokens = process_text_with_language_detection(f"BLOCK_{block_counter}", text, nlp)
 
             if sentence_tokens:
                 block_id = f"BLOCK_{block_counter}"
@@ -305,7 +354,7 @@ def extract_translatable_html(input_path, lang_code):
                 value = tag[attr].strip()
                 if value:
                     block_id = f"BLOCK_{block_counter}"
-                    structured, flattened, sentence_tokens = process_text_block(block_id, value, nlp)
+                    structured, flattened, sentence_tokens = process_text_with_language_detection(block_id, value, nlp)
                     structured_output[block_id] = {"attr": attr, "tokens": structured}
                     flattened_output.update(flattened)
                     if sentence_tokens:
@@ -325,7 +374,7 @@ def extract_translatable_html(input_path, lang_code):
             (prop and prop in SEO_META_FIELDS["property"])
         ):
             block_id = f"BLOCK_{block_counter}"
-            structured, flattened, sentence_tokens = process_text_block(block_id, content, nlp)
+            structured, flattened, sentence_tokens = process_text_with_language_detection(block_id, content, nlp)
             structured_output[block_id] = {"meta": name or prop, "tokens": structured}
             flattened_output.update(flattened)
             if sentence_tokens:
@@ -336,7 +385,7 @@ def extract_translatable_html(input_path, lang_code):
     if title_tag and title_tag.string and title_tag.string.strip():
         block_id = f"BLOCK_{block_counter}"
         text = title_tag.string.strip()
-        structured, flattened, sentence_tokens = process_text_block(block_id, text, nlp)
+        structured, flattened, sentence_tokens = process_text_with_language_detection(block_id, text, nlp)
         structured_output[block_id] = {"tag": "title", "tokens": structured}
         flattened_output.update(flattened)
         if sentence_tokens:
