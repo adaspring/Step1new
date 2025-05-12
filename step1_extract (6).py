@@ -9,13 +9,20 @@ import regex as re
 from pypinyin import lazy_pinyin
 from bs4 import BeautifulSoup, Comment, NavigableString
 
+
 SPACY_MODELS = {
     "en": "en_core_web_sm",
+    "zh": "zh_core_web_sm",
     "fr": "fr_core_news_sm",
     "es": "es_core_news_sm",
     "de": "de_core_news_sm",
-    "zh": "zh_core_web_sm"
+    "it": "it_core_news_sm",
+    "pt": "pt_core_news_sm",
+    "ru": "ru_core_news_sm",
+    "el": "el_core_news_sm",
+    "xx": "xx_ent_wiki_sm"  # fallback for multilingual
 }
+
 
 TRANSLATABLE_TAGS = {
     "p", "span", "div", "h1", "h2", "h3", "h4", "h5", "h6",
