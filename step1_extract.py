@@ -94,43 +94,27 @@ def is_symbol_heavy(text):
 
 
 def detect_language(text, default_lang="en"):
-    """Enhanced language detection combining script detection and word counting."""
-    # First check script-based detection
+    """Enhanced language detection using existing script detection rules."""
+    # First check script-based detection (single word can determine language)
     lang = is_exception_language(text)
     if lang:
         return lang
     
-    # Then try word-based detection if we have enough words
+    # For longer texts, analyze word by word
     words = re.findall(r'\b\p{L}{3,}\b', text, re.UNICODE)
-    if len(words) >= 1:
-        # Manual word counting instead of using Counter
-        lang_counts = {
-            'en': 0,
-            'fr': 0,
-            'es': 0,
-            'de': 0,
-            'it': 0,
-            'pt': 0,
-            'ru': 0,
-            'zh': 0,
-            'el': 0,
-        }
+    if len(words) >= 3:
+        lang_votes = {}
         
         for word in words:
-            if contains_english(word): lang_counts['en'] += 1
-            if contains_french(word): lang_counts['fr'] += 1
-            if contains_spanish(word): lang_counts['es'] += 1
-            if contains_german(word): lang_counts['de'] += 1
-            if contains_italian(word): lang_counts['it'] += 1
-            if contains_portuguese(word): lang_counts['pt'] += 1
-            if contains_cyrillic(word): lang_counts['ru'] += 1
-            if contains_chinese(word): lang_counts['zh'] += 1
-            if contains_greek(word): lang_counts['el'] += 1
+            word_lang = is_exception_language(word)
+            if word_lang:
+                lang_votes[word_lang] = lang_votes.get(word_lang, 0) + 1
         
-        # Get the language with highest score
-        best_lang = max(lang_counts.items(), key=lambda x: x[1])[0]
-        if lang_counts[best_lang] >= 2:  # Require at least 2 matching words
-            return best_lang
+        if lang_votes:
+            # Get language with most votes, but require at least 2 votes
+            best_lang = max(lang_votes.items(), key=lambda x: x[1])[0]
+            if lang_votes[best_lang] >= 2:
+                return best_lang
     
     return default_lang
 
