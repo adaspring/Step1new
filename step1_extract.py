@@ -206,7 +206,7 @@ def contains_chinese(text):
 def process_text_block(block_id, text, default_nlp):
     lang_code = is_exception_language(text)
     nlp = default_nlp if not lang_code else load_spacy_model(lang_code)
-
+    detected_language = lang_code or "default"
     
     structured = {}
     flattened = {}
@@ -228,6 +228,7 @@ def process_text_block(block_id, text, default_nlp):
             structured[s_key]["words"][w_key] = {  # Keep `{` on the same line
                "text": token.text,
                "pos": token.pos_,
+               "language": detected_language,
                "ent": token.ent_type_ or None,
                "pinyin": (
                   " ".join(lazy_pinyin(token.text)) 
