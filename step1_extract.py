@@ -94,27 +94,37 @@ def is_symbol_heavy(text):
 def is_exception_language(text):
     """
     Detect if the text contains a script or pattern matching a non-default language.
-    
+
     Returns:
         A language code (e.g. 'zh', 'fr', 'ru', 'xx') if a match is found.
         Returns None if no exception language is detected.
-        
-    Note: Despite the name, this no longer returns a boolean.
     """
     if contains_chinese(text):
         return "zh"
-    elif re.search(r'[\u0600-\u06FF]', text):  # Arabic
+    elif contains_arabic(text):
         return "xx"
-    elif re.search(r'[\u0400-\u04FF]', text):  # Cyrillic
+    elif contains_cyrillic(text):
         return "ru"
-    elif re.search(r'[\u0370-\u03FF]', text):  # Greek
+    elif contains_greek(text):
         return "el"
-    elif re.search(r'[\u0590-\u05FF]', text):  # Hebrew
+    elif contains_hebrew(text):
         return "xx"
-    elif re.search(r'[\u0E00-\u0E7F]', text):  # Thai
+    elif contains_thai(text):
         return "xx"
-    elif re.search(r'[\u0900-\u097F]', text):  # Devanagari
+    elif contains_devanagari(text):
         return "xx"
+    elif contains_french(text):
+        return "fr"
+    elif contains_spanish(text):
+        return "es"
+    elif contains_italian(text):
+        return "it"
+    elif contains_portuguese(text):
+        return "pt"
+    elif contains_german(text):
+        return "de"
+    elif contains_english(text):
+        return "en"
     return None
 
 def has_real_words(text):
@@ -200,7 +210,44 @@ def is_translatable_text(tag):
 
 def contains_chinese(text):
     return re.search(r'[\u4e00-\u9fff]', text) is not None
+def contains_chinese(text):
+    return re.search(r'[\u4e00-\u9fff]', text) is not None
 
+def contains_arabic(text):
+    return re.search(r'[\u0600-\u06FF]', text) is not None
+
+def contains_cyrillic(text):
+    return re.search(r'[\u0400-\u04FF]', text) is not None
+
+def contains_greek(text):
+    return re.search(r'[\u0370-\u03FF]', text) is not None
+
+def contains_hebrew(text):
+    return re.search(r'[\u0590-\u05FF]', text) is not None
+
+def contains_thai(text):
+    return re.search(r'[\u0E00-\u0E7F]', text) is not None
+
+def contains_devanagari(text):
+    return re.search(r'[\u0900-\u097F]', text) is not None
+
+def contains_french(text):
+    return re.search(r'[àâæçéèêëîïôœùûüÿ]', text, re.IGNORECASE) is not None
+
+def contains_spanish(text):
+    return re.search(r'[áéíóúüñ]', text, re.IGNORECASE) is not None
+
+def contains_italian(text):
+    return re.search(r'[àèéìíîòóùú]', text, re.IGNORECASE) is not None
+
+def contains_portuguese(text):
+    return re.search(r'[áàâãéêíóôõúç]', text, re.IGNORECASE) is not None
+
+def contains_german(text):
+    return re.search(r'[äöüß]', text, re.IGNORECASE) is not None
+
+def contains_english(text):
+    return re.search(r'\b(the|and|is|of|to|in)\b', text, re.IGNORECASE) is not None
 
 
 def process_text_block(block_id, text, default_nlp):
