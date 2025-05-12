@@ -256,7 +256,7 @@ def extract_from_jsonld(obj, block_counter, nlp, structured_output, flattened_ou
 
 
 def extract_translatable_html(input_path, lang_code):
-    nlp = load_spacy_model(lang_code)
+    nlp = get_spacy_model(lang_code)
 
     with open(input_path, "r", encoding="utf-8") as f:
         soup = BeautifulSoup(f, "html5lib")
