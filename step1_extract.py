@@ -147,11 +147,11 @@ def is_translatable_text(tag):
         return False
 
     # Math and symbol skipping (with proper line continuation)
-    if (not is_exception_language(text)) 
+    if ((not is_exception_language(text)) 
     and (
         is_pure_symbol(text) or 
         is_math_fragment(text) or 
-        has_math_html_markup(tag)):
+        has_math_html_markup(tag))):
         return False
 
     # If any parent says "no", block translation
