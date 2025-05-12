@@ -7,7 +7,6 @@ import argparse
 import subprocess
 import regex as re
 from pypinyin import lazy_pinyin
-from collections import Counter
 from bs4 import BeautifulSoup, Comment, NavigableString
 
 
@@ -92,6 +91,8 @@ def is_symbol_heavy(text):
     symbol_count = len(re.findall(r'[\p{P}\p{S}\d_]', text))
     return symbol_count > 0  # treat as symbol-heavy if only symbols
 
+
+
 def detect_language(text, default_lang="en"):
     """Enhanced language detection combining script detection and word counting."""
     # First check script-based detection
@@ -102,27 +103,36 @@ def detect_language(text, default_lang="en"):
     # Then try word-based detection if we have enough words
     words = re.findall(r'\b\p{L}{3,}\b', text, re.UNICODE)
     if len(words) >= 3:
-        word_counter = Counter(words)
-        # Check for language-specific words
-        lang_scores = {
-            'en': sum(1 for word in word_counter if contains_english(word)),
-            'fr': sum(1 for word in word_counter if contains_french(word)),
-            'es': sum(1 for word in word_counter if contains_spanish(word)),
-            'de': sum(1 for word in word_counter if contains_german(word)),
-            'it': sum(1 for word in word_counter if contains_italian(word)),
-            'pt': sum(1 for word in word_counter if contains_portuguese(word)),
-            'ru': sum(1 for word in word_counter if contains_cyrillic(word)),
-            'zh': sum(1 for word in word_counter if contains_chinese(word)),
-            'el': sum(1 for word in word_counter if contains_greek(word)),
+        # Manual word counting instead of using Counter
+        lang_counts = {
+            'en': 0,
+            'fr': 0,
+            'es': 0,
+            'de': 0,
+            'it': 0,
+            'pt': 0,
+            'ru': 0,
+            'zh': 0,
+            'el': 0,
         }
         
+        for word in words:
+            if contains_english(word): lang_counts['en'] += 1
+            if contains_french(word): lang_counts['fr'] += 1
+            if contains_spanish(word): lang_counts['es'] += 1
+            if contains_german(word): lang_counts['de'] += 1
+            if contains_italian(word): lang_counts['it'] += 1
+            if contains_portuguese(word): lang_counts['pt'] += 1
+            if contains_cyrillic(word): lang_counts['ru'] += 1
+            if contains_chinese(word): lang_counts['zh'] += 1
+            if contains_greek(word): lang_counts['el'] += 1
+        
         # Get the language with highest score
-        best_lang = max(lang_scores.items(), key=lambda x: x[1])[0]
-        if lang_scores[best_lang] >= 2:  # Require at least 2 matching words
+        best_lang = max(lang_counts.items(), key=lambda x: x[1])[0]
+        if lang_counts[best_lang] >= 2:  # Require at least 2 matching words
             return best_lang
     
     return default_lang
-
 
 def is_exception_language(text):
     """
