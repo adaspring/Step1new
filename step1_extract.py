@@ -6,7 +6,7 @@ import spacy
 import argparse
 import subprocess
 import regex as re
-from pinyin import lazy_pinyin
+from pypinyin import lazy_pinyin
 from bs4 import BeautifulSoup, Comment, NavigableString
 
 SPACY_MODELS = {
