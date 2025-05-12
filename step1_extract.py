@@ -203,7 +203,7 @@ def contains_chinese(text):
 
 
 
-def process_text_block(block_id, text, nlp):
+def process_text_block(block_id, text, default_nlp):
     lang_code = is_exception_language(text)
     nlp = default_nlp if not lang_code else load_spacy_model(lang_code)
 
