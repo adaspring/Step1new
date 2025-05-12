@@ -28,7 +28,7 @@ jobs:
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install beautifulsoup4 spacy html5lib regex pypinyin
+          pip install beautifulsoup4 spacy html5lib langdetect regex pypinyin
       - name: Run Step 1 HTML extraction with JSON-LD support
         run: |
           python step1_extract.py ${{ github.event.inputs.html_file }} --lang ${{ github.event.inputs.lang }}
