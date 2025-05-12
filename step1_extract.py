@@ -232,23 +232,39 @@ def contains_devanagari(text):
     return re.search(r'[\u0900-\u097F]', text) is not None
 
 def contains_french(text):
-    return re.search(r'[àâæçéèêëîïôœùûüÿ]', text, re.IGNORECASE) is not None
+    return (
+        re.search(r'[àâæçéèêëîïôœùûüÿ]', text, re.IGNORECASE) is not None or
+        re.search(r'\b(le|la|les|un|une|des|ce|cette|est|avec|mais|pour|pas|qui|sur)\b', text, re.IGNORECASE)
+    )
 
 def contains_spanish(text):
-    return re.search(r'[áéíóúüñ]', text, re.IGNORECASE) is not None
+    return (
+        re.search(r'[áéíóúüñ]', text, re.IGNORECASE) is not None or
+        re.search(r'\b(el|la|los|las|un|una|que|es|con|pero|por|para|cómo|sin|más)\b', text, re.IGNORECASE)
+    )
 
 def contains_italian(text):
-    return re.search(r'[àèéìíîòóùú]', text, re.IGNORECASE) is not None
+    return (
+        re.search(r'[àèéìíîòóùú]', text, re.IGNORECASE) is not None or
+        re.search(r'\b(il|lo|la|gli|le|un|una|che|è|con|ma|come|perché|senza|più|meno)\b', text, re.IGNORECASE)
+    )
 
 def contains_portuguese(text):
-    return re.search(r'[áàâãéêíóôõúç]', text, re.IGNORECASE) is not None
+    return (
+        re.search(r'[áàâãéêíóôõúç]', text, re.IGNORECASE) is not None or
+        re.search(r'\b(o|a|os|as|um|uma|que|é|com|mas|por|para|como|sem|mais)\b', text, re.IGNORECASE)
+    )
 
 def contains_german(text):
-    return re.search(r'[äöüß]', text, re.IGNORECASE) is not None
+    return (
+        re.search(r'[äöüß]', text, re.IGNORECASE) is not None or
+        re.search(r'\b(der|die|das|ein|eine|ist|mit|aber|und|nicht|für|ohne|warum|wie|mehr)\b', text, re.IGNORECASE)
+    )
 
 def contains_english(text):
-    return re.search(r'\b(the|and|is|of|to|in)\b', text, re.IGNORECASE) is not None
-
+    return (
+        re.search(r'\b(the|and|is|of|to|in|with|but|not|a|an|for|on|that|how|without|more)\b', text, re.IGNORECASE)
+    )
 
 def process_text_block(block_id, text, default_nlp):
     lang_code = is_exception_language(text)
