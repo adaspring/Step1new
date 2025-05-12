@@ -92,9 +92,30 @@ def is_symbol_heavy(text):
     return symbol_count > 0  # treat as symbol-heavy if only symbols
 
 def is_exception_language(text):
-    # Allow Chinese, Arabic, etc., even if short
-    return contains_chinese(text) or re.search(r'[\u0600-\u06FF\u0400-\u04FF\u0370-\u03FF]', text)
-
+    """
+    Detect if the text contains a script or pattern matching a non-default language.
+    
+    Returns:
+        A language code (e.g. 'zh', 'fr', 'ru', 'xx') if a match is found.
+        Returns None if no exception language is detected.
+        
+    Note: Despite the name, this no longer returns a boolean.
+    """
+    if contains_chinese(text):
+        return "zh"
+    elif re.search(r'[\u0600-\u06FF]', text):  # Arabic
+        return "xx"
+    elif re.search(r'[\u0400-\u04FF]', text):  # Cyrillic
+        return "ru"
+    elif re.search(r'[\u0370-\u03FF]', text):  # Greek
+        return "el"
+    elif re.search(r'[\u0590-\u05FF]', text):  # Hebrew
+        return "xx"
+    elif re.search(r'[\u0E00-\u0E7F]', text):  # Thai
+        return "xx"
+    elif re.search(r'[\u0900-\u097F]', text):  # Devanagari
+        return "xx"
+    return None
 
 def has_real_words(text):
     return re.search(r'\b\p{L}{3,}\b', text, re.UNICODE) is not None
@@ -227,10 +248,13 @@ def process_text_with_language_detection(block_id, text):
         return process_text_block(block_id, text, nlp)
 
 
-
-
-
 def process_text_block(block_id, text, nlp):
+    lang_code = 
+    is_exception_language(text)
+    nlp = default_nlp if not lang_code 
+    else load_spacy_model(lang_code)
+    
+    
     structured = {}
     flattened = {}
     sentence_tokens = []
