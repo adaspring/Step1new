@@ -7,6 +7,7 @@ import argparse
 import subprocess
 import regex as re
 from pypinyin import lazy_pinyin
+from collections import Counter
 from bs4 import BeautifulSoup, Comment, NavigableString
 
 
@@ -90,6 +91,38 @@ def is_symbol_heavy(text):
     # Otherwise check for excessive symbols
     symbol_count = len(re.findall(r'[\p{P}\p{S}\d_]', text))
     return symbol_count > 0  # treat as symbol-heavy if only symbols
+
+def detect_language(text, default_lang="en"):
+    """Enhanced language detection combining script detection and word counting."""
+    # First check script-based detection
+    lang = is_exception_language(text)
+    if lang:
+        return lang
+    
+    # Then try word-based detection if we have enough words
+    words = re.findall(r'\b\p{L}{3,}\b', text, re.UNICODE)
+    if len(words) >= 3:
+        word_counter = Counter(words)
+        # Check for language-specific words
+        lang_scores = {
+            'en': sum(1 for word in word_counter if contains_english(word)),
+            'fr': sum(1 for word in word_counter if contains_french(word)),
+            'es': sum(1 for word in word_counter if contains_spanish(word)),
+            'de': sum(1 for word in word_counter if contains_german(word)),
+            'it': sum(1 for word in word_counter if contains_italian(word)),
+            'pt': sum(1 for word in word_counter if contains_portuguese(word)),
+            'ru': sum(1 for word in word_counter if contains_cyrillic(word)),
+            'zh': sum(1 for word in word_counter if contains_chinese(word)),
+            'el': sum(1 for word in word_counter if contains_greek(word)),
+        }
+        
+        # Get the language with highest score
+        best_lang = max(lang_scores.items(), key=lambda x: x[1])[0]
+        if lang_scores[best_lang] >= 2:  # Require at least 2 matching words
+            return best_lang
+    
+    return default_lang
+
 
 def is_exception_language(text):
     """
@@ -267,9 +300,9 @@ def contains_english(text):
     )
 
 def process_text_block(block_id, text, default_nlp):
-    lang_code = is_exception_language(text)
-    nlp = default_nlp if not lang_code else load_spacy_model(lang_code)
-    detected_language = lang_code or "default"
+    lang_code = detect_language(text)  # Changed from is_exception_language to detect_language
+    nlp = default_nlp if lang_code == "default" else load_spacy_model(lang_code)
+    detected_language = lang_code if lang_code != "default" else "en"  # Default to English if not detected
     
     structured = {}
     flattened = {}
@@ -281,17 +314,22 @@ def process_text_block(block_id, text, default_nlp):
         sentence_id = f"{block_id}_{s_key}"
         sentence_text = sent.text
         flattened[sentence_id] = sentence_text
-        structured[s_key] = {"text": sentence_text, "words": {}}
+        structured[s_key] = {
+            "text": sentence_text, 
+            "language": detected_language,  # Add language at sentence level
+            "words": {}
+        }
         sentence_tokens.append((sentence_id, sentence_text))
 
         for w_idx, token in enumerate(sent, 1):
             w_key = f"W{w_idx}"
             word_id = f"{sentence_id}_{w_key}"
             flattened[word_id] = token.text
-            structured[s_key]["words"][w_key] = {  # Keep `{` on the same line
+            word_lang = detect_language(token.text, detected_language)  # Detect language at word level
+            structured[s_key]["words"][w_key] = {
                "text": token.text,
                "pos": token.pos_,
-               "language": detected_language,
+               "language": word_lang,  # Add language at word level
                "ent": token.ent_type_ or None,
                "pinyin": (
                   " ".join(lazy_pinyin(token.text)) 
@@ -301,7 +339,6 @@ def process_text_block(block_id, text, default_nlp):
             }
 
     return structured, flattened, sentence_tokens
-
 
 def extract_from_jsonld(obj, block_counter, nlp, structured_output, flattened_output):
     if isinstance(obj, dict):
