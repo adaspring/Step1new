@@ -159,12 +159,17 @@ def load_spacy_model(lang_code):
     model_name = SPACY_MODELS[lang_code]
 
     try:
-        return spacy.load(model_name)
+        nlp = spacy.load(model_name)
     except OSError:
         print(f"spaCy model '{model_name}' not found. Downloading automatically...")
         subprocess.run(["python", "-m", "spacy", "download", model_name], check=True)
-        return spacy.load(model_name)
+        nlp = spacy.load(model_name)
 
+    # Minimal addition: ensure sentence segmentation
+    if "parser" not in nlp.pipe_names and "sentencizer" not in nlp.pipe_names:
+        nlp.add_pipe("sentencizer", first=True)
+
+    return nlp
 
 def is_translatable_text(tag):
     """Determine if the given tag's text should be translated."""
