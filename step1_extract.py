@@ -263,23 +263,15 @@ def contains_french(text):
     )
 
 def contains_spanish(text):
+    # Original regex method
     if (
         re.search(r'[áéíóúüñ]', text, re.IGNORECASE) is not None or
         re.search(r'\b(el|la|los|las|un|una|que|es|con|pero|por|para|cómo|sin|más)\b', text, re.IGNORECASE) is not None
-    )   return True
-
-    if langdetect_detect_language(text, 'en'):
+    ):  # Added missing colon here
         return True
-        
-    return False
 
-def contains_italian(text):
-    if (
-        re.search(r'[àèéìíîòóùú]', text, re.IGNORECASE) is not None or
-        re.search(r'\b(il|lo|la|gli|le|un|una|che|è|con|ma|come|perché|senza|più|meno)\b', text, re.IGNORECASE) is not None
-    ) return True
-
-if langdetect_detect_language(text, 'en'):
+    # langdetect library - fixed to check for Spanish ('es') not English ('en')
+    if langdetect_detect_language(text, 'es'):
         return True
         
     return False
