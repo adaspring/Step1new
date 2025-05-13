@@ -1,0 +1,29 @@
+name: Count Languages in JSON
+
+on:
+  push:
+    paths:
+      - '**.json'
+      - 'count_languages.py'
+  workflow_dispatch:
+
+jobs:
+  analyze-languages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+
+      - name: Run language counting script
+        run: |
+          python count_languages.py input.json
