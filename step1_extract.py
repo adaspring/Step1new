@@ -292,7 +292,7 @@ def contains_english(text):
 
 def process_text_block(block_id, text, default_nlp):
     lang_code = detectis_exception_language(text)
-    nlp = default_nlp if not lang_code else load_spacy_model(lang_code)
+    nlp = default_nlp
     detected_language = lang_code or "default"
     
     structured = {}
