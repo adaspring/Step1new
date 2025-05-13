@@ -21,22 +21,35 @@ jobs:
         with:
           python-version: '3.11'
 
-
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libicu-dev wget
-
-
-
-
+          sudo apt-get install -y \
+            libicu-dev \
+            wget \
+            cmake \
+            protobuf-compiler \
+            libprotobuf-dev
 
       - name: Install Python dependencies
         run: |
-          python -m pip install --upgrade pip
+          python -m pip install --upgrade pip setuptools wheel
+          pip install --upgrade cmake
           
-          pip install beautifulsoup4 spacy html5lib langdetect regex pypinyin pycld3 fasttext polyglot
-          python -m spacy download en_core_web_sm  # Preload default English model
+          # Install packages separately with retries
+          pip install beautifulsoup4 spacy html5lib regex pypinyin
+          pip install langdetect  # Pure Python - easy install
+          pip install fasttext-wheel  # Pre-built wheel
+          
+          # Install pycld3 with build dependencies
+          pip install pycld3 --no-binary pycld3 || \
+            (echo "Retrying pycld3 install..." && pip install pycld3 --no-binary pycld3)
+          
+          # Install polyglot and its optional dependencies
+          pip install polyglot pyicu pycld2 morfessor
+
+          # Download spaCy models
+          python -m spacy download en_core_web_sm
           python -m spacy download zh_core_web_sm
           python -m spacy download fr_core_news_sm
           python -m spacy download es_core_news_sm
@@ -45,25 +58,12 @@ jobs:
           python -m spacy download pt_core_news_sm
           python -m spacy download ru_core_news_sm
           python -m spacy download el_core_news_sm
-          python -m spacy download xx_ent_wiki_sm  # multilingual fallback for Arabic, Hebrew, Thai, Hindi
+          python -m spacy download xx_ent_wiki_sm
 
       - name: Download FastText model
         run: |
-          wget https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin -O lid.176.bin
-        
+          wget -q https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin
 
-      - name: Download Polyglot language data
-        run: |
-          polyglot download LANG:en
-          polyglot download LANG:fr
-          polyglot download LANG:es
-          polyglot download LANG:de
-          polyglot download LANG:it
-          polyglot download LANG:pt
-          polyglot download LANG:ru
-          polyglot download LANG:zh
-
-     
       - name: Run multilingual content extraction
         run: |
           python step1_extract.py "${{ github.event.inputs.html_file }}"
