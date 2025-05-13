@@ -48,6 +48,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'  # ← NEW: Caches pip packages for faster runs
+          retention-days: 7  # ← NEW: Auto-deletes artifacts after 1 week
 
       - name: Install Python dependencies
         run: |
@@ -66,10 +68,14 @@ jobs:
      
       - name: Run multilingual content extraction
         run: |
-          python step1_extract.py "${{ github.event.inputs.html_file }}"
-            --lang "${{ github.event.inputs.lang }}" \
-            ${{ github.event.inputs.secondary-lang && format('--secondary-lang {0}', github.event.inputs.secondary-lang) }}
-
+          if [ -z "${{ github.event.inputs.secondary-lang }}" ]; then
+            python step1_extract.py "${{ github.event.inputs.html_file }}" \
+              --lang "${{ github.event.inputs.lang }}"
+          else
+            python step1_extract.py "${{ github.event.inputs.html_file }}" \
+              --lang "${{ github.event.inputs.lang }}" \
+              --secondary-lang "${{ github.event.inputs.secondary-lang }}"
+          fi
 
   
       - name: Upload extracted results
