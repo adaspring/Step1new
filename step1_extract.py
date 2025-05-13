@@ -479,20 +479,20 @@ def extract_translatable_html(input_path, lang_code):
     print("✅ Step 1 complete: saved translatable_flat.json, translatable_structured.json, and non_translatable.html.")
 
 if __name__ == "__main__":
-parser = argparse.ArgumentParser()
-parser.add_argument("input_file", help="HTML file to process")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input_file", help="HTML file to process")
 
-# Primary language (required)
-parser.add_argument("--lang", choices=SPACY_MODELS.keys(), required=True,
-                    help="Primary language code (required)")
+    # Primary language (required)
+    parser.add_argument("--lang", choices=SPACY_MODELS.keys(), required=True,
+                        help="Primary language code (required)")
 
-# Secondary language (optional)
-parser.add_argument("--secondary-lang", choices=SPACY_MODELS.keys(), default=None,
-                    help="Optional secondary language to prioritize in detection")
+    # Secondary language (optional)
+    parser.add_argument("--secondary-lang", choices=SPACY_MODELS.keys(), default=None,
+                        help="Optional secondary language to prioritize in detection")
 
-args = parser.parse_args()
+    args = parser.parse_args()
 
-# Global language detection priority (for detectis_exception_language)
-user_lang_order = [args.lang]
-if args.secondary_lang:
-    user_lang_order.append(args.secondary_lang)
+    # Global language detection priority (for detecting_exception_language)
+    user_lang_order = [args.lang]
+    if args.secondary_lang:
+        user_lang_order.append(args.secondary_lang)
