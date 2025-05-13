@@ -465,20 +465,48 @@ def extract_translatable_html(input_path, lang_code):
     print("✅ Step 1 complete: saved translatable_flat.json, translatable_structured.json, and non_translatable.html.")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("input_file", help="HTML file to process")
+    # Define supported languages for help text
+    SUPPORTED_LANGS = ", ".join(sorted(SPACY_MODELS.keys()))
 
-    # Primary language (required)
-    parser.add_argument("--lang", choices=SPACY_MODELS.keys(), required=True,
-                        help="Primary language code (required)")
+    parser = argparse.ArgumentParser(
+        description="Extract translatable text from HTML.",
+        formatter_class=argparse.RawTextHelpFormatter  # For multi-line help
+    )
+    
+    # Required arguments
+    parser.add_argument(
+        "input_file",
+        help="Path to the HTML file to process"
+    )
+    
+    # Primary language (MANDATORY)
+    parser.add_argument(
+        "--lang",
+        choices=SPACY_MODELS.keys(),
+        required=True,
+        metavar="LANG_CODE",
+        help=f"""\
+Primary language of the document (REQUIRED).
+Supported codes: {SUPPORTED_LANGS}
+Examples: --lang en (English), --lang zh (Chinese)"""
+    )
 
-    # Secondary language (optional)
-    parser.add_argument("--secondary-lang", choices=SPACY_MODELS.keys(), default=None,
-                        help="Optional secondary language to prioritize in detection")
+    # Secondary language (OPTIONAL)
+    parser.add_argument(
+        "--secondary-lang",
+        choices=SPACY_MODELS.keys(),
+        metavar="LANG_CODE",
+        help=f"""\
+Optional secondary language for mixed-content detection.
+Supported codes: {SUPPORTED_LANGS}
+Examples: --secondary-lang fr (French), --secondary-lang es (Spanish)"""
+    )
 
     args = parser.parse_args()
 
-    # Global language detection priority (for detecting_exception_language)
-    user_lang_order = [args.lang]
-    if args.secondary_lang:
-        user_lang_order.append(args.secondary_lang)
+    # Validate language priority
+    if args.secondary_lang and args.secondary_lang == args.lang:
+        parser.error("Primary and secondary languages cannot be the same!")
+
+    # Run extraction
+    extract_translatable_html(args.input_file, args.lang)
