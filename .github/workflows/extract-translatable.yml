@@ -1,5 +1,6 @@
 name: Extract Translatable Content
 
+
 on:
   workflow_dispatch:
     inputs:
@@ -7,6 +8,33 @@ on:
         description: 'Path to the HTML file to process'
         required: true
         default: 'index.html'
+      lang:
+        description: "Primary language"
+        required: true
+        default: "en"
+        type: choice
+        options:
+          - en
+          - fr
+          - es
+          - zh
+          - de
+          - pt
+          - it
+      secondary-lang:
+        description: "Secondary language"
+        required: false
+        default: ""
+        type: choice
+        options:
+          - ""
+          - en
+          - fr
+          - es
+          - zh
+          - de
+          - pt
+          - it
 
 jobs:
   extract:
@@ -39,7 +67,11 @@ jobs:
       - name: Run multilingual content extraction
         run: |
           python step1_extract.py "${{ github.event.inputs.html_file }}"
+            --lang "${{ github.event.inputs.lang }}" \
+            ${{ github.event.inputs.secondary-lang && format('--secondary-lang {0}', github.event.inputs.secondary-lang) }}
 
+
+  
       - name: Upload extracted results
         uses: actions/upload-artifact@v4
         with:
