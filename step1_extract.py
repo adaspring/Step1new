@@ -6,6 +6,9 @@ import spacy
 import argparse
 import subprocess
 import regex as re
+import fasttext
+import pycld3
+from langdetect import detect_langs
 from pypinyin import lazy_pinyin
 from bs4 import BeautifulSoup, Comment, NavigableString
 
