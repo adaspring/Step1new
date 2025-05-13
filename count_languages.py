@@ -1,5 +1,5 @@
 import json
-from collections import defaultdict, Counter
+from collections import Counter
 import sys
 
 def main():
