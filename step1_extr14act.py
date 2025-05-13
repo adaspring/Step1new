@@ -103,20 +103,12 @@ def is_exception_language(text):
         return "zh"
     elif contains_arabic(text):
         return "xx"
-    elif contains_cyrillic(text):
-        return "ru"
-    elif contains_greek(text):
-        return "el"
     elif contains_hebrew(text):
         return "xx"
     elif contains_thai(text):
         return "xx"
     elif contains_devanagari(text):
         return "xx"
-    elif contains_german(text):
-        return "de"
-    elif contains_english(text):
-        return "en"
     return None
 
 def has_real_words(text):
