@@ -49,8 +49,7 @@ jobs:
         with:
           python-version: '3.11'
           cache: 'pip'  # ← NEW: Caches pip packages for faster runs
-          retention-days: 7  # ← NEW: Auto-deletes artifacts after 1 week
-
+          
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
