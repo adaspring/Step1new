@@ -113,23 +113,16 @@ def is_exception_language(text):
 
 def detectis_exception_language(text):
     """
-    Detect if the text contains a script or pattern matching a non-default language.
-    The detection order is influenced by user-selected languages (if provided).
-    
-    Returns:
-        A language code (e.g. 'zh', 'fr', 'ru', 'xx') if a match is found.
-        Returns None if no exception language is detected.
+    Detect if the text contains a script or pattern matching a prioritized language order.
+    Uses user-defined primary and secondary languages first.
     """
-    # User-prioritized order (global)
     try:
         custom = user_lang_order
     except NameError:
         custom = []
 
-    # Default fallback order
     fallback = ["zh", "en", "fr", "es", "it", "pt", "de", "ru", "el", "ar", "he", "th", "hi"]
 
-    # Merge without duplicates
     seen = set()
     lang_order = []
     for lang in custom + fallback:
@@ -164,7 +157,6 @@ def detectis_exception_language(text):
             return "de"
         elif lang == "en" and contains_english(text):
             return "en"
-
     return None
 
 
@@ -486,22 +478,21 @@ def extract_translatable_html(input_path, lang_code):
 
     print("✅ Step 1 complete: saved translatable_flat.json, translatable_structured.json, and non_translatable.html.")
 
-
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("input_file", help="HTML file to process")
-    parser.add_argument("--lang", choices=SPACY_MODELS.keys(), default="en", help="Language code (default: en)")
-    parser.add_argument("--secondary-lang", choices=SPACY_MODELS.keys(), default=None,
-                        help="Optional second language to prioritize in detection")
+parser = argparse.ArgumentParser()
+parser.add_argument("input_file", help="HTML file to process")
 
-    args = parser.parse_args()
+# Primary language (required)
+parser.add_argument("--lang", choices=SPACY_MODELS.keys(), required=True,
+                    help="Primary language code (required)")
 
-    # Define a global language priority list for detection
-    user_lang_order = [args.lang]
-    if args.secondary_lang:
-        user_lang_order.append(args.secondary_lang)
+# Secondary language (optional)
+parser.add_argument("--secondary-lang", choices=SPACY_MODELS.keys(), default=None,
+                    help="Optional secondary language to prioritize in detection")
 
-    # Debug output to verify
-    print("Language detection priority:", user_lang_order)
+args = parser.parse_args()
 
-    extract_translatable_html(args.input_file, args.lang)
+# Global language detection priority (for detectis_exception_language)
+user_lang_order = [args.lang]
+if args.secondary_lang:
+    user_lang_order.append(args.secondary_lang)
