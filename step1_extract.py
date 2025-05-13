@@ -111,6 +111,43 @@ def is_exception_language(text):
         return "xx"
     return None
 
+def detectis_exception_language(text):
+    """
+    Detect if the text contains a script or pattern matching a non-default language.
+
+    Returns:
+        A language code (e.g. 'zh', 'fr', 'ru', 'xx') if a match is found.
+        Returns None if no exception language is detected.
+    """
+    if contains_chinese(text):
+        return "zh"
+    elif contains_arabic(text):
+        return "xx"
+    elif contains_cyrillic(text):
+        return "ru"
+    elif contains_greek(text):
+        return "el"
+    elif contains_hebrew(text):
+        return "xx"
+    elif contains_thai(text):
+        return "xx"
+    elif contains_devanagari(text):
+        return "xx"
+    elif contains_french(text):
+        return "fr"
+    elif contains_spanish(text):
+        return "es"
+    elif contains_italian(text):
+        return "it"
+    elif contains_portuguese(text):
+        return "pt"
+    elif contains_german(text):
+        return "de"
+    elif contains_english(text):
+        return "en"
+    return None
+
+
 def has_real_words(text):
     return re.search(r'\b\p{L}{3,}\b', text, re.UNICODE) is not None
 
@@ -256,7 +293,7 @@ def contains_english(text):
     )
 
 def process_text_block(block_id, text, default_nlp):
-    lang_code = is_exception_language(text)
+    lang_code = detectis_exception_language(text)
     nlp = default_nlp if not lang_code else load_spacy_model(lang_code)
     detected_language = lang_code or "default"
     
