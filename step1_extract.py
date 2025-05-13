@@ -121,6 +121,8 @@ def detectis_exception_language(text):
     """
     if contains_chinese(text):
         return "zh"
+    elif contains_english(text):
+        return "en"
     elif contains_arabic(text):
         return "xx"
     elif contains_cyrillic(text):
@@ -141,8 +143,6 @@ def detectis_exception_language(text):
         return "it"
     elif contains_german(text):
         return "de"
-    elif contains_english(text):
-        return "en"
     return None
 
 
