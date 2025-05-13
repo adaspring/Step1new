@@ -6,6 +6,7 @@ import spacy
 import argparse
 import subprocess
 import regex as re
+from langdetect import detect, LangDetectException
 from pypinyin import lazy_pinyin
 from bs4 import BeautifulSoup, Comment, NavigableString
 
@@ -127,6 +128,30 @@ def is_exception_language(text):
         return "en"
     return None
 
+def langdetect_detect_language(text, target_language):
+    """
+    Use langdetect library to detect if text is in the target language.
+    
+    Args:
+        text: The text to analyze
+        target_language: The language code to check for (e.g., 'en', 'fr')
+    
+    Returns:
+        Boolean: True if detected language matches target language
+    """
+    try:
+        if len(text) < MIN_TEXT_LENGTH_FOR_EXTERNAL:
+            return False
+            
+        detected = detect(text)
+        return detected == target_language
+    except LangDetectException:
+        # Fail silently and return False if langdetect fails
+        return False
+        
+
+
+
 def has_real_words(text):
     return re.search(r'\b\p{L}{3,}\b', text, re.UNICODE) is not None
 
@@ -238,16 +263,26 @@ def contains_french(text):
     )
 
 def contains_spanish(text):
-    return (
+    if (
         re.search(r'[áéíóúüñ]', text, re.IGNORECASE) is not None or
         re.search(r'\b(el|la|los|las|un|una|que|es|con|pero|por|para|cómo|sin|más)\b', text, re.IGNORECASE) is not None
-    )
+    )   return True
+
+    if langdetect_detect_language(text, 'en'):
+        return True
+        
+    return False
 
 def contains_italian(text):
-    return (
+    if (
         re.search(r'[àèéìíîòóùú]', text, re.IGNORECASE) is not None or
         re.search(r'\b(il|lo|la|gli|le|un|una|che|è|con|ma|come|perché|senza|più|meno)\b', text, re.IGNORECASE) is not None
-    )
+    ) return True
+
+if langdetect_detect_language(text, 'en'):
+        return True
+        
+    return False
 
 def contains_portuguese(text):
     return (
