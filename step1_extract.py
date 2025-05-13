@@ -114,35 +114,57 @@ def is_exception_language(text):
 def detectis_exception_language(text):
     """
     Detect if the text contains a script or pattern matching a non-default language.
-
+    The detection order is influenced by user-selected languages (if provided).
+    
     Returns:
         A language code (e.g. 'zh', 'fr', 'ru', 'xx') if a match is found.
         Returns None if no exception language is detected.
     """
-    if contains_chinese(text):
-        return "zh"
-    elif contains_arabic(text):
-        return "xx"
-    elif contains_cyrillic(text):
-        return "ru"
-    elif contains_greek(text):
-        return "el"
-    elif contains_hebrew(text):
-        return "xx"
-    elif contains_thai(text):
-        return "xx"
-    elif contains_devanagari(text):
-        return "xx"
-    elif contains_french(text):
-        return "fr"
-    elif contains_spanish(text):
-        return "es"
-    elif contains_italian(text):
-        return "it"
-    elif contains_german(text):
-        return "de"
-    elif contains_english(text):
-        return "en"
+    # User-prioritized order (global)
+    try:
+        custom = user_lang_order
+    except NameError:
+        custom = []
+
+    # Default fallback order
+    fallback = ["zh", "en", "fr", "es", "it", "pt", "de", "ru", "el", "ar", "he", "th", "hi"]
+
+    # Merge without duplicates
+    seen = set()
+    lang_order = []
+    for lang in custom + fallback:
+        if lang not in seen:
+            lang_order.append(lang)
+            seen.add(lang)
+
+    for lang in lang_order:
+        if lang == "zh" and contains_chinese(text):
+            return "zh"
+        elif lang == "ar" and contains_arabic(text):
+            return "xx"
+        elif lang == "ru" and contains_cyrillic(text):
+            return "ru"
+        elif lang == "el" and contains_greek(text):
+            return "el"
+        elif lang == "he" and contains_hebrew(text):
+            return "xx"
+        elif lang == "th" and contains_thai(text):
+            return "xx"
+        elif lang == "hi" and contains_devanagari(text):
+            return "xx"
+        elif lang == "fr" and contains_french(text):
+            return "fr"
+        elif lang == "es" and contains_spanish(text):
+            return "es"
+        elif lang == "it" and contains_italian(text):
+            return "it"
+        elif lang == "pt" and contains_portuguese(text):
+            return "pt"
+        elif lang == "de" and contains_german(text):
+            return "de"
+        elif lang == "en" and contains_english(text):
+            return "en"
+
     return None
 
 
@@ -469,5 +491,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("input_file", help="HTML file to process")
     parser.add_argument("--lang", choices=SPACY_MODELS.keys(), default="en", help="Language code (default: en)")
+    parser.add_argument("--secondary-lang", choices=SPACY_MODELS.keys(), default=None,
+                        help="Optional second language to prioritize in detection")
+
     args = parser.parse_args()
+
+    # Define a global language priority list for detection
+    user_lang_order = [args.lang]
+    if args.secondary_lang:
+        user_lang_order.append(args.secondary_lang)
+
+    # Debug output to verify
+    print("Language detection priority:", user_lang_order)
+
     extract_translatable_html(args.input_file, args.lang)
