@@ -113,14 +113,6 @@ def is_exception_language(text):
         return "xx"
     elif contains_devanagari(text):
         return "xx"
-    elif contains_french(text):
-        return "fr"
-    elif contains_spanish(text):
-        return "es"
-    elif contains_italian(text):
-        return "it"
-    elif contains_portuguese(text):
-        return "pt"
     elif contains_german(text):
         return "de"
     elif contains_english(text):
