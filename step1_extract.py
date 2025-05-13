@@ -383,7 +383,7 @@ def extract_translatable_html(input_path, lang_code):
                 flattened_output.update(flattened)
                 
                 # Fix 3: Safe replacement
-                replacement_content = sentence_tokens[0][0]
+                replacement_content = " ".join([token[0] for token in sentence_tokens])
                 if not isinstance(replacement_content, NavigableString):
                     replacement_content = NavigableString(str(replacement_content))
                 element.replace_with(replacement_content)
