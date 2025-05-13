@@ -1,0 +1,80 @@
+name: Count Language Tags
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  count-languages:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+
+    - name: Run language counter script
+      run: |
+        cat << 'EOF' > count_languages.py
+        import json
+
+        def count_language_tags(json_file_path):
+            with open(json_file_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            language_counts = {}
+            block_language_distribution = {}
+            
+            for block_id, block_data in data.items():
+                if 'tokens' not in block_data:
+                    continue
+                    
+                if block_id not in block_language_distribution:
+                    block_language_distribution[block_id] = {}
+                    
+                for sentence_data in block_data['tokens'].values():
+                    if 'words' not in sentence_data:
+                        continue
+                        
+                    for word_data in sentence_data['words'].values():
+                        language = word_data.get('language', 'unknown')
+                        language_counts[language] = language_counts.get(language, 0) + 1
+                        block_language_distribution[block_id][language] = block_language_distribution[block_id].get(language, 0) + 1
+            
+            # Save results to files
+            with open('language_summary.txt', 'w', encoding='utf-8') as f:
+                f.write("Total language tag counts:\n")
+                for lang, count in sorted(language_counts.items(), key=lambda x: x[1], reverse=True):
+                    f.write(f"{lang}: {count}\n")
+            
+            with open('block_language_distribution.txt', 'w', encoding='utf-8') as f:
+                f.write("Language distribution by block:\n")
+                for block_id, lang_counts in block_language_distribution.items():
+                    f.write(f"\nBlock {block_id}:\n")
+                    for lang, count in sorted(lang_counts.items(), key=lambda x: x[1], reverse=True):
+                        f.write(f"  {lang}: {count}\n")
+
+        if __name__ == "__main__":
+            count_language_tags("translatable_structured.json")
+        EOF
+
+        python count_languages.py
+
+    - name: Upload results as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: language-tag-results
+        path: |
+          language_summary.txt
+          block_language_distribution.txt
