@@ -1,11 +1,12 @@
 name: Count Languages in JSON
 
 on:
-  push:
-    paths:
-      - '**.json'
-      - 'count_languages.py'
   workflow_dispatch:
+    inputs:
+      json_filename:
+        description: 'Path to the input JSON file (e.g., data/input.json)'
+        required: true
+        default: 'input.json'
 
 jobs:
   analyze-languages:
@@ -18,12 +19,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
       - name: Install dependencies
-        run: |
-          pip install --upgrade pip
+        run: pip install --upgrade pip
 
       - name: Run language counting script
         run: |
-          python count_languages.py input.json
+          python count_languages.py ${{ github.event.inputs.json_filename }}
