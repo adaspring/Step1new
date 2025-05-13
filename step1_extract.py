@@ -231,11 +231,6 @@ def contains_thai(text):
 def contains_devanagari(text):
     return re.search(r'[\u0900-\u097F]', text) is not None
 
-def contains_french(text):
-    return (
-        re.search(r'[àâæçéèêëîïôœùûüÿ]', text, re.IGNORECASE) is not None or
-        re.search(r'\b(le|la|les|un|une|des|ce|cette|est|avec|mais|pour|pas|qui|sur)\b', text, re.IGNORECASE) is not None
-    )
 
 def contains_spanish(text):
     return (
@@ -261,10 +256,86 @@ def contains_german(text):
         re.search(r'\b(der|die|das|ein|eine|ist|mit|aber|und|nicht|für|ohne|warum|wie|mehr)\b', text, re.IGNORECASE) is not None
     )
 
-def contains_english(text):
-    return (
-        re.search(r'\b(the|and|is|of|to|in|with|but|not|a|an|for|on|that|how|without|more)\b', text, re.IGNORECASE) is not None
+
+def contains_french(text):
+    # Original regex check
+    regex_match = (
+        re.search(r'[àâæçéèêëîïôœùûüÿ]', text, re.IGNORECASE) is not None or
+        re.search(r'\b(le|la|les|un|une|des|ce|cette|est|avec|mais|pour|pas|qui|sur)\b', 
+                 text, re.IGNORECASE) is not None
     )
+    
+    if regex_match:
+        return True
+    
+    # New advanced detection methods
+    try:
+        # Method 1: FastText
+        model = fasttext.load_model('lid.176.bin')
+        lang = model.predict(text)[0][0].replace('__label__', '')
+        if lang == 'fr':
+            return True
+    except:
+        pass
+    
+    try:
+        # Method 2: CLD3
+        result = pycld3.get_language(text)
+        if result and result[0] == 'fr':
+            return True
+    except:
+        pass
+    
+    try:
+        # Method 3: Langdetect
+        langs = detect_langs(text)
+        if langs and langs[0].lang == 'fr' and langs[0].prob > 0.95:
+            return True
+    except:
+        pass
+    
+    return False
+
+
+def contains_english(text):
+    # Original regex check
+    regex_match = (
+        re.search(r'\b(the|and|is|of|to|in|with|but|not|a|an|for|on|that|how|without|more)\b', 
+                 text, re.IGNORECASE) is not None
+    )
+    
+    # If regex already matches, return True
+    if regex_match:
+        return True
+    
+    # New advanced detection methods
+    try:
+        # Method 1: FastText
+        model = fasttext.load_model('lid.176.bin')  # Make sure this model is downloaded
+        lang = model.predict(text)[0][0].replace('__label__', '')
+        if lang == 'en':
+            return True
+    except:
+        pass
+    
+    try:
+        # Method 2: CLD3
+        result = pycld3.get_language(text)
+        if result and result[0] == 'en':
+            return True
+    except:
+        pass
+    
+    try:
+        # Method 3: Langdetect
+        langs = detect_langs(text)
+        if langs and langs[0].lang == 'en' and langs[0].prob > 0.95:
+            return True
+    except:
+        pass
+    
+    return False
+
 
 def process_text_block(block_id, text, default_nlp):
     lang_code = is_exception_language(text)
