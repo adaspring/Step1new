@@ -133,12 +133,12 @@ def detectis_exception_language(text):
         return "xx"
     elif contains_devanagari(text):
         return "xx"
-    elif contains_english(text):
-        return "en"
     elif contains_spanish(text):
         return "es"
     elif contains_french(text):
         return "fr"
+    elif contains_english(text):
+        return "en"
     elif contains_italian(text):
         return "it"
     elif contains_portuguese(text):
