@@ -208,8 +208,8 @@ def is_translatable_text(tag):
         
     return default_translatable
 
-def contains_chinese(text):
-    return re.search(r'[\u4e00-\u9fff]', text) is not None
+
+
 def contains_chinese(text):
     return re.search(r'[\u4e00-\u9fff]', text) is not None
 
