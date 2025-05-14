@@ -447,6 +447,20 @@ def extract_translatable_html(input_path, lang_code):
             continue
 
 
+
+    # Generate compact, valid JSON for ChatGPT context
+    compact_format = {
+    block_id: {
+        "type": data["type"],
+        "text": data["text"],
+        "segments": list(data["segments"].values())
+    }
+    for block_id, data in reformatted_flattened.items()
+}
+
+    with open("translatable_compact.json", "w", encoding="utf-8") as f:
+         json.dump(compact_format, f, indent=2, ensure_ascii=False)
+
     reformatted_flattened = {}
     for block_id, block_data in structured_output.items():
         # Determine the block type (tag/attr/meta/jsonld)
