@@ -447,20 +447,33 @@ def extract_translatable_html(input_path, lang_code):
             continue
 
 
-    # Replace the translatable_flat.json writing code with this:
     reformatted_flattened = {}
     for block_id, block_data in structured_output.items():
+        # Determine the block type (tag/attr/meta/jsonld)
+        block_type = (
+            block_data.get("tag") or 
+            block_data.get("attr") or 
+            block_data.get("meta") or 
+            block_data.get("jsonld") or 
+            "unknown"
+        )
+    
+        # Get full text (fallback: join all sentences)
+        full_text = block_data.get("text", " ".join(
+            s_data["text"] for s_data in block_data["tokens"].values()
+        ))
+    
         reformatted_flattened[block_id] = {
-            "tag": block_data.get("tag", ""),
-            "text": block_data.get("text", ""),
-            "tokens": {
-                s_key: s_data["text"]  # Extract sentence text
+            "type": block_type,  # "p", "alt", "og:title", etc.
+            "text": full_text,
+            "segments": {  # Renamed from "tokens" for clarity
+                f"{block_id}_{s_key}": s_data["text"]
                 for s_key, s_data in block_data["tokens"].items()
             }
         }
 
     with open("translatable_flat.json", "w", encoding="utf-8") as f:
-        json.dump(reformatted_flattened, f, indent=2, ensure_ascii=False)
+         json.dump(reformatted_flattened, f, indent=2, ensure_ascii=False)
     
     with open("translatable_structured.json", "w", encoding="utf-8") as f:
         json.dump(structured_output, f, indent=2, ensure_ascii=False)
