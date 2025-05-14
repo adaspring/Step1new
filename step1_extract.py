@@ -446,9 +446,22 @@ def extract_translatable_html(input_path, lang_code):
             print(f"⚠️ Failed to parse or process JSON-LD: {e}")
             continue
 
-    with open("translatable_flat.json", "w", encoding="utf-8") as f:
-        json.dump(flattened_output, f, indent=2, ensure_ascii=False)
 
+    # Replace the translatable_flat.json writing code with this:
+    reformatted_flattened = {}
+    for block_id, block_data in structured_output.items():
+        reformatted_flattened[block_id] = {
+            "tag": block_data.get("tag", ""),
+            "text": block_data.get("text", ""),
+            "tokens": {
+                s_key: s_data["text"]  # Extract sentence text
+                for s_key, s_data in block_data["tokens"].items()
+            }
+        }
+
+    with open("translatable_flat.json", "w", encoding="utf-8") as f:
+        json.dump(reformatted_flattened, f, indent=2, ensure_ascii=False)
+    
     with open("translatable_structured.json", "w", encoding="utf-8") as f:
         json.dump(structured_output, f, indent=2, ensure_ascii=False)
 
