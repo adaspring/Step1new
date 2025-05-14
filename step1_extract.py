@@ -448,19 +448,34 @@ def extract_translatable_html(input_path, lang_code):
 
 
 
-    # Generate compact, valid JSON for ChatGPT context
-    compact_format = {
-    block_id: {
-        "type": data["type"],
-        "text": data["text"],
-        "segments": list(data["segments"].values())
-    }
-    for block_id, data in reformatted_flattened.items()
-}
+    # Generate compact, positional-array format for ChatGPT
+     compact_array_format = {}
+
+    for block_id, block_data in structured_output.items():
+             block_type = (
+             block_data.get("tag") or
+             block_data.get("attr") or
+             block_data.get("meta") or
+             block_data.get("jsonld") or
+             "unknown"
+        )
+
+        full_text = block_data.get("text", " ".join(
+        s_data["text"] for s_data in block_data["tokens"].values()
+        ))
+
+        segments = [
+        s_data["text"]
+        for s_key, s_data in block_data["tokens"].items()
+        ]
+
+         compact_array_format[block_id] = [block_type, full_text, segments]
 
     with open("translatable_compact.json", "w", encoding="utf-8") as f:
-         json.dump(compact_format, f, indent=2, ensure_ascii=False)
+         json.dump(compact_array_format, f, indent=2, ensure_ascii=False)
 
+
+    
     reformatted_flattened = {}
     for block_id, block_data in structured_output.items():
         # Determine the block type (tag/attr/meta/jsonld)
@@ -502,7 +517,7 @@ def extract_translatable_html(input_path, lang_code):
     with open("translatable_flat_sentences.json", "w", encoding="utf-8") as f:
         json.dump(flat_sentences_only, f, indent=2, ensure_ascii=False)
 
-    print("✅ Step 1 complete: saved translatable_flat.json, translatable_structured.json, and non_translatable.html.")
+    print("✅ Step 1 complete: saved translatable_flat.json, translatable_structured.json,translatable_compact.json, and non_translatable.html.")
 
 if __name__ == "__main__":
     # Define supported languages for help text
